@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import PageHero from '@/components/PageHero';
+import { EventsCollage } from '@/components/HeroMedia';
 import Footer from '@/components/Footer';
 import { FeaturedEvent, EventCard, PastList, NoEvents } from '@/components/Cards';
 import { upcoming } from '@/data/events';
@@ -14,7 +15,7 @@ export default function Events() {
   return (
     <>
       <Header />
-      <PageHero scene="table" title="Events" lead="In person in key investor cities, online every month. Small rooms, selected guests - investors only." />
+      <PageHero aside={<EventsCollage events={events} />} word="SINGAPORE · DUBAI · ABU DHABI · RIYADH · ONLINE ·" title="Events" lead="In person in key investor cities, online every month. Small rooms, selected guests - investors only." />
 
       <section className="sec ev-sec" data-track="offline" id="in-person" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="sec-head rv">

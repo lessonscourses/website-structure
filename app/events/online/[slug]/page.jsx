@@ -55,7 +55,6 @@ export default async function Recap({ params }) {
           <ol className="ib-r rc-hl">{r.highlights.map((h, i) => <li key={h} className={'rv d' + i}><b>{String(i + 1).padStart(2, '0')}</b><div><p>{h}</p></div></li>)}</ol>
           <figure className="rc-pull rv d1"><blockquote>“{r.pull}”</blockquote><figcaption>{r.speaker}</figcaption></figure>
         </div>
-        <div className={'rc-shots n' + r.shots.length}>{r.shots.map((src, i) => <span key={src} className={'rv d' + i}><img src={src} alt="" loading="lazy" /></span>)}</div>
       </div></section>
 
       <section className="sec" id="speaker" style={{ paddingTop: 0 }}><div className="wrap">
