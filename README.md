@@ -12,7 +12,7 @@ npm run build && npm start
 ## Pages
 | Route | File |
 |---|---|
-| `/` | `app/page.jsx` - city hero, about, events (next dinner + list, online), blog, membership |
+| `/` | `app/page.jsx` - scroll hero (`components/HeroScroll.jsx`: LEGENDS with the event film inside the letters, fly-through, film framed on cream), about, events (next dinner + list, online), blog, membership |
 | `/events` | `app/events/page.jsx` - in person (next dinner + cards), online (sessions, upcoming first) |
 | `/events/<slug>` | `app/events/[slug]/page.jsx` - dinner page (video hero, why, guest list, form with the table, evening, gallery, FAQ) |
 | `/events/legends-online-06` | `app/events/legends-online-06/page.jsx` - online session page |

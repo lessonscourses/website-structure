@@ -1171,3 +1171,33 @@ body:has(.evp){--max:1144px}
 .hw-word{z-index:1}
 .hw-fade{height:200px;background:linear-gradient(180deg,rgba(7,6,5,0) 0%,rgba(40,33,22,.35) 35%,rgba(240,232,215,.85) 80%,var(--cream) 100%)}
 .hw{background:#000}.hw-cut{background:#000}
+
+/* ===== home hero (scroll): fly through LEGENDS into the film ===== */
+.hdr.dark.over.inhero .hdr-in{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-bottom-color:transparent!important}
+.hs{position:relative;height:340vh;background:var(--cream)}
+.hs-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.hs-film{position:absolute;inset:0;overflow:hidden;background:#000;color:#fff;will-change:clip-path}
+.hs-poster,.hs-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hs-poster{background:url(/gallery/evening-5.jpg) center/cover}
+.hs-shade{position:absolute;inset:0;opacity:var(--shade,0);background:linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.4) 55%,rgba(0,0,0,.15)),linear-gradient(0deg,rgba(0,0,0,.55),transparent 45%)}
+.hs-curtain{position:absolute;inset:0;background:#000;mix-blend-mode:multiply;display:grid;place-items:center;opacity:var(--cur,1)}
+.hs-word{margin-top:-8vh;font-size:clamp(60px,19vw,330px);font-weight:700;letter-spacing:-.03em;line-height:1;color:#fff;white-space:nowrap;transform:scale(var(--s,1));transform-origin:var(--ox,50%) var(--oy,50%);will-change:transform}
+.hs-word span{display:inline-block;animation:hsIn 1.4s cubic-bezier(.2,.8,.2,1) both}
+.hs-word span:nth-child(2){animation-delay:.06s}.hs-word span:nth-child(3){animation-delay:.12s}.hs-word span:nth-child(4){animation-delay:.18s}.hs-word span:nth-child(5){animation-delay:.24s}.hs-word span:nth-child(6){animation-delay:.3s}.hs-word span:nth-child(7){animation-delay:.36s}
+@keyframes hsIn{from{opacity:0;transform:translateY(40px)}}
+.hs-intro{position:absolute;left:0;right:0;top:calc(50% + clamp(40px,8vw,130px));text-align:center;opacity:var(--intro,1);pointer-events:none;animation:up 1s .7s both}
+.hs-pin{font-size:clamp(22px,3.1vw,48px);font-weight:600;letter-spacing:.2em;text-transform:uppercase;line-height:1.15;background:linear-gradient(100deg,#f3dca4,#c5993a 55%,#e8cd8e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hs-only{margin-top:14px;font-size:clamp(14px,1.2vw,17px);letter-spacing:.06em;color:rgba(255,255,255,.75)}
+.hs-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);opacity:var(--intro,1)}
+.hs-cue i{width:1px;height:40px;background:linear-gradient(var(--gold-hi),transparent);animation:hsCue 2s ease-in-out infinite}
+@keyframes hsCue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hs-copy{position:absolute;left:calc(max(var(--gut),(100vw - var(--max))/2) + var(--side,0px) * .6);bottom:calc(clamp(56px,10vh,110px) + var(--bot,0px));width:min(900px,calc(100% - 2 * (var(--gut) + var(--side,0px))));opacity:var(--copy,0);transform:translateY(calc((1 - var(--copy,0)) * 40px))}
+.hs-k{font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-hi)}
+.hs-copy h1{margin-top:18px;font-size:clamp(44px,8vw,132px);line-height:.92;font-weight:600;letter-spacing:-.045em}
+.hs-copy h1 em{font-style:normal;background:linear-gradient(100deg,#f3dca4,#c5993a 60%,#e8cd8e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hs-lead{margin-top:24px;font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:rgba(255,255,255,.82)}
+.hs-row{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hs-row .g-note{color:rgba(255,255,255,.7)}
+.hs+.sec{padding-top:clamp(56px,6vw,90px)}
+@media (max-width:640px){.hs-pin{letter-spacing:.12em}.hs-word{margin-top:-14vh}.hs-intro{top:calc(50% + 4vh)}.hs-row .g-btn{width:auto}}
+@media (prefers-reduced-motion:reduce){.hs{height:auto}.hs-stage{position:relative}.hs-curtain,.hs-intro,.hs-cue{display:none}}
