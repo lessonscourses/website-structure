@@ -1,4 +1,4 @@
-import Skyline from '@/components/Skyline';
+import HeroWordmark from '@/components/HeroWordmark';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Join from '@/components/Join';
@@ -26,22 +26,10 @@ export default function Home() {
   const events = upcoming();
   return (
     <>
-      <Header />
+      <Header dark />
 
       {/* ===== Hero ===== */}
-      <section className="gate">
-        <Skyline />
-        <main className="g-main">
-          <span className="g-rule" aria-hidden="true" />
-          <p className="g-kicker">Investors only</p>
-          <h1>Private Investors<br /><em>Network</em></h1>
-          <p className="g-lead"><span>Rare, high-quality deals from investors.</span> <span>Co-investment. Additional capital. Private events.</span></p>
-          <div className="g-cta">
-            <ApplyButton className="g-btn">Apply to join <Arr /></ApplyButton>
-            <span className="g-note"><i />Membership by approval</span>
-          </div>
-        </main>
-      </section>
+      <HeroWordmark />
 
       {/* ===== About ===== */}
       <section className="sec about" id="about"><div className="wrap">
