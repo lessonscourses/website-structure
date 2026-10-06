@@ -130,7 +130,7 @@ export default async function EventPage({ params }) {
       <section className="sec" id="evening"><div className="wrap eve">
         <div className="eve-head rv"><h2 className="h2">Three hours.<br />Simple<br />by design.</h2></div>
         <ol className="eve2 rv d1">
-          {scheduleFor(e.start).map(([t, h, p], i) => <li key={t} className={i === 2 ? 'on' : ''}><time>{t}</time><i /><div><h3>{h}</h3><p>{p}</p></div></li>)}
+          {scheduleFor(e.start).map(([t, h, p], i) => <li key={t} className={i === 2 ? 'key' : ''}><time>{t}</time><i /><div><h3>{h}</h3><p>{p}</p></div></li>)}
         </ol>
       </div></section>
 
@@ -156,13 +156,12 @@ export default async function EventPage({ params }) {
       <Faq e={e} />
 
       {/* ===== Closing ===== */}
-      <section className="close2" style={{ backgroundImage: 'url(/gallery/evening-5.jpg)' }}>
-        <div className="wrap close2-in">
-          <h2 className="rv">The strong never walk their journey alone</h2>
-          <p className="rv d1">10 seats. One table. {e.city}, {e.day} {e.month}.</p>
-          <a className="btn gold big rv d2" href="#apply">Request an invitation <Arr /></a>
+      <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
+        <div className="close3 rv">
+          <div><h2>The strong never walk<br />their journey alone.</h2><p>10 seats. One table. {e.city}, {e.day} {e.month}.</p></div>
+          <a className="btn gold big" href="#apply">Request an invitation <Arr /></a>
         </div>
-      </section>
+      </div></section>
       </div>
       <Footer />
     </>

@@ -1087,3 +1087,30 @@ a.on-card:hover{transform:translateY(-4px)}
 .nx-go{display:inline-flex;align-items:center;min-height:42px;padding:0 20px;border-radius:999px;border:1px solid rgba(33,29,22,.2);font-size:14px;font-weight:600;transition:border-color .2s,background .2s}
 .nx-go:hover{border-color:var(--gold);background:#fff}
 @media (max-width:760px){.nx-row{grid-template-columns:1fr auto;row-gap:2px}.nx-d,.nx-w{grid-column:1;font-size:14px}.nx-go{grid-column:2;grid-row:1/4}}
+
+/* ===== dinner page v5: as live screenshots ===== */
+body:has(.evp){--max:1144px}
+.evp .eh{min-height:100svh;padding:clamp(250px,32vh,300px) 0 clamp(48px,6vh,70px);align-items:flex-start}
+.evp .eh-city{top:clamp(100px,13vh,120px);left:-4%;font-size:clamp(120px,13.5vw,200px);letter-spacing:.01em;line-height:1;-webkit-text-stroke:1.6px rgba(212,173,90,.8)}
+.evp .eh-when{font-size:13px}
+.evp .eh-h{margin-top:22px;font-size:clamp(40px,4.1vw,60px);line-height:1.02}
+.evp .eh-lead{margin-top:26px;max-width:580px;font-size:clamp(17px,1.35vw,19.5px)}
+.evp .eh .lf{margin-top:28px}
+.evp .eh .lf>span{font-size:13.5px}
+.evp .eh .lf>div{gap:8px}
+.evp .eh .lf button{min-height:40px;padding:0 16px;font-size:14.5px}
+.evp .eh .btn.big{margin-top:26px;min-height:58px;padding:0 36px;font-size:15.5px}
+.evp .eh-note{margin-top:26px;font-size:14px}
+.evp .sec{padding:clamp(80px,9vw,120px) 0}
+/* evening: fixed, no scroll effect; "Asks & gives" highlighted */
+.eve-head{position:static}
+.eve2 li.key{background:#f3ece0}
+.eve2 li.key i{background:var(--gold);border-color:var(--gold)}
+/* closing card */
+.close3{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;padding:clamp(40px,5vw,64px);border-radius:28px;background:#211d16;color:#fff}
+.close3 h2{font-size:clamp(32px,3.2vw,44px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.close3 p{margin-top:16px;font-size:16.5px;color:rgba(255,255,255,.85)}
+@media (max-width:760px){.evp .eh{padding-top:200px}.evp .eh-city{top:84px;font-size:96px}.close3 .btn{width:100%}}
+.evp .eh-city{left:-34%}
+body:has(.evp){--max:1262px}
+.evp .eh-city{top:clamp(96px,12vh,116px);font-size:clamp(110px,12.6vw,186px)}
