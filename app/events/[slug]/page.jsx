@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SeatTable from '@/components/SeatTable';
 import Faq from '@/components/Faq';
-import { EVENTS, event, upcoming, SCHEDULE, MEDIA } from '@/data/events';
+import { EVENTS, event, upcoming, scheduleFor, MEDIA } from '@/data/events';
 import { PRIVACY_URL, TERMS_URL } from '@/data/links';
 
 // One page per dinner (legends.app/events/<slug>). Content is the same for every city;
@@ -30,32 +30,34 @@ export default async function EventPage({ params }) {
       <Header dark cta={{ href: '#apply', label: 'Request an invitation' }} />
 
       {/* ===== Hero: city video on black ===== */}
+      <div className="evp">
       <section className="eh">
         <div className="eh-bg" aria-hidden="true">
           <video autoPlay muted loop playsInline preload="auto" poster={`${MEDIA}/img/evening-1.jpg`}><source src={`https://legends.app/events/${e.slug}/media/hero.mp4`} type="video/mp4" /></video>
           <i className="eh-shade" />
         </div>
-        <div className="eh-city" data-drift aria-hidden="true">{Array.from({ length: 6 }, () => e.city).join(' · ')} ·</div>
+        <div className="eh-city" data-drift aria-hidden="true">{Array.from({ length: 6 }, () => e.city.toUpperCase()).join(' · ')} ·</div>
         <div className="wrap eh-in">
-          <p className="eh-when rv"><b>{e.city}</b><i />{e.day} {e.month}<i />Invitation only</p>
-          <h1 className="eh-h rv d1">You’re in {e.city} for {e.heroWeek}. <span>Meet the other nine at one private table.</span></h1>
-          <p className="lead rv d2">A private dinner for the investors who decide where capital goes: family offices, GPs, LPs and private investors.</p>
-          <div className="lf rv d2"><span>I’m looking for</span>{LOOKING.map((l) => <button key={l} type="button">{l}</button>)}</div>
-          <div className="eh-cta rv d3"><a className="btn gold big" href="#apply">Request an invitation <Arr /></a><p>Not public. Every seat is confirmed individually. The venue is disclosed on confirmation.</p></div>
-          <dl className="eh-facts rv d3">
-            <div><dt>Date</dt><dd>{DAYS[e.dow]}, {e.day} {e.month} 2026</dd></div>
-            <div><dt>Time</dt><dd>{e.time}</dd></div>
-            <div><dt>Venue</dt><dd>Disclosed on confirmation</dd></div>
-            <div><dt>Guests</dt><dd>{e.seats} investors only</dd></div>
-          </dl>
+          <p className="eh-when rv">{e.city} · {e.day} {e.month} · Invitation only</p>
+          <h1 className="eh-h rv d1"><b>You’re in {e.city} for<br />{e.heroWeek}.</b><br /><span>Meet the other nine<br />at one private table.</span></h1>
+          <p className="eh-lead rv d2">A private dinner for the investors who decide where capital goes: family offices, GPs, LPs and private investors.</p>
+          <div className="lf rv d2"><span>I’m looking for</span><div>{LOOKING.map((l) => <button key={l} type="button">{l}</button>)}</div></div>
+          <a className="btn gold big rv d3" href="#apply">Request an invitation <Arr /></a>
+          <p className="eh-note rv d3">Not public. Every seat is confirmed individually. The venue is disclosed on confirmation.</p>
         </div>
       </section>
+      <div className="tk2"><div className="wrap"><dl>
+        <div><dt>Date</dt><dd>{DAYS[e.dow]}, {e.day} {e.month} 2026</dd></div>
+        <div><dt>Time</dt><dd>{e.time}</dd></div>
+        <div><dt>Venue</dt><dd>Disclosed on confirmation</dd></div>
+        <div><dt>Guests</dt><dd>{e.seats} investors only</dd></div>
+      </dl></div></div>
 
       {/* ===== Why ===== */}
       <section className="sec" id="why"><div className="wrap why">
         <div className="why-pics rv"><img src={`${MEDIA}/img/evening-1.jpg`} alt="Investors around one dinner table on a rooftop" /><img src={`${MEDIA}/img/evening-2.jpg`} alt="Investors talking in a private lounge" /></div>
         <div className="why-tx">
-          <h2 className="h2 rv">{e.city} will be full of people. The right ten are harder to find</h2>
+          <h2 className="h2 rv">{e.city} will be full of people. The right ten are harder to find.</h2>
           <p className="lead rv d1">Thousands of investors, funds and brokers. No selection. Finding people you can trust usually takes years.</p>
           <ul className="nos rv d2">{['No stage', 'No pitches', 'No brokers', 'No random networking'].map((n) => <li key={n}>{n}</li>)}</ul>
         </div>
@@ -64,7 +66,7 @@ export default async function EventPage({ params }) {
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="sel">
           <div className="sel-tx">
-            <h2 className="h2 rv">Legends selects the table</h2>
+            <h2 className="h2 rv">Legends selects the table.</h2>
             <p className="lead rv d1">Introductions that usually take years, at one table in one evening.</p>
             <ul className="sel-facts">
               <li className="rv"><b>10 seats</b><span>Active investors only.</span></li>
@@ -83,14 +85,14 @@ export default async function EventPage({ params }) {
         </div>
       </div></section>
 
-      {/* ===== Outcomes + who ===== */}
-      <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
-        <div className="sec-head rv"><h2 className="h2">One evening, one relationship may be enough</h2></div>
-        <ul className="oc4">{OUTCOMES.map(([h, p], i) => <li key={h} className={'rv d' + i}><b>{h}</b><span>{p}</span></li>)}</ul>
+      {/* ===== Outcomes ===== */}
+      <section className="oc-band"><div className="wrap oc-band-in">
+        <h2 className="h2 rv">One evening.<br />One relationship<br />may be enough.</h2>
+        <ul className="oc-list rv d1">{OUTCOMES.map(([h, p]) => <li key={h}><b>{h}</b><span>{p}</span></li>)}</ul>
       </div></section>
 
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
-        <div className="sec-head rv"><h2 className="h2">Who sits at the table</h2><p className="lead">Only investors, at your level. Nobody pitching you. People who have walked the same journey.</p></div>
+        <div className="sec-head rv" style={{ marginTop: 'clamp(70px,8vw,120px)' }}><h2 className="h2">Who sits at the table</h2><p className="lead">Only investors, at your level. Nobody pitching you. People who have walked the same journey.</p></div>
         <div className="tables4">{GUESTS.map(([h, p], i) => <div key={h} className={'tbl rv d' + i}><h3>{h}</h3><p>{p}</p></div>)}</div>
       </div></section>
 
@@ -125,14 +127,10 @@ export default async function EventPage({ params }) {
       </div></section>
 
       {/* ===== Evening ===== */}
-      <section className="sec" id="evening" style={{ paddingTop: 0 }}><div className="wrap eve">
-        <div className="eve-head rv">
-          <h2 className="h2">Three hours, simple by design</h2>
-          <p className="lead">Enough structure to make it useful. Enough freedom for real conversation.</p>
-          <a className="btn gold" href="#apply">Request an invitation <Arr /></a>
-        </div>
-        <ol className="eve-list"><span className="eve-prog" />
-          {SCHEDULE.map(([t, h, p], i) => <li key={t} className={i === 2 || i === 3 ? 'key' : ''}><time>{t}</time><div className="eve-card"><h3>{h}</h3><p>{p}</p></div></li>)}
+      <section className="sec" id="evening"><div className="wrap eve">
+        <div className="eve-head rv"><h2 className="h2">Three hours.<br />Simple<br />by design.</h2></div>
+        <ol className="eve2 rv d1">
+          {scheduleFor(e.start).map(([t, h, p], i) => <li key={t} className={i === 2 ? 'on' : ''}><time>{t}</time><i /><div><h3>{h}</h3><p>{p}</p></div></li>)}
         </ol>
       </div></section>
 
@@ -149,10 +147,8 @@ export default async function EventPage({ params }) {
       {others.length > 0 && (
         <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
           <div className="sec-head rv"><h2 className="h2">Next investor dinners</h2></div>
-          <div className="up-list next-list">
-            {others.map((o, i) => (
-              <div key={o.slug} className={'rv d' + i}><a className="er" href={o.url}><span className="ev-d"><b>{o.day}</b><span>{o.dow}<br />{o.month.slice(0, 3)}</span></span><span className="er-c"><h4>{o.city}</h4><span>{o.week} week</span></span><Arr /></a></div>
-            ))}
+          <div className="nx">
+            {others.map((o) => <div key={o.slug} className="nx-row"><b>{o.city}</b><span className="nx-d">{o.day} {o.month.slice(0, 3)}</span><span className="nx-w">{o.week} week</span><a className="nx-go" href={o.url}>View</a></div>)}
           </div>
         </div></section>
       )}
@@ -167,6 +163,7 @@ export default async function EventPage({ params }) {
           <a className="btn gold big rv d2" href="#apply">Request an invitation <Arr /></a>
         </div>
       </section>
+      </div>
       <Footer />
     </>
   );
