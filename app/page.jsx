@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Join from '@/components/Join';
 import { ApplyButton } from '@/components/ApplyModal';
-import { Upcoming, OnlineCard, EssayTile } from '@/components/Cards';
+import { Upcoming, OnlineCard } from '@/components/Cards';
 import { upcoming } from '@/data/events';
 import { ONLINE_NEXT } from '@/data/online';
 import { ESSAYS } from '@/data/blog';
@@ -75,11 +75,24 @@ export default function Home() {
           <h2 className="h2">From the blog</h2>
           <p className="lead">Essays by the investors and operators who speak at Legends - how they decide, what they look for and what they learned the hard way.</p>
         </div>
-        <div className="et-grid">
-          <div className="rv"><EssayTile e={ESSAYS[0]} big /></div>
-          {ESSAYS.slice(1, 3).map((e, i) => <div key={e.url} className={'rv d' + (i + 1)}><EssayTile e={e} /></div>)}
+        <div className="bl">
+          <a className="bl-lead rv" href={ESSAYS[0].url}>
+            <span className="bl-cov"><img src={ESSAYS[0].img} alt="" /></span>
+            <span className="bl-au">{ESSAYS[0].author} <span>· {ESSAYS[0].authorRole}</span></span>
+            <h3>{ESSAYS[0].title}</h3>
+            <p>{ESSAYS[0].excerpt}</p>
+            <span className="bl-go">Read the essay <Arr c="" /></span>
+          </a>
+          <div className="bl-list">
+            {ESSAYS.slice(1, 4).map((e, i) => (
+              <a key={e.url} className={'rv d' + (i + 1)} href={e.url}>
+                <span className="bl-tx"><span className="bl-au">{e.author} <span>· {e.role}</span></span><h3>{e.title}</h3></span>
+                <span className="bl-cov"><img src={e.img} alt="" loading="lazy" /></span>
+              </a>
+            ))}
+            <a className="more rv" href="/blog">All stories <Arr c="" /></a>
+          </div>
         </div>
-        <a className="more rv" href="/blog">All stories <Arr c="" /></a>
       </div></section>
 
       <Join />

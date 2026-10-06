@@ -1211,3 +1211,52 @@ body:has(.evp){--max:1144px}
 .hs-lead{margin-top:22px}
 .hs-row{margin-top:30px;flex-direction:column;gap:14px}
 .hs-row .g-btn{min-height:58px}
+
+/* Home - from the blog: lead story + list on hairlines */
+.bl{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,4.5vw,64px);align-items:start}
+.bl-cov{position:relative;display:block;overflow:hidden;border-radius:22px;background:linear-gradient(135deg,#efe6d3,#e4d6b8)}
+.bl-cov img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.bl a:hover .bl-cov img{transform:scale(1.04)}
+.bl-au{display:block;font-size:15px;font-weight:600;color:var(--ink)}
+.bl-au span{font-weight:400;color:var(--ink-3)}
+.bl-lead{display:block}
+.bl-lead .bl-cov{aspect-ratio:1200/680}
+.bl-lead .bl-au{margin-top:24px}
+.bl-lead h3{margin-top:10px;font-size:clamp(28px,2.8vw,38px);font-weight:700;letter-spacing:-.035em;line-height:1.06}
+.bl-lead p{margin-top:14px;font-size:17px;line-height:1.55;color:var(--ink-2);max-width:600px}
+.bl-go{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:15.5px;font-weight:600}
+.bl-go svg{width:16px;height:16px;transition:transform .3s}
+.bl a:hover .bl-go svg{transform:translateX(4px)}
+.bl-list{display:flex;flex-direction:column}
+.bl-list>a:not(.more){display:grid;grid-template-columns:1fr 128px;gap:22px;align-items:center;padding:24px 0;border-bottom:1px solid rgba(33,29,22,.12)}
+.bl-list>a:first-child{padding-top:0}
+.bl-list .bl-cov{aspect-ratio:1;border-radius:16px}
+.bl-list h3{margin-top:8px;font-size:21px;font-weight:700;letter-spacing:-.02em;line-height:1.2;transition:color .3s}
+.bl-list>a:hover h3{color:var(--gold-d)}
+.bl-list .more{align-self:flex-start}
+@media (max-width:900px){.bl{grid-template-columns:1fr}.bl-list>a:not(.more){grid-template-columns:1fr 96px}.bl-list h3{font-size:18px}}
+
+/* Home - next online session: title + split-flap board, no card around it */
+.obd{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,5vw,72px);align-items:center}
+.obd>*{min-width:0}
+.obd-tx h3{font-size:clamp(28px,3vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1.06}
+.obd-spk{margin-top:18px;font-size:15.5px;color:var(--ink-2)}
+.obd-spk b{font-weight:600;color:var(--ink)}
+.obd-tx .btn{margin-top:30px}
+.obd-tx .btn svg{width:16px;height:16px}
+.obd-bd{border-radius:22px;padding:26px 26px 22px;background:#16130f;box-shadow:inset 0 0 0 1px rgba(226,190,112,.18),0 40px 70px -40px rgba(30,20,5,.7);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+a.obd:hover .obd-bd{transform:translateY(-4px)}
+.obd-h{display:flex;justify-content:space-between;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(226,190,112,.75);padding:0 2px 16px}
+.obd-h i{font-style:normal;display:inline-flex;align-items:center;gap:8px}
+.obd-h i::before{content:"";width:7px;height:7px;border-radius:50%;background:#62d37a;box-shadow:0 0 0 4px rgba(98,211,122,.18);animation:obdBl 1.6s infinite}
+@keyframes obdBl{50%{opacity:.35}}
+.obd-ln{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 0;border-top:1px solid rgba(255,255,255,.06)}
+.obd-ln>span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.obd-ln b{display:flex;gap:3px;min-height:38px}
+.obd-ln b i{position:relative;width:27px;height:38px;border-radius:4px;display:grid;place-items:center;font:600 22px var(--font);font-style:normal;color:#f4ead2;background:linear-gradient(#2a251e 50%,#221e18 50%);box-shadow:inset 0 -1px 0 rgba(0,0,0,.5)}
+.obd-ln b i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.65)}
+.obd-ln b i.e{background:transparent;box-shadow:none}
+.obd-ln.big b,.obd-ln b.g{color:var(--gold-hi)}
+.obd-ln.big b i,.obd-ln b.g i{color:#E2BE70}
+.obd-ln.big b{min-height:50px}.obd-ln.big b i{width:34px;height:50px;font-size:30px}
+@media (max-width:900px){.obd{grid-template-columns:minmax(0,1fr)}.obd-bd{padding:18px 14px}.obd-ln b{gap:2px;min-height:26px}.obd-ln b i{width:17px;height:26px;font-size:14px}.obd-ln.big b{min-height:30px}.obd-ln.big b i{width:19px;height:30px;font-size:16px}.obd-ln>span{font-size:10.5px;letter-spacing:.12em}}

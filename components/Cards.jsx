@@ -15,20 +15,24 @@ export function EventCard({ e, next = false }) {
 }
 
 // Next Legends Online session - wide card.
+// Next online session: title + split-flap board with date, city times and days left
+const to24 = (t) => { const [hm, ap] = t.split(' '); let [h, m] = hm.split(':').map(Number); if (ap === 'PM' && h < 12) h += 12; if (ap === 'AM' && h === 12) h = 0; return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0'); };
 export function OnlineCard({ s }) {
   const Tag = s.url ? 'a' : 'div';
+  const days = Math.max(0, Math.ceil((new Date(s.startsAt) - Date.now()) / 864e5));
   return (
-    <Tag className="on-card" {...(s.url ? { href: s.url } : {})}>
-      <div className="on-when">
-        <span className="ev-d"><b>{s.day}</b><span>{s.dow}<br />{s.month.slice(0, 3)}</span></span>
-        <ul>{s.times.slice(0, 3).map(([c, t]) => <li key={c}><b>{t}</b>{c}</li>)}</ul>
-      </div>
-      <div className="on-main">
+    <Tag className="obd" {...(s.url ? { href: s.url } : {})}>
+      <div className="obd-tx">
         <h3>{s.title}</h3>
-        <p className="on-spk"><b>{s.speaker}</b>{s.role}</p>
-        {s.url && <span className="ev-go">Reserve your seat <Arr /></span>}
+        <p className="obd-spk"><b>{s.speaker}</b> · {s.role}</p>
+        {s.url && <span className="btn gold big">Reserve your seat <Arr /></span>}
       </div>
-      {s.photo && <span className="on-ph"><img src={s.photo} alt="" /></span>}
+      <div className="obd-bd" data-flapboard>
+        <div className="obd-h"><span>Next session</span><i>Seats open</i></div>
+        <div className="obd-ln big"><span>Date</span><b data-flap={`${s.dow} ${s.day} ${s.month.slice(0, 3)}`.toUpperCase()} /></div>
+        {s.times.map(([c, t]) => <div key={c} className="obd-ln"><span>{c}</span><b data-flap={to24(t)} /></div>)}
+        <div className="obd-ln"><span>Starts in</span><b className="g" data-flap={`${days} ${days === 1 ? 'DAY' : 'DAYS'}`} data-flapdays={s.startsAt} /></div>
+      </div>
     </Tag>
   );
 }

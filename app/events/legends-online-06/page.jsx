@@ -40,13 +40,13 @@ export default function OnlineSession() {
       </section>
 
       <section className="sec" id="idea"><div className="wrap">
-        <div className="i-band rv">
-          <span className="i-mark" aria-hidden="true">“</span>
-          <div className="i-l">
-            <p className="i-quote">{S.idea.quote[0]} <span>{S.idea.quote[1]}</span></p>
-            <p className="lead">{S.idea.text}</p>
+        <div className="ib">
+          <div className="ib-l rv">
+            <p className="ib-q">{S.idea.quote[0]}<span>{S.idea.quote[1]}</span></p>
+            <p className="ib-tx">{S.idea.text}</p>
+            <div className="ib-who"><span className="ib-av">{S.speaker.split(' ').map((w) => w[0]).join('')}</span><span><b>{S.speaker}</b>{S.role}</span></div>
           </div>
-          <ol className="i-list">{S.idea.points.map(([h, p], i) => <li key={h} className={'rv d' + i}><b>{String(i + 1).padStart(2, '0')}</b><div><h3>{h}</h3><p>{p}</p></div></li>)}</ol>
+          <ol className="ib-r">{S.idea.points.map(([h, p], i) => <li key={h} className={'rv d' + i}><b>{String(i + 1).padStart(2, '0')}</b><div><h3>{h}</h3><p>{p}</p></div></li>)}</ol>
         </div>
       </div></section>
 
