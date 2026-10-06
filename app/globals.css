@@ -1260,3 +1260,33 @@ a.obd:hover .obd-bd{transform:translateY(-4px)}
 .obd-ln.big b i,.obd-ln b.g i{color:#E2BE70}
 .obd-ln.big b{min-height:50px}.obd-ln.big b i{width:34px;height:50px;font-size:30px}
 @media (max-width:900px){.obd{grid-template-columns:minmax(0,1fr)}.obd-bd{padding:18px 14px}.obd-ln b{gap:2px;min-height:26px}.obd-ln b i{width:17px;height:26px;font-size:14px}.obd-ln.big b{min-height:30px}.obd-ln.big b i{width:19px;height:30px;font-size:16px}.obd-ln>span{font-size:10.5px;letter-spacing:.12em}}
+
+/* Join: text + quote left, founder cut-out standing on the bottom edge right */
+.jn{position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,4vw,60px);border-radius:40px;background:linear-gradient(150deg,#F5EBD6,#EBD8AE)}
+.jn-tx{padding:clamp(40px,6vw,88px) 0 clamp(40px,6vw,80px) clamp(28px,6vw,88px)}
+.jn .lead{margin-top:16px;color:#5a4a2c;max-width:560px}
+.jn .g-btn{margin-top:30px}
+.jn-q{margin-top:clamp(36px,4.5vw,56px);padding-left:22px;border-left:2px solid var(--gold);max-width:560px}
+.jn-q blockquote{font-size:clamp(19px,1.7vw,24px);line-height:1.4;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+.jn-q figcaption{margin-top:14px;font-size:13.5px;color:#7a6640}
+.jn-q figcaption b{display:block;font-size:15px;font-weight:600;color:var(--ink)}
+.jn-ph{position:relative;align-self:end;height:100%;min-height:420px}
+.jn-glow{position:absolute;left:50%;bottom:-18%;width:118%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,250,238,.95) 0%,rgba(255,246,226,.55) 45%,rgba(255,246,226,0) 70%)}
+.jn-ph img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:min(100%,520px);width:auto;max-width:none;filter:drop-shadow(0 30px 40px rgba(90,60,15,.18))}
+@media (max-width:900px){.jn{grid-template-columns:1fr;border-radius:28px}.jn-tx{padding:32px 22px 0}.jn .g-btn{width:100%}.jn-ph{min-height:300px}.jn-ph img{height:300px}}
+
+/* board without its own black panel: light flap tiles on the page */
+.obd-bd{padding:0;background:none;box-shadow:none;border-radius:0}
+a.obd:hover .obd-bd{transform:none}
+.obd-h{color:var(--gold-d);padding:0 0 14px}
+.obd-ln{border-top:1px solid rgba(33,29,22,.12);padding:10px 0}
+.obd-ln:last-child{border-bottom:1px solid rgba(33,29,22,.12)}
+.obd-ln>span{color:var(--ink-3)}
+.obd-ln b i{color:var(--ink);background:linear-gradient(#fff 50%,#f4eee2 50%);box-shadow:0 1px 0 rgba(33,29,22,.08),0 0 0 1px rgba(33,29,22,.08)}
+.obd-ln b i::after{background:rgba(33,29,22,.14)}
+.obd-ln.big b i,.obd-ln b.g i{color:var(--gold-d)}
+
+/* blog list: wider thumbnails in the covers' own 1200x630 format */
+.bl-list>a:not(.more){grid-template-columns:1fr 176px}
+.bl-list .bl-cov{aspect-ratio:1200/630;border-radius:14px}
+@media (max-width:900px){.bl-list>a:not(.more){grid-template-columns:1fr 130px}}
