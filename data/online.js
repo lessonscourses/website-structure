@@ -25,7 +25,7 @@ export const ONLINE_NEXT = {
     'His approach combines scientific rigor with family office discipline: the underlying science, commercial viability, founders’ alignment and the capacity to last beyond a single fundraising cycle. A yes from Alex means an 8-10-year minimum horizon.',
   ],
   creds: [['Family office', '$200M+, 90% direct'], ['Invests in', 'Biotech · Healthcare · Agriculture · Energy'], ['Typical check', '$1-10M'], ['Horizon', '8-10 years minimum']],
-  hour: [[1, '01 · 10 min', 'The journey', 'How molecular toxicology and scientific commercialisation shaped his investment philosophy and risk framework.'], [2, '02 · 20 min', 'The decision framework', 'Underlying science, commercial viability, founders’ alignment and the capacity to last beyond a single fundraising cycle.'], [3, '03 · 30 min', 'The closed discussion', 'Questions from the room, candid discussion and relevant introductions with the speaker.']],
+  hour: [[1.5, '01 · 10 min', 'The journey', 'How molecular toxicology and scientific commercialisation shaped his investment philosophy and risk framework.'], [2.3, '02 · 20 min', 'The decision framework', 'Underlying science, commercial viability, founders’ alignment and the capacity to last beyond a single fundraising cycle.'], [2.8, '03 · 30 min', 'The closed discussion', 'Questions from the room, candid discussion and relevant introductions with the speaker.']],
   forWho: ['An investor building a direct-investment practice', 'A fund manager working with family offices', 'A founder who wants to understand how patient capital decides'],
   notFor: 'pitching the speaker or looking for clients as a service provider.',
 };

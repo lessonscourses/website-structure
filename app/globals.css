@@ -1380,3 +1380,11 @@ a.obd:hover .obd-bd{transform:none}
 .ph-word{left:0;top:16%;white-space:nowrap;font-size:clamp(120px,17vw,280px);font-weight:700;letter-spacing:-.06em;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(160,122,46,.16);pointer-events:none}
 .deck{z-index:1}
 .hm-bl .hm-chip.c3{bottom:8%}
+/* essay tiles: title leads, author sits above it in gold */
+.et-cap{gap:6px}
+.et-cap .et-au{order:-1;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d)}
+.et-cap h3{font-size:clamp(18px,1.5vw,21px);font-weight:700;letter-spacing:-.02em;line-height:1.22;color:var(--ink)}
+.et.big .et-cap .et-au{font-size:13.5px}
+.et.big .et-cap h3{font-size:clamp(22px,2vw,27px)}
+.et:hover .et-cap h3{color:var(--gold-d)}
+.et-cap h3{transition:color .3s}

@@ -40,7 +40,6 @@ export default function OnlineSession() {
           <div className="ib-l rv">
             <p className="ib-q">{S.idea.quote[0]}<span>{S.idea.quote[1]}</span></p>
             <p className="ib-tx">{S.idea.text}</p>
-            <div className="ib-who"><span className="ib-av">{S.speaker.split(' ').map((w) => w[0]).join('')}</span><span><b>{S.speaker}</b>{S.role}</span></div>
           </div>
           <ol className="ib-r">{S.idea.points.map(([h, p], i) => <li key={h} className={'rv d' + i}><b>{String(i + 1).padStart(2, '0')}</b><div><h3>{h}</h3><p>{p}</p></div></li>)}</ol>
         </div>
@@ -61,7 +60,7 @@ export default function OnlineSession() {
       <section className="sec d-hour" id="hour" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="sec-head rv"><h2 className="h2">Sixty minutes, then the room</h2><p className="lead">30-minute talk, then a closed discussion with the speaker. Small group, cameras on.</p></div>
         <div className="d-track rv">
-          <div className="d-marks"><span style={{ left: 0 }}>0'</span><span style={{ left: '16.66%' }}>10'</span><span style={{ left: '50%' }}>30'</span><span style={{ left: '100%' }}>60'</span></div>
+          <div className="d-marks"><span style={{ left: 0 }}>0'</span><span style={{ left: '22.1%' }}>10'</span><span style={{ left: '56.6%' }}>30'</span><span style={{ left: '100%' }}>60'</span></div>
           <div className="d-rail"><i className="r1" /><i className="r2" /><i className="r3" /><span className="d-head" /></div>
           <div className="d-segs">{S.hour.map(([f, k, h, p]) => <div key={k} style={{ flex: f }}><b>{k}</b><h3>{h}</h3><p>{p}</p></div>)}</div>
         </div>

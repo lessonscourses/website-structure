@@ -33,7 +33,7 @@ export default async function EssayPage({ params }) {
   if (!e) notFound();
   const blocks = await getEssay(e.slug);
   const more = ESSAYS.filter((x) => x.slug !== e.slug).slice(0, 3);
-  const initials = e.author.split(' ').map((w) => w[0]).join('');
+
   return (
     <>
       <Header />
@@ -44,7 +44,6 @@ export default async function EssayPage({ params }) {
           <h1 className="art-h rv d1">{e.title}</h1>
           <p className="lead rv d2">{e.excerpt}</p>
           <div className="art-author rv d2">
-            <span className="art-av">{initials}</span>
             <span><b>{e.author}</b><small>{e.authorRole}</small></span>
             <span className="art-meta">{e.date} · {e.read} min read</span>
           </div>

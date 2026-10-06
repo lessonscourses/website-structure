@@ -72,8 +72,10 @@ export default async function Recap({ params }) {
       </div></section>
 
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
-        <div className="sec-head rv"><h2 className="h2">Next session</h2></div>
-        <div className="rv"><OnlineCard s={ONLINE_NEXT} /></div>
+        <div className="rc-next rv">
+          <h2 className="h2">Next session</h2>
+          <OnlineCard s={ONLINE_NEXT} />
+        </div>
       </div></section>
 
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
