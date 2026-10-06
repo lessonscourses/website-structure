@@ -71,28 +71,24 @@ export default function Home() {
 
       {/* ===== Blog ===== */}
       <section className="sec" id="blog" style={{ paddingTop: 0 }}><div className="wrap">
-        <div className="sec-head rv">
+        <div className="bc-hd rv">
           <h2 className="h2">From the blog</h2>
-          <p className="lead">Essays by the investors and operators who speak at Legends - how they decide, what they look for and what they learned the hard way.</p>
-        </div>
-        <div className="bl">
-          <a className="bl-lead rv" href={ESSAYS[0].url}>
-            <span className="bl-cov"><img src={ESSAYS[0].img} alt="" /></span>
-            <span className="bl-au">{ESSAYS[0].author} <span>· {ESSAYS[0].authorRole}</span></span>
-            <h3>{ESSAYS[0].title}</h3>
-            <p>{ESSAYS[0].excerpt}</p>
-            <span className="bl-go">Read the essay <Arr c="" /></span>
-          </a>
-          <div className="bl-list">
-            {ESSAYS.slice(1, 4).map((e, i) => (
-              <a key={e.url} className={'rv d' + (i + 1)} href={e.url}>
-                <span className="bl-tx"><span className="bl-au">{e.author} <span>· {e.role}</span></span><h3>{e.title}</h3></span>
-                <span className="bl-cov"><img src={e.img} alt="" loading="lazy" /></span>
-              </a>
-            ))}
-            <a className="more rv" href="/blog">All stories <Arr c="" /></a>
+          <div className="bc-nav">
+            <a className="more" href="/blog">All stories <Arr c="" /></a>
+            <button type="button" className="prev" data-carousel-step="-1" aria-label="Previous"><Arr c="" /></button>
+            <button type="button" data-carousel-step="1" aria-label="Next"><Arr c="" /></button>
           </div>
         </div>
+        <div className="bc rv" data-carousel>
+          {ESSAYS.map((e) => (
+            <a key={e.url} href={e.url}>
+              <span className="bc-cov"><img src={e.img} alt="" loading="lazy" /></span>
+              <span className="bc-au">{e.author} <span>· {e.role}</span></span>
+              <h3>{e.title}</h3>
+            </a>
+          ))}
+        </div>
+        <div className="bc-bar"><i data-carousel-bar /></div>
       </div></section>
 
       <Join />

@@ -29,9 +29,9 @@ export function OnlineCard({ s }) {
       </div>
       <div className="obd-bd" data-flapboard>
         <div className="obd-h"><span>Next session</span><i>Seats open</i></div>
-        <div className="obd-ln big"><span>Date</span><b data-flap={`${s.dow} ${s.day} ${s.month.slice(0, 3)}`.toUpperCase()} /></div>
-        {s.times.map(([c, t]) => <div key={c} className="obd-ln"><span>{c}</span><b data-flap={to24(t)} /></div>)}
-        <div className="obd-ln"><span>Starts in</span><b className="g" data-flap={`${days} ${days === 1 ? 'DAY' : 'DAYS'}`} data-flapdays={s.startsAt} /></div>
+        <div className="obd-ln obd-date"><span>Date</span><b className="g" data-flap={`${s.dow} ${s.day} ${s.month.slice(0, 3)}`.toUpperCase()} /></div>
+        <div className="obd-cities">{s.times.map(([c, t]) => <div key={c} className="obd-ln obd-city"><span>{c}</span><b data-flap={to24(t)} /></div>)}</div>
+        <div className="obd-ln obd-left"><span>Starts in</span><b className="g" data-flap={`${days} ${days === 1 ? 'DAY' : 'DAYS'}`} data-flapdays={s.startsAt} /></div>
       </div>
     </Tag>
   );
