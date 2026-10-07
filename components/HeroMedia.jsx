@@ -29,21 +29,14 @@ export function EssayDeck({ essays }) {
   );
 }
 
-// Online: four tiles in a staggered 2x2 grid. Tiles 1-3 each play one recap and jump to a new moment
-// every ~1.5s (quick cuts); tile 4 cycles through all recaps. Logic: lib/site.js, [data-reel].
+// Online: one square film that is clear in the centre and dissolves into a dot screen towards the edges.
+// Recaps crossfade slowly one after another (lib/site.js, [data-reel]).
 export function SessionReel({ clips }) {
-  const tiles = [clips[0], clips[1], clips[2], clips[0]].map((c, i) => ({ ...(c || clips[0]), all: i === 3 }));
-  const col = (list, k) => list.map((c, i) => (
-    <figure key={k + i} className="rt" data-clip={c.all ? 'all' : ''}>
-      <video muted playsInline preload="auto" poster={c.poster} src={c.video} />
-      {c.all ? <figcaption>Legends Online</figcaption> : <figcaption>{c.speaker}</figcaption>}
-    </figure>
-  ));
   return (
     <div className="hm hm-reel rv d1">
-      <div className="rg" data-reel data-clips={JSON.stringify(clips.map((c) => c.video))}>
-        <div className="rg-col">{col([tiles[0], tiles[2]], 'a')}</div>
-        <div className="rg-col">{col([tiles[1], tiles[3]], 'b')}</div>
+      <div className="dz" data-reel data-clips={JSON.stringify(clips.map((c) => c.video))}>
+        <video className="on" muted playsInline preload="auto" poster={clips[0]?.poster} src={clips[0]?.video} />
+        <video muted playsInline preload="auto" />
       </div>
     </div>
   );

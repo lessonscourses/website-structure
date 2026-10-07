@@ -1583,3 +1583,18 @@ a.obd:hover .obd-bd{transform:none}
 @keyframes wrCur{50%{opacity:0}}
 .wr:hover .wr-ti{color:var(--gold-d)}
 .wr-ti{min-height:3.45em}
+/* Blog hero: narrower, the cover lands tile by tile */
+.wr{max-width:360px}
+.wr-img{position:relative;background:transparent}
+.wr-img>i{position:absolute;background-size:800% 500%;opacity:0;transform:scale(.6);transition:opacity .45s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.wr-img>i.in{opacity:1;transform:none}
+.wr-ti{font-size:clamp(22px,1.9vw,28px)}
+/* Online hero: square film dissolving into a dot screen */
+.dz{position:relative;width:100%;max-width:500px;aspect-ratio:1/1;margin-left:auto;
+  -webkit-mask:radial-gradient(closest-side,#000 38%,transparent 64%),radial-gradient(circle,#000 2.8px,transparent 3.2px) 0 0/9px 9px,radial-gradient(closest-side,#000 55%,transparent 100%);
+  -webkit-mask-composite:source-over,source-in;
+  mask:radial-gradient(closest-side,#000 38%,transparent 64%),radial-gradient(circle,#000 2.8px,transparent 3.2px) 0 0/9px 9px,radial-gradient(closest-side,#000 55%,transparent 100%);
+  mask-composite:add,intersect}
+.dz video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease;filter:saturate(1.1) brightness(1.05)}
+.dz video.on{opacity:1}
+.dz{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cfilter id='b' x='-50%' y='-50%' width='200%' height='200%'%3E%3CfeGaussianBlur stdDeviation='45'/%3E%3C/filter%3E%3Crect x='120' y='120' width='260' height='260' rx='30' fill='black' filter='url(%23b)'/%3E%3C/svg%3E") center/100% 100% no-repeat,radial-gradient(circle,#000 2.8px,transparent 3.2px) 0 0/9px 9px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cfilter id='b' x='-50%' y='-50%' width='200%' height='200%'%3E%3CfeGaussianBlur stdDeviation='22'/%3E%3C/filter%3E%3Crect x='30' y='30' width='440' height='440' rx='30' fill='black' filter='url(%23b)'/%3E%3C/svg%3E") center/100% 100% no-repeat;-webkit-mask-composite:source-over,source-in;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cfilter id='b' x='-50%' y='-50%' width='200%' height='200%'%3E%3CfeGaussianBlur stdDeviation='45'/%3E%3C/filter%3E%3Crect x='120' y='120' width='260' height='260' rx='30' fill='black' filter='url(%23b)'/%3E%3C/svg%3E") center/100% 100% no-repeat,radial-gradient(circle,#000 2.8px,transparent 3.2px) 0 0/9px 9px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cfilter id='b' x='-50%' y='-50%' width='200%' height='200%'%3E%3CfeGaussianBlur stdDeviation='22'/%3E%3C/filter%3E%3Crect x='30' y='30' width='440' height='440' rx='30' fill='black' filter='url(%23b)'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask-composite:add,intersect}
