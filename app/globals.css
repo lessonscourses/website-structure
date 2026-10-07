@@ -1541,3 +1541,17 @@ a.obd:hover .obd-bd{transform:none}
 .call-prev{right:auto;left:-40px;top:auto;bottom:-24px;width:150px;transform:rotate(-4deg);z-index:2}
 .call-prev{display:none}
 .call-tile.more{aspect-ratio:1/1;overflow:hidden;align-self:start}
+/* Online page hero: a reel of recap cuts */
+.hm-reel{display:flex;align-items:center;justify-content:center}
+.reel{position:relative;width:100%;max-width:600px;aspect-ratio:4/3;border-radius:32px;overflow:hidden;background:#15120e;box-shadow:0 50px 100px -40px rgba(40,25,5,.6)}
+.reel-c{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .8s ease}
+.reel-c.on{opacity:1}
+.reel-c video{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.08);transition:transform 3.4s linear}
+.reel-c.on video{transform:scale(1)}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 40%);pointer-events:none}
+.reel-live{position:absolute;left:18px;top:18px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;background:rgba(20,17,12,.55);backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:600;letter-spacing:.08em}
+.reel-live i{width:7px;height:7px;border-radius:50%;background:var(--gold-hi);animation:callBl 1.6s infinite}
+@keyframes callBl{50%{opacity:.3}}
+.reel-cap{position:absolute;left:22px;bottom:20px;z-index:2;color:#fff;font-size:18px;font-weight:600;letter-spacing:-.01em}
+.reel-cap.in{animation:reelIn .6s cubic-bezier(.2,.8,.2,1)}
+@keyframes reelIn{from{opacity:0;transform:translateY(8px)}}

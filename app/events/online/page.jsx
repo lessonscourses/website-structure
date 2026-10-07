@@ -1,9 +1,9 @@
 import Header from '@/components/Header';
 import PageHero from '@/components/PageHero';
-import { LiveCall } from '@/components/HeroMedia';
+import { SessionReel } from '@/components/HeroMedia';
 import Footer from '@/components/Footer';
 import { PastList, NoEvents } from '@/components/Cards';
-import { ONLINE_NEXT, ONLINE_PAST } from '@/data/online';
+import { ONLINE_NEXT, ONLINE_PAST, ONLINE_RECAPS } from '@/data/online';
 
 export const metadata = { title: 'Legends Online - Legends', description: 'A monthly live session with a top investor, then a closed discussion with the room.' };
 
@@ -13,7 +13,7 @@ export default function Online() {
   return (
     <>
       <Header />
-      <PageHero aside={<LiveCall s={ONLINE_NEXT} past={ONLINE_PAST} />} word="LIVE · ONLINE · EVERY MONTH ·" title="Legends Online" lead="Once a month, a top investor shares how they decide - a 30-minute talk, then a closed discussion with the room. Small group, cameras on." />
+      <PageHero aside={<SessionReel clips={ONLINE_RECAPS.filter((r) => r.video).map((r) => ({ video: r.video, poster: r.shots[0], speaker: r.speaker }))} />} word="LIVE · ONLINE · EVERY MONTH ·" title="Legends Online" lead="Once a month, a top investor shares how they decide - a 30-minute talk, then a closed discussion with the room. Small group, cameras on." />
       <section className="sec ev-sec" data-track="online" id="online" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="sec-head rv">
           <h2 className="h2">Next session</h2>
