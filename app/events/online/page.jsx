@@ -13,7 +13,7 @@ export default function Online() {
   return (
     <>
       <Header />
-      <PageHero aside={<SessionReel clips={ONLINE_RECAPS.filter((r) => r.video).map((r) => ({ video: r.video, poster: r.shots[0], speaker: r.speaker, reel: r.reel || [20] }))} />} word="LIVE · ONLINE · EVERY MONTH ·" title="Legends Online" lead="Once a month, a top investor shares how they decide - a 30-minute talk, then a closed discussion with the room. Small group, cameras on." />
+      <PageHero aside={<SessionReel clips={[1, 0, 2].map((k) => ONLINE_RECAPS[k]).filter((r) => r && r.video).map((r) => ({ video: r.video, poster: r.shots[0], speaker: r.speaker, reel: r.reel || [20] }))} />} word="LIVE · ONLINE · EVERY MONTH ·" title="Legends Online" lead="Once a month, a top investor shares how they decide - a 30-minute talk, then a closed discussion with the room. Small group, cameras on." />
       <section className="sec ev-sec" data-track="online" id="online" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="sec-head rv">
           <h2 className="h2">Next session</h2>

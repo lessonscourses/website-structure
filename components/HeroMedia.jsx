@@ -14,16 +14,19 @@ export function EventsCollage({ events }) {
   );
 }
 
-// Blog: an essay "being written" - the cover develops, then the author and title type in, it holds,
-// fades away and the next essay is written. No card, no shadow. Logic: lib/site.js, [data-write].
+// Blog: a gold pencil sketch draws itself, then the author, title and a short excerpt are written in,
+// it rests, fades out in parts, and the next essay begins. Sketches: public/sketch/*.svg
+// TODO: sketches are traced from event photos; trace the essay covers the same way (scripts in README).
+const SKETCHES = ['/sketch/evening-3.svg', '/sketch/evening-4.svg', '/sketch/evening-1.svg', '/sketch/evening-2.svg'];
 export function EssayDeck({ essays }) {
-  const list = essays.slice(0, 6).map((e) => ({ img: e.img, au: e.author, ti: e.title, url: e.url }));
+  const list = essays.slice(0, 6).map((e, i) => ({ sk: SKETCHES[i % SKETCHES.length], au: e.author, ti: e.title, ex: e.excerpt, url: e.url }));
   return (
     <div className="hm hm-bl rv d1">
       <a className="wr" href={list[0].url} data-write={JSON.stringify(list)}>
-        <span className="wr-img"><img src={list[0].img} alt="" /></span>
+        <span className="wr-sk" />
         <span className="wr-au">{list[0].au}</span>
         <span className="wr-ti">{list[0].ti}</span>
+        <span className="wr-ex">{list[0].ex}</span>
       </a>
     </div>
   );
@@ -35,7 +38,7 @@ export function SessionReel({ clips }) {
   return (
     <div className="hm hm-reel rv d1">
       <div className="dz" data-reel data-clips={JSON.stringify(clips.map((c) => ({ v: c.video, t: c.reel })))}>
-        <video className="on" muted playsInline preload="auto" poster={clips[0]?.poster} src={clips[0]?.video} />
+        <video muted playsInline preload="auto" src={clips[0]?.video} />
         <video muted playsInline preload="auto" />
       </div>
     </div>
