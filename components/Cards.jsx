@@ -154,3 +154,13 @@ export function NoEvents() {
     </div>
   );
 }
+
+// Past dinner with a recap page
+export function DinnerCard({ e, i = 0 }) {
+  return (
+    <a className={'drc rv d' + (i % 3)} href={e.url}>
+      <span className="drc-img"><img src={e.cover} alt="" loading="lazy" /><em>Recap</em></span>
+      <span className="drc-tx"><b>{e.city}</b><span>{e.date} · {e.week}</span></span>
+    </a>
+  );
+}

@@ -1444,3 +1444,55 @@ a.obd:hover .obd-bd{transform:none}
 .pc[hidden]{display:none}
 .ft-grid{grid-template-columns:1.6fr 1fr 1fr 1.3fr!important}
 @media (max-width:860px){.ft-grid{grid-template-columns:1fr 1fr!important}.ft-grid>div:first-child{grid-column:1/-1}}
+/* second block: shadow only above its rounded top, nothing at the bottom */
+.hd+.sec{box-shadow:none}
+.hd+.sec::after{content:"";position:absolute;left:0;right:0;top:0;height:120px;border-radius:inherit;box-shadow:0 -40px 80px -30px rgba(0,0,0,.55);pointer-events:none;z-index:-1}
+/* gives: titles fit on one line */
+.gives b{font-size:clamp(15px,1.25vw,19px);letter-spacing:.02em;white-space:nowrap}
+@media (max-width:1100px){.gives b{white-space:normal}}
+/* online cards: taller picture, larger text */
+.pc-img{aspect-ratio:4/3}
+.pc-img img{object-position:0 50%}
+.pc-tx{padding:22px 22px 24px}
+.pc h4{font-size:19.5px;line-height:1.28}
+.pc-by{font-size:15px!important}.pc-by b{font-size:16px!important}
+.pc-d{font-size:14.5px!important}
+.pc-img em{font-size:13px;padding:6px 12px}
+
+/* Dinner recap (app/events/recap/[slug]) */
+.dr-hero .eh-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dr-stats{background:var(--ink);color:#fff}
+.dr-stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.dr-stats .wrap>div{padding:clamp(26px,3vw,40px) 0 clamp(26px,3vw,40px) clamp(20px,2.5vw,34px);border-left:1px solid rgba(255,255,255,.12)}
+.dr-stats .wrap>div:first-child{padding-left:0;border-left:0}
+.dr-stats b{display:block;font-size:clamp(40px,4.6vw,68px);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--gold-hi)}
+.dr-stats span{display:block;margin-top:8px;font-size:15px;color:rgba(255,255,255,.7)}
+.dr-story{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,90px);align-items:start}
+.dr-text p{font-size:clamp(18px,1.5vw,21px);line-height:1.6;color:var(--ink-2)}
+.dr-text p+p{margin-top:18px}
+.dr-text p:first-child{font-size:clamp(21px,1.9vw,27px);line-height:1.45;color:var(--ink);font-weight:500}
+.dr-themes{grid-column:2;padding-top:24px;border-top:1px solid var(--line)}
+.dr-themes b{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.dr-themes ul{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:10px 28px}
+.dr-themes li{font-size:17px;font-weight:600}
+.dr-themes li::before{content:"";display:inline-block;width:6px;height:6px;margin:0 10px 3px 0;border-radius:50%;background:var(--gold)}
+.dr-gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:240px 240px;gap:12px}
+.dr-gal>*{border-radius:24px;overflow:hidden;background:#e9dfcb center/cover}
+.dr-gal>*:first-child{grid-row:span 2}
+.dr-gal .v video{width:100%;height:100%;object-fit:cover;display:block}
+.dr-q blockquote{font-size:clamp(22px,2.2vw,32px);font-weight:600;line-height:1.3;letter-spacing:-.02em;color:#fff}
+.dr-q figcaption{margin-top:18px;font-size:14px;color:rgba(255,255,255,.65)}.dr-q figcaption b{display:block;font-size:16px;color:var(--gold-hi)}
+.dr-more,.dr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.drc{display:block;border-radius:22px;overflow:hidden;background:#fdfcf8;border:1px solid var(--line);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.drc:hover{transform:translateY(-4px)}
+.drc[hidden]{display:none}
+.drc-img{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#e9dfcb}
+.drc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.drc:hover .drc-img img{transform:scale(1.04)}
+.drc-img em{position:absolute;left:14px;top:14px;font-style:normal;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:rgba(251,249,244,.92);color:var(--ink)}
+.drc-tx{display:block;padding:20px 22px 24px}
+.drc-tx b{display:block;font-size:24px;font-weight:700;letter-spacing:-.03em}
+.drc-tx span{display:block;margin-top:6px;font-size:15px;color:var(--ink-2)}
+@media (max-width:900px){.dr-stats .wrap,.dr-story,.dr-more,.dr-grid{grid-template-columns:1fr}.dr-stats .wrap>div{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.12)}.dr-themes{grid-column:auto}.dr-gal{grid-template-columns:1fr 1fr;grid-template-rows:auto}.dr-gal>*{aspect-ratio:4/3}.dr-gal>*:first-child{grid-column:1/-1;grid-row:auto}}
+.dr-hero .eh-bg img{opacity:.6}
+.dr-q blockquote{color:var(--ink)}.dr-q figcaption{color:var(--ink-2)}.dr-q figcaption b{color:var(--gold-d)}

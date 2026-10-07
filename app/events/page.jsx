@@ -2,8 +2,8 @@ import Header from '@/components/Header';
 import PageHero from '@/components/PageHero';
 import { EventsCollage } from '@/components/HeroMedia';
 import Footer from '@/components/Footer';
-import { FeaturedEvent, EventCard, PastList, NoEvents } from '@/components/Cards';
-import { upcoming } from '@/data/events';
+import { FeaturedEvent, EventCard, PastList, NoEvents, DinnerCard } from '@/components/Cards';
+import { upcoming, PAST_DINNERS } from '@/data/events';
 import { ONLINE_NEXT, ONLINE_PAST } from '@/data/online';
 
 export const metadata = { title: 'Events - Legends', description: 'Private dinners for ten investors in key investor cities and monthly live sessions online.' };
@@ -27,6 +27,8 @@ export default function Events() {
           {events.slice(1).map((e, i) => <div key={e.slug} className={'rv d' + i}><EventCard e={e} /></div>)}
         </div>
         <p className="note rv">More cities for November and December will be announced here.</p>
+        <div className="past-h rv"><h3>Past dinners</h3><span>{PAST_DINNERS.length} dinners</span></div>
+        <div className="dr-grid" data-paged="5">{PAST_DINNERS.map((e, i) => <DinnerCard key={e.slug} e={e} i={i} />)}</div>
       </div></section>
 
       <section className="sec ev-sec" data-track="online" id="online" style={{ paddingTop: 0 }}><div className="wrap">
