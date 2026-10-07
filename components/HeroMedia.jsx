@@ -34,7 +34,7 @@ export function EssayDeck({ essays }) {
 export function SessionReel({ clips }) {
   return (
     <div className="hm hm-reel rv d1">
-      <div className="dz" data-reel data-clips={JSON.stringify(clips.map((c) => c.video))}>
+      <div className="dz" data-reel data-clips={JSON.stringify(clips.map((c) => ({ v: c.video, t: c.reel })))}>
         <video className="on" muted playsInline preload="auto" poster={clips[0]?.poster} src={clips[0]?.video} />
         <video muted playsInline preload="auto" />
       </div>

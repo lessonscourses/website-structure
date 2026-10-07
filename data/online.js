@@ -55,6 +55,8 @@ export const ONLINE_RECAPS = [
     speaker: 'Alex Felman', role: 'General Partner, Felman Family Office · Founder, Exponential U',
     hero: `${P}/kfzgg99w8mivqcf/alex_f_lend_tk1a658sfq.png`, photo: `${P}/kfzgg99w8mivqcf/alex_f_l_q_rd9qlb3hjv.png`,
     video: `${P}/kfzgg99w8mivqcf/investors_disappointment_w80zcz5bgs.mp4`,
+    // TODO: seconds where only the speaker is talking (each plays 5s in the online hero). Replace with checked timecodes.
+    reel: [20, 45, 70],
     shots: [`${P}/kfzgg99w8mivqcf/alex_speaking_4x3_xd5yplsfyq.jpg`, `${P}/kfzgg99w8mivqcf/alex_qu_nxt69yjfnx.png`],
     room: 'A funding deadline does not have to become an investor’s decision deadline. Alex Felman explained how his family office uses the time between rounds to assess execution, communication and the relationship itself. Drawing on his scientific background, he also described how promising claims can fail closer scrutiny - and why liking a team can make it harder to turn down a deal that falls below the investment threshold.',
     highlights: ['Why sitting out a funding round gives Alex time to compare founders’ promises with their results', 'How scientific claims can fall apart when the underlying studies and data are checked', 'Why a strong opportunity may still deserve a clear no when investment capacity is limited'],
@@ -71,6 +73,8 @@ export const ONLINE_RECAPS = [
     speaker: 'Janneke Niessen', role: 'Founding Partner, CapitalT · Serial Entrepreneur · Investor',
     hero: `${P}/nkx8sv2d9mrxvkq/janneke_niessen_l_1n3fn26cd9.png`, photo: `${P}/nkx8sv2d9mrxvkq/janneke_niessen_l_q_mn6b93nrqu.png`,
     video: `${P}/nkx8sv2d9mrxvkq/passions_for_venture_vzuomgcl1g.mp4`,
+    // TODO: seconds where only the speaker is talking (each plays 5s in the online hero). Replace with checked timecodes.
+    reel: [20, 45, 70],
     shots: [`${P}/nkx8sv2d9mrxvkq/r_jn_2_z3d4ulm371.png`, `${P}/nkx8sv2d9mrxvkq/r_jn_3_fl4qi6t65.png`],
     room: 'Before a startup has revenue, an investor is placing a bet on the people who will build it. Drawing on her experience as both a founder and an investor, Janneke Niessen explained how CapitalT evaluates teams - and why even an exceptional founder may be pursuing a path that does not fit venture capital.',
     highlights: ['How CapitalT evaluates a founding team before revenue can provide evidence', 'Why shared vision and the ability to disagree productively matter as much as individual talent', 'How founders’ ambitions shape whether venture capital is the right fit'],
@@ -87,6 +91,8 @@ export const ONLINE_RECAPS = [
     speaker: 'Walied Albasheer', role: 'Founder & Managing Partner, Intuitio Ventures',
     hero: `${P}/limyhdr7l2k2qzo/walied_baner_4uq2nlyted.webp`, photo: `${P}/limyhdr7l2k2qzo/walied_quote_6m7wfe64io.webp`,
     video: `${P}/limyhdr7l2k2qzo/walied_video_gdltkz1dza.mp4`,
+    // TODO: seconds where only the speaker is talking (each plays 5s in the online hero). Replace with checked timecodes.
+    reel: [20, 45, 70],
     shots: [`${R}/o3lfehk0n70t7o6/walied_recap_speaker_kn68wsgc1i.webp`, `${R}/zikmno08g03lrb4/walied_recap_conversation_h6zhuavrc4.webp`],
     room: 'AI can now create a polished pitch, market research and working MVP before the business underneath has developed the same depth. Drawing on nearly three decades as a founder and investor, Walied showed where polish ends and real substance begins.',
     highlights: ['Why a polished pitch and working MVP no longer prove a real company exists underneath', 'How AI slop hides across the interface, functionality, business model and fundraising story', 'Why founder knowledge, defensibility, retention, referrals and revenue now matter more than polish'],
