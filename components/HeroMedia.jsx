@@ -14,30 +14,36 @@ export function EventsCollage({ events }) {
   );
 }
 
-// Blog: a strip of essay covers that moves on by itself - one large in the middle,
-// the neighbours half visible and fading into the background (lib/site.js, [data-strip])
+// Blog: an essay "being written" - the cover develops, then the author and title type in, it holds,
+// fades away and the next essay is written. No card, no shadow. Logic: lib/site.js, [data-write].
 export function EssayDeck({ essays }) {
+  const list = essays.slice(0, 6).map((e) => ({ img: e.img, au: e.author, ti: e.title, url: e.url }));
   return (
     <div className="hm hm-bl rv d1">
-      <div className="strip" data-strip>
-        {essays.map((e) => <a key={e.url} href={e.url} className="strip-c" aria-label={e.title}><img src={e.img} alt="" /></a>)}
-      </div>
+      <a className="wr" href={list[0].url} data-write={JSON.stringify(list)}>
+        <span className="wr-img"><img src={list[0].img} alt="" /></span>
+        <span className="wr-au">{list[0].au}</span>
+        <span className="wr-ti">{list[0].ti}</span>
+      </a>
     </div>
   );
 }
 
-// Online: a light reel - short cuts from the session recaps, one frame, a new cut every ~2.5s (lib/site.js, [data-reel])
+// Online: four tiles in a staggered 2x2 grid. Tiles 1-3 each play one recap and jump to a new moment
+// every ~1.5s (quick cuts); tile 4 cycles through all recaps. Logic: lib/site.js, [data-reel].
 export function SessionReel({ clips }) {
+  const tiles = [clips[0], clips[1], clips[2], clips[0]].map((c, i) => ({ ...(c || clips[0]), all: i === 3 }));
+  const col = (list, k) => list.map((c, i) => (
+    <figure key={k + i} className="rt" data-clip={c.all ? 'all' : ''}>
+      <video muted playsInline preload="auto" poster={c.poster} src={c.video} />
+      {c.all ? <figcaption>Legends Online</figcaption> : <figcaption>{c.speaker}</figcaption>}
+    </figure>
+  ));
   return (
     <div className="hm hm-reel rv d1">
-      <div className="reel" data-reel>
-        {clips.map((c, i) => (
-          <figure key={c.video} className={'reel-c' + (i === 0 ? ' on' : '')} data-cap={c.speaker}>
-            <video muted playsInline loop preload="auto" poster={c.poster}><source src={c.video} type="video/mp4" /></video>
-          </figure>
-        ))}
-        <span className="reel-live"><i />Legends Online</span>
-        <span className="reel-cap" data-reel-cap>{clips[0]?.speaker}</span>
+      <div className="rg" data-reel data-clips={JSON.stringify(clips.map((c) => c.video))}>
+        <div className="rg-col">{col([tiles[0], tiles[2]], 'a')}</div>
+        <div className="rg-col">{col([tiles[1], tiles[3]], 'b')}</div>
       </div>
     </div>
   );
