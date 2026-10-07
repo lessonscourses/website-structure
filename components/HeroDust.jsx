@@ -4,7 +4,7 @@ const Arr = () => <svg className="arr" viewBox="0 0 24 24" fill="none" stroke="c
 
 // Home hero "Gold dust" (logic in lib/site.js, "home hero"):
 // gold particles settle into LEGENDS, the cursor scatters them;
-// on scroll the dust falls away and a cream sheet rises over the screen into the next block.
+// on scroll the dust falls away while the next block slides up over the hero on a rounded cream sheet.
 export default function HeroDust() {
   return (
     <section className="hd" data-hero>
@@ -16,7 +16,6 @@ export default function HeroDust() {
           <p className="hd-lead">Rare, high-quality deals from investors.<br />Co-investment. Additional capital. Private events.</p>
           <div className="hd-cta"><ApplyButton className="g-btn hd-btn">Apply to join <Arr /></ApplyButton><span className="g-note"><i />Membership by approval</span></div>
         </div>
-        <div className="hd-sheet" aria-hidden="true" />
       </div>
     </section>
   );
