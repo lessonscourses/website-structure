@@ -14,16 +14,15 @@ export function EventsCollage({ events }) {
   );
 }
 
-// Blog: a gold pencil sketch draws itself, then the author, title and a short excerpt are written in,
-// it rests, fades out in parts, and the next essay begins. Sketches: public/sketch/*.svg
-// TODO: sketches are traced from event photos; trace the essay covers the same way (scripts in README).
+// Blog: a page where the essay is being written - author, title and excerpt appear word by word,
+// then the page turns and the next essay starts (lib/site.js, [data-write]).
 const SKETCHES = ['/sketch/evening-3.svg', '/sketch/evening-4.svg', '/sketch/evening-1.svg', '/sketch/evening-2.svg'];
 export function EssayDeck({ essays }) {
   const list = essays.slice(0, 6).map((e, i) => ({ sk: SKETCHES[i % SKETCHES.length], au: e.author, ti: e.title, ex: e.excerpt, url: e.url }));
   return (
     <div className="hm hm-bl rv d1">
       <a className="wr" href={list[0].url} data-write={JSON.stringify(list)}>
-        <span className="wr-sk" />
+        <span className="wr-pg" aria-hidden="true" />
         <span className="wr-au">{list[0].au}</span>
         <span className="wr-ti">{list[0].ti}</span>
         <span className="wr-ex">{list[0].ex}</span>

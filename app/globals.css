@@ -1652,3 +1652,30 @@ a.obd:hover .obd-bd{transform:none}
 .wr:hover .wr-ti{color:var(--gold-d)!important}
 .wr-ex::after{content:"";display:inline-block;width:40px;height:1px;margin-left:6px;vertical-align:middle;background:var(--gold);opacity:.6}
 .wr-au,.wr-ti{filter:blur(1px)}.wr-ti{opacity:.42!important}
+/* Blog hero v4: a page being written, then turned */
+.hm-bl{perspective:1600px}
+.wr{position:relative;display:block;width:100%;max-width:400px;min-height:330px;padding:34px 34px 30px;border-radius:6px 18px 18px 6px;background:linear-gradient(100deg,#f3ecdd 0%,#fdfbf6 9%,#fffdf9 100%);box-shadow:0 1px 0 rgba(169,128,43,.15),0 30px 60px -36px rgba(60,40,10,.35);transform-origin:left center;transform-style:preserve-3d;transition:transform 1.1s cubic-bezier(.6,0,.3,1),opacity 1.1s ease}
+.wr::before{content:"";position:absolute;inset:0;border-radius:inherit;background:repeating-linear-gradient(transparent 0 27px,rgba(169,128,43,.08) 27px 28px);background-position:0 34px;pointer-events:none}
+.wr.turn{transform:rotateY(-100deg);opacity:0}
+.wr.back{transition:none;transform:rotateY(0);opacity:0}
+.wr{opacity:1}
+.wr-pg{position:absolute;right:-6px;top:10px;bottom:10px;width:6px;border-radius:0 6px 6px 0;background:repeating-linear-gradient(#efe6d3 0 2px,#fbf7ee 2px 4px);box-shadow:2px 0 6px -3px rgba(60,40,10,.3)}
+.wr-au,.wr-ti,.wr-ex{position:relative;filter:none!important;opacity:1!important;font-style:normal!important;color:inherit!important;letter-spacing:0!important}
+.wr-au{margin:0!important;font-size:12px!important;font-weight:600!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--gold-d)!important;line-height:1.4!important}
+.wr-ti{margin-top:12px!important;font-size:20px!important;font-weight:600!important;line-height:1.3!important;color:var(--ink)!important}
+.wr-ex{margin-top:12px!important;font-size:15px!important;font-weight:400!important;line-height:1.75!important;color:var(--ink-2)!important;max-width:none}
+.wr-ex::after{content:"";display:inline-block;width:2px;height:1em;margin-left:4px;vertical-align:-.15em;background:var(--gold);opacity:1;animation:wrCur .8s steps(1) infinite}
+.wr-w{filter:blur(2px)}.wr-w.in{filter:none}
+.wr-w:nth-child(3n){transform:none}
+.wr.out .wr-au,.wr.out .wr-ti,.wr.out .wr-ex{opacity:1;filter:none}
+@media (max-width:900px){.wr{max-width:none}}
+/* Blog hero v5: an implied sheet, thin gold italic writing */
+.wr{background:transparent;box-shadow:none;border-radius:0;padding:30px 4px 26px 28px;border-left:1px solid rgba(169,128,43,.28)}
+.wr::before{background:repeating-linear-gradient(transparent 0 25px,rgba(169,128,43,.1) 25px 26px);background-position:0 30px;-webkit-mask:linear-gradient(90deg,#000 55%,transparent);mask:linear-gradient(90deg,#000 55%,transparent)}
+.wr-pg{display:none}
+.wr-au,.wr-ti,.wr-ex{font-style:italic!important;font-weight:300!important;text-transform:none!important;letter-spacing:.005em!important;color:var(--gold-d)!important;font-size:16px!important;line-height:1.62!important}
+.wr-au{opacity:.85!important}
+.wr-ti{margin-top:4px!important;font-size:19px!important;opacity:1!important}
+.wr-ex{margin-top:6px!important;opacity:.8!important}
+.wr-ex::after{width:1px;background:var(--gold-d)}
+.wr:hover .wr-ti{color:var(--gold-d)!important}
