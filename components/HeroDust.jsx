@@ -11,11 +11,11 @@ export default function HeroDust() {
       <div className="hd-stage">
         <canvas className="hd-cv" aria-hidden="true" />
         <h1 className="sr-only">Legends</h1>
+        <ul className="hd-ways"><li>Online by sector</li><li>In person by city</li><li>Connected through our platform</li></ul>
         <div className="hd-copy">
           <p className="hd-t">Private Investors <em>Network</em></p>
           <p className="hd-lead">Rare, high-quality deals from investors.<br />Co-investment. Additional capital. Private events.</p>
           <div className="hd-cta"><ApplyButton className="g-btn hd-btn">Apply to join <Arr /></ApplyButton><span className="g-note"><i />Membership by approval</span></div>
-          <ul className="hd-ways"><li>Online by sector</li><li>In person by city</li><li>Connected through our platform</li></ul>
         </div>
       </div>
     </section>

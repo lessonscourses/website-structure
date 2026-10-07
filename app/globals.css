@@ -1555,3 +1555,6 @@ a.obd:hover .obd-bd{transform:none}
 .reel-cap{position:absolute;left:22px;bottom:20px;z-index:2;color:#fff;font-size:18px;font-weight:600;letter-spacing:-.01em}
 .reel-cap.in{animation:reelIn .6s cubic-bezier(.2,.8,.2,1)}
 @keyframes reelIn{from{opacity:0;transform:translateY(8px)}}
+/* the three ways sit at the bottom of the first screen */
+.hd-ways{position:absolute;left:0;right:0;bottom:clamp(28px,5vh,52px);z-index:2;margin:0;padding:0 var(--gut);opacity:0;animation:hdIn 1.2s 1.9s forwards}
+@media (max-width:640px){.hd-ways{align-items:center;text-align:center}}
