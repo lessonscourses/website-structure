@@ -10,9 +10,8 @@ export default function Footer() {
           <p className="ft-about">Uniting Legends. Private Investor Network: co-investment, deal flow, additional capital, private events.</p>
         </div>
         <div><h4>Explore</h4><ul>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/events#in-person">Private dinners</a></li>
-          <li><a href="/events#online">Legends Online</a></li>
+          <li><a href="/events">Private dinners</a></li>
+          <li><a href="/events/online">Legends Online</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul></div>
         <div><h4>Membership</h4><ul>

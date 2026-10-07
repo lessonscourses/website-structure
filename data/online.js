@@ -41,6 +41,7 @@ export const ONLINE_PAST = [
   { speaker: 'Vijay Sivaram', role: 'Co-Founder, RVAI Global', title: 'How to Build a $2B Company and Manage 650k+ People', date: 'Tue, 11 Aug 2026', label: 'Speaker session', img: `${LU}/2o/559112b4-ca42-4a7d-bfe8-66797fbb0833.png`, url: 'https://luma.com/gxeiw4sg' },
   { speaker: 'Abhineet Singh', role: 'CIO, Al Siraj Holdings', title: 'Inside the Family Office: How Patient Capital Decides', date: 'Thu, 30 Jul 2026', label: 'Speaker session', img: `${LU}/sx/b253d992-9e8f-48f5-b19e-2ce299ddee0c.png`, url: 'https://luma.com/2uelini6' },
   { speaker: 'Radhesh Kanumury', role: 'Managing Partner, Suvan Ventures', title: 'AI in the Enterprise: An Investor’s View', date: 'Thu, 23 Jul 2026', label: 'Speaker session', img: `${LU}/f1/589abc2d-6f41-4c2f-b9d2-dc4b90c88713.png`, url: 'https://luma.com/au6shx7n' },
+  { speaker: 'Legends', role: 'AI-matched rooms', title: 'Private Founders & CEOs Online Networking: AI-Matched Rooms', date: 'Thu, 4 Jun 2026', label: 'AI-matched rooms', img: `${LU}/mq/8fd45b4c-0a1e-4620-9e8a-362b0f5dece5.png`, url: 'https://luma.com/0bpr2u1i' },
 ];
 
 // Recaps of past sessions (content from belegends.club/events/<slug>), shown at /events/online/<slug>.

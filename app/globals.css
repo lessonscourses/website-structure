@@ -1496,3 +1496,17 @@ a.obd:hover .obd-bd{transform:none}
 @media (max-width:900px){.dr-stats .wrap,.dr-story,.dr-more,.dr-grid{grid-template-columns:1fr}.dr-stats .wrap>div{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.12)}.dr-themes{grid-column:auto}.dr-gal{grid-template-columns:1fr 1fr;grid-template-rows:auto}.dr-gal>*{aspect-ratio:4/3}.dr-gal>*:first-child{grid-column:1/-1;grid-row:auto}}
 .dr-hero .eh-bg img{opacity:.6}
 .dr-q blockquote{color:var(--ink)}.dr-q figcaption{color:var(--ink-2)}.dr-q figcaption b{color:var(--gold-d)}
+/* online cards: show the whole square creative */
+.pc-img{aspect-ratio:1/1!important}
+.pc-img img{object-position:50% 50%!important}
+/* upcoming dinner cards with their cover */
+.ev.has-img{padding-top:0;overflow:hidden}
+.ev-img{display:block;margin:0 calc(var(--ev-pad,26px) * -1) 22px;aspect-ratio:1/1;overflow:hidden;background:#e9dfcb}
+.ev-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.ev:hover .ev-img img{transform:scale(1.04)}
+/* past in-person cards */
+.drc-img{aspect-ratio:1/1}
+.drc-t{margin-top:8px!important;font-size:15px!important;line-height:1.45;color:var(--ink)!important;font-weight:500}
+.ev.has-img{--ev-pad:24px}
+.hd+.sec::after{height:auto;bottom:0}
+.more-row{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px}.more-row .more{margin-top:0}

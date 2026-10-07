@@ -5,7 +5,8 @@ const Arr = () => <svg className="arr" viewBox="0 0 24 24" fill="none" stroke="c
 
 export function EventCard({ e, next = false }) {
   return (
-    <a className={'ev' + (next ? ' next' : '')} href={e.url}>
+    <a className={'ev' + (next ? ' next' : '') + (e.img ? ' has-img' : '')} href={e.url}>
+      {e.img && <span className="ev-img"><img src={e.img} alt="" loading="lazy" /></span>}
       <span className="ev-d"><b>{e.day}</b><span>{e.dow}<br />{e.month.slice(0, 3)}</span></span>
       <h3>{e.city}</h3>
       <p>{e.week} week</p>
@@ -158,9 +159,9 @@ export function NoEvents() {
 // Past dinner with a recap page
 export function DinnerCard({ e, i = 0 }) {
   return (
-    <a className={'drc rv d' + (i % 3)} href={e.url}>
-      <span className="drc-img"><img src={e.cover} alt="" loading="lazy" /><em>Recap</em></span>
-      <span className="drc-tx"><b>{e.city}</b><span>{e.date} · {e.week}</span></span>
+    <a className={'drc rv d' + (i % 3)} href={e.url} {...(e.url.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' })}>
+      <span className="drc-img"><img src={e.cover} alt="" loading="lazy" /><em>{e.story ? 'Recap' : 'In person'}</em></span>
+      <span className="drc-tx"><b>{e.city}</b><span>{e.date}</span>{e.title && <span className="drc-t">{e.title}</span>}</span>
     </a>
   );
 }

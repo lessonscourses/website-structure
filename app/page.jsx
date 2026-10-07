@@ -66,7 +66,7 @@ export default function Home() {
         </div>
         <div className="rv"><OnlineCard s={ONLINE_NEXT} /></div>
 
-        <a className="more rv" href="/events">All events <Arr c="" /></a>
+        <div className="more-row rv"><a className="more" href="/events">All dinners <Arr c="" /></a><a className="more" href="/events/online">All online sessions <Arr c="" /></a></div>
       </div></section>
 
       {/* ===== Blog ===== */}

@@ -1,12 +1,12 @@
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { PAST_DINNERS, pastDinner, upcoming } from '@/data/events';
+import { RECAPS, PAST_DINNERS, pastDinner, upcoming } from '@/data/events';
 import { DinnerCard } from '@/components/Cards';
 
 // Recap of a past dinner: same look as the dinner page, without seats, form, time or venue.
 export const dynamicParams = false;
-export const generateStaticParams = () => PAST_DINNERS.map((e) => ({ slug: e.slug }));
+export const generateStaticParams = () => RECAPS.map((e) => ({ slug: e.slug }));
 export async function generateMetadata({ params }) {
   const e = pastDinner((await params).slug);
   return e ? { title: `Legends10 ${e.city} recap - ${e.day} ${e.month}`, description: e.lead } : {};
@@ -18,7 +18,7 @@ export default async function DinnerRecap({ params }) {
   const e = pastDinner((await params).slug);
   if (!e) notFound();
   const next = upcoming();
-  const others = PAST_DINNERS.filter((x) => x.slug !== e.slug).slice(0, 3);
+  const others = PAST_DINNERS.slice(0, 3);
   return (
     <>
       <Header dark cta={next[0] ? { href: next[0].url, label: 'Next dinner' } : undefined} />
@@ -76,7 +76,7 @@ export default async function DinnerRecap({ params }) {
         )}
         {others.length > 0 && (
           <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
-            <div className="sec-head rv"><h2 className="h2">More recaps</h2></div>
+            <div className="sec-head rv"><h2 className="h2">Past dinners</h2></div>
             <div className="dr-more">{others.map((o, i) => <DinnerCard key={o.slug} e={o} i={i} />)}</div>
           </div></section>
         )}
