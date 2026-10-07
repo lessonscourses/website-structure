@@ -1679,3 +1679,15 @@ a.obd:hover .obd-bd{transform:none}
 .wr-ex{margin-top:6px!important;opacity:.8!important}
 .wr-ex::after{width:1px;background:var(--gold-d)}
 .wr:hover .wr-ti{color:var(--gold-d)!important}
+/* blog hero sheet: no empty space below, sits in the middle of the hero */
+.hm-bl{align-items:center}
+.wr{min-height:0;padding-bottom:22px}
+.wr-ex{min-height:4.9em}
+/* essay page: author larger, date and read time under it, all left */
+.art-author{display:grid!important;grid-template-columns:1fr;justify-items:start;gap:4px!important}
+.art-author b{font-size:clamp(20px,1.7vw,24px)!important;font-weight:600;letter-spacing:-.015em}
+.art-author small{font-size:15px!important}
+.art-meta{margin:10px 0 0!important;justify-self:start!important;font-size:14px;color:var(--ink-3)}
+/* online labels: no green dot */
+.pc-img em::before{display:none}
+.pc-img em{padding:6px 12px!important}
