@@ -1,4 +1,4 @@
-import HeroScroll from '@/components/HeroScroll';
+import HeroDust from '@/components/HeroDust';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Join from '@/components/Join';
@@ -29,7 +29,7 @@ export default function Home() {
       <Header dark />
 
       {/* ===== Hero ===== */}
-      <HeroScroll />
+      <HeroDust />
 
       {/* ===== About ===== */}
       <section className="sec about" id="about"><div className="wrap">
