@@ -31,9 +31,9 @@ export function OnlineCard({ s }) {
   );
 }
 
-export function PastList({ items }) {
+export function PastList({ items, paged }) {
   return (
-    <div className="pc-grid">
+    <div className="pc-grid" {...(paged ? { 'data-paged': paged } : {})}>
       {items.map((p) => (
         <a key={p.url} className={'pc' + (p.next ? ' next' : '')} href={p.url} {...(p.url.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' })}>
           <span className="pc-img"><img src={p.img} alt="" loading="lazy" /><em>{p.label}</em></span>

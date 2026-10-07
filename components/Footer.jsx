@@ -1,4 +1,3 @@
-import { EVENTS } from '@/data/events';
 import { PRIVACY_URL, TERMS_URL } from '@/data/links';
 
 
@@ -10,8 +9,15 @@ export default function Footer() {
           <a className="brand" href="/"><img src="/brand/symbol.png" alt="" /><b>LEGENDS</b></a>
           <p className="ft-about">Uniting Legends. Private Investor Network: co-investment, deal flow, additional capital, private events.</p>
         </div>
-        <div><h4>October</h4><ul>
-          {EVENTS.map((e) => <li key={e.slug}><a href={e.url}>{e.city}, {e.day} {e.month.slice(0, 3)}</a></li>)}
+        <div><h4>Explore</h4><ul>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/events#in-person">Private dinners</a></li>
+          <li><a href="/events#online">Legends Online</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul></div>
+        <div><h4>Membership</h4><ul>
+          <li><button type="button" className="ft-btn" data-open="apply">Apply to join</button></li>
+          <li><button type="button" className="ft-btn" data-open="login">Member login</button></li>
         </ul></div>
         <div><h4>Contact</h4><ul>
           <li><a href="mailto:concierge@legends.app">concierge@legends.app</a></li>

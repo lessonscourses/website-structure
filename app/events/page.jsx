@@ -34,8 +34,9 @@ export default function Events() {
           <h2 className="h2">Online: Legends Online</h2>
           <p className="lead">Once a month, a top investor shares how they decide - a 30-minute talk, then a closed discussion with the room. Small group, cameras on.</p>
         </div>
-        {nextOnline.length === 0 && <NoEvents />}
-        <PastList items={[...nextOnline, ...ONLINE_PAST]} />
+        {nextOnline.length === 0 ? <NoEvents /> : <div className="on-next rv"><PastList items={nextOnline} /></div>}
+        <div className="past-h rv"><h3>Past sessions</h3><span>{ONLINE_PAST.length} sessions</span></div>
+        <PastList items={ONLINE_PAST} paged={10} />
       </div></section>
 
       <Footer />

@@ -264,3 +264,7 @@
 @media (max-width:980px){.rc-next{padding:28px 20px;border-radius:28px}}
 .d-rail .r1{flex:1.5}.d-rail .r2{flex:2.3}.d-rail .r3{flex:2.8}
 .d-cut .d-glow{bottom:auto;top:50%;transform:translate(-50%,-50%)}
+/* recap: text under the heading, first sentence leads */
+.rc-head{display:block!important}
+.rc-room{margin-top:clamp(20px,2.4vw,30px);max-width:920px;padding-left:clamp(18px,2vw,28px);border-left:2px solid var(--gold);font-size:clamp(19px,1.7vw,24px);line-height:1.55;color:var(--ink-2)}
+.rc-room b{font-weight:600;color:var(--ink)}

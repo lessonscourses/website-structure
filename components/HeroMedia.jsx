@@ -14,17 +14,13 @@ export function EventsCollage({ events }) {
   );
 }
 
-// Blog: a deck of essay covers that deals itself, the author chip follows the top card
+// Blog: a strip of essay covers that moves on by itself - one large in the middle,
+// the neighbours half visible and fading into the background (lib/site.js, [data-strip])
 export function EssayDeck({ essays }) {
-  const list = essays.slice(0, 5);
   return (
     <div className="hm hm-bl rv d1">
-      <div className="deck" data-deck>
-        {list.map((e) => (
-          <a key={e.url} href={e.url} className="deck-c" data-au={e.author} data-role={e.role} data-title={e.title}>
-            <img src={e.img} alt={e.title} />
-          </a>
-        ))}
+      <div className="strip" data-strip>
+        {essays.map((e) => <a key={e.url} href={e.url} className="strip-c" aria-label={e.title}><img src={e.img} alt="" /></a>)}
       </div>
     </div>
   );

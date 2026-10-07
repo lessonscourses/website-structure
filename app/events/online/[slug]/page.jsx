@@ -46,7 +46,7 @@ export default async function Recap({ params }) {
       <section className="sec" id="recap"><div className="wrap">
         <div className="rc-head rv">
           <h2 className="h2">What happened in the room</h2>
-          <p className="lead">{r.room}</p>
+          <p className="rc-room">{(() => { const i = r.room.indexOf('. '); return i > 0 ? <><b>{r.room.slice(0, i + 1)}</b> {r.room.slice(i + 2)}</> : r.room; })()}</p>
         </div>
         {r.video
           ? <div className="rc-video rv"><video controls playsInline preload="metadata" poster={r.shots[0]}><source src={r.video} type="video/mp4" /></video></div>
