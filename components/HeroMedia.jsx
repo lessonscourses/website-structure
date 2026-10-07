@@ -25,3 +25,25 @@ export function EssayDeck({ essays }) {
     </div>
   );
 }
+
+// Online: a live call - the speaker on the main screen, the room in small tiles (lib/site.js rotates who speaks)
+export function LiveCall({ s, past }) {
+  const room = ['/gallery/evening-1.jpg', '/gallery/evening-4.jpg', '/gallery/evening-2.jpg', '/gallery/evening-3.jpg', '/gallery/evening-5.jpg', '/gallery/evening-1.jpg'];
+  const pos = ['20% 40%', '35% 45%', '60% 40%', '75% 45%', '45% 40%', '85% 40%'];
+  return (
+    <div className="hm hm-call rv d1" data-call>
+      <div className="call">
+        <div className="call-bar"><span className="call-live"><i />Live</span><b>Legends Online {s.no}</b><span className="call-t" data-call-time>00:00</span></div>
+        <div className="call-main">
+          <img src={s.photo} alt={s.speaker} />
+          <span className="call-name"><i />{s.speaker}</span>
+        </div>
+        <div className="call-room">
+          {room.map((src, i) => <span key={i} className="call-tile" style={{ backgroundImage: `url(${src})`, backgroundPosition: pos[i] }} />)}
+          <span className="call-tile more"><b>+{s.seats - 7}</b>investors</span>
+        </div>
+      </div>
+      {past[0] && <div className="call-prev" data-speed=".08"><img src={past[0].img} alt="" /><span>Last session · {past[0].speaker}</span></div>}
+    </div>
+  );
+}

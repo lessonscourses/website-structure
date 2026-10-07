@@ -1510,3 +1510,34 @@ a.obd:hover .obd-bd{transform:none}
 .ev.has-img{--ev-pad:24px}
 .hd+.sec::after{height:auto;bottom:0}
 .more-row{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px}.more-row .more{margin-top:0}
+/* second block shadow: only the part above its top edge is drawn */
+.hd+.sec::after{clip-path:inset(-200px -200px 100% -200px)}
+/* Online page hero: live call */
+.hm-call{display:flex;align-items:center;justify-content:center}
+.call{position:relative;width:100%;max-width:620px;border-radius:28px;padding:12px;background:#16130f;box-shadow:0 50px 100px -40px rgba(40,25,5,.7),inset 0 0 0 1px rgba(226,190,112,.18)}
+.call-bar{display:flex;align-items:center;gap:12px;padding:6px 8px 12px;color:rgba(255,255,255,.75);font-size:13px}
+.call-bar b{font-weight:600;color:#fff}
+.call-live{display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:999px;background:rgba(255,90,74,.15);color:#ff8a7c;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.call-live i{width:7px;height:7px;border-radius:50%;background:#ff5a4a;animation:callBl 1.4s infinite}
+@keyframes callBl{50%{opacity:.3}}
+.call-t{margin-left:auto;font-variant-numeric:tabular-nums}
+.call-main{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:linear-gradient(150deg,#f3e6c9,#e2cc9c);box-shadow:0 0 0 2px var(--gold-hi);animation:callSpeak 2.6s ease-in-out infinite}
+@keyframes callSpeak{50%{box-shadow:0 0 0 2px var(--gold-hi),0 0 0 8px rgba(212,173,90,.18)}}
+.call-main img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;animation:callZoom 14s ease-in-out infinite alternate}
+@keyframes callZoom{to{transform:scale(1.06)}}
+.call-name{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;padding:7px 12px 7px 9px;border-radius:999px;background:rgba(20,17,12,.7);backdrop-filter:blur(8px);color:#fff;font-size:13px;font-weight:600}
+.call-name i{width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(212,173,90,.6);animation:callMic 1.2s ease-out infinite}
+@keyframes callMic{to{box-shadow:0 0 0 8px rgba(212,173,90,0)}}
+.call-room{margin-top:8px;display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.call-tile{position:relative;aspect-ratio:1/1;border-radius:10px;background-size:420% auto;background-color:#2a241b;filter:saturate(.9);transition:box-shadow .4s}
+.call-tile.on{box-shadow:0 0 0 2px var(--gold-hi)}
+.call-tile.more{display:grid;place-items:center;align-content:center;background:#2a241b;color:rgba(255,255,255,.7);font-size:10px;text-align:center;line-height:1.2}
+.call-tile.more b{display:block;font-size:16px;color:#fff}
+.call-prev{position:absolute;right:-6px;top:-10px;width:170px;padding:8px;border-radius:16px;background:#fff;box-shadow:0 24px 50px -24px rgba(60,40,10,.5);font-size:11.5px;color:var(--ink-2);transform:rotate(3deg)}
+.call-prev img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block;margin-bottom:6px}
+@media (max-width:900px){.call-prev{display:none}}
+.call-room{grid-template-columns:repeat(7,minmax(0,1fr))}
+.call-tile.more{font-size:9px}
+.call-prev{right:auto;left:-40px;top:auto;bottom:-24px;width:150px;transform:rotate(-4deg);z-index:2}
+.call-prev{display:none}
+.call-tile.more{aspect-ratio:1/1;overflow:hidden;align-self:start}
