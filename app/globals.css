@@ -2128,3 +2128,4 @@ html,body{overflow-x:clip}
 @media (max-width:560px){.ab-index{grid-template-columns:1fr}.ab-cols.four{grid-template-columns:1fr}.ab-cols.four li{padding-left:0!important;border-left:0!important}.ab-cols.four li+li{border-top:1px solid var(--line)}.ab-mem{grid-template-columns:1fr}.ab-hub-row{grid-template-columns:1fr;gap:8px}.ab-hub-row span::after{display:none}.ab-hub-core{margin:10px 0}.ab-hub-row.out span{text-align:left}}
 .ab-seats .ppl{margin:0!important}
 .ab-h3+.ab-cols{margin-top:18px}
+.ev.ses p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}

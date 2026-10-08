@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import PageHero from '@/components/PageHero';
 import Footer from '@/components/Footer';
-import { PastList, NoEvents } from '@/components/Cards';
+import { PastList, NoEvents, SessionCard } from '@/components/Cards';
 import { ONLINE_NEXT, ONLINE_PAST, ONLINE_RECAPS } from '@/data/online';
 
 export const metadata = { title: 'Online - Legends', description: 'Legends Online10: up to 10 investors at one online table, by industry. InvestHack: members open their playbook, live Q&A.' };
@@ -15,7 +15,7 @@ export default function Online() {
       <PageHero crumbs={[['Online']]} word="ONLINE10 · INVESTHACK ·" title={<>Legends <em>Online</em></>} lead="Two formats: Legends Online10 - up to 10 investors at one online table, by industry. InvestHack - members open their playbook, live Q&A." />
       <section className="sec ev-sec" data-track="online" id="investhack" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="past-h rv" style={{ marginTop: 0 }}><h3>Next session</h3></div>
-        {nextOnline.length === 0 ? <NoEvents /> : <div className="on-next rv"><PastList items={nextOnline} /></div>}
+        {nextOnline.length === 0 ? <NoEvents /> : <div className="ev-grid ev-all"><div className="rv"><SessionCard s={ONLINE_NEXT} img={ONLINE_PAST[0].img} /></div></div>}
         <div className="past-h rv"><h3>Past sessions</h3><span>{ONLINE_PAST.length} sessions</span></div>
         <PastList items={ONLINE_PAST} paged={10} />
       </div></section>

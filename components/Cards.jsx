@@ -16,6 +16,23 @@ export function EventCard({ e, next = false }) {
   );
 }
 
+// Next online session in the same card format as the dinners
+export function SessionCard({ s, img }) {
+  const [city, t] = s.times.find(([c]) => c === 'London') || s.times[0];
+  const [, hh, mm, ap] = t.match(/(\d+):(\d+)\s*(AM|PM)/i) || [, 12, '00', 'PM'];
+  const h = (+hh % 12) + (/pm/i.test(ap) ? 12 : 0), f = (x) => String(x % 24).padStart(2, '0') + ':' + mm;
+  return (
+    <a className="ev has-img ses" href={s.url}>
+      {img && <span className="ev-img"><img src={img} alt="" loading="lazy" /></span>}
+      <span className="ev-d plain"><b>{s.day}</b><span>{s.month.slice(0, 3)}, {s.dow}</span></span>
+      <h3>{s.speaker}</h3>
+      <p>{s.title}</p>
+      <ul className="ev-meta"><li>{f(h)}-{f(h + 1)} {city}</li><li>On Zoom</li></ul>
+      <span className="ev-go">View the session <Arr /></span>
+    </a>
+  );
+}
+
 // Next Legends Online session - wide card.
 // Next online session on the home page: title + day line (components/DayLine.jsx)
 export function OnlineCard({ s }) {
