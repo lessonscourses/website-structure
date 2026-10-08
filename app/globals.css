@@ -1848,3 +1848,17 @@ html,body{overflow-x:clip}
   .up-list .er h4{font-size:clamp(28px,2.4vw,34px)!important;line-height:1.05}
   .up-list .er-c span{margin-top:8px;font-size:14.5px;line-height:1.4}
 }
+
+/* Online page: Legends Online10 block */
+.o10{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(28px,5vw,80px);}
+.o10-sec{padding-bottom:clamp(64px,8vw,120px)!important}
+.h2 em{font-style:normal;color:var(--gold-d)}
+.o10-sub{margin-top:14px;font-size:clamp(17px,1.5vw,20px);color:var(--ink-2)}
+.sec-head .o10-sub{margin-top:12px}
+.o10-lead{font-size:clamp(19px,1.7vw,24px);line-height:1.4;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+.o10-list{list-style:none;margin-top:28px}
+.o10-list li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.5}
+.o10-list b{font-weight:600}
+.o10-list span{color:var(--ink-2)}
+.o10-cta{margin-top:26px;background:none;border:0;border-bottom:1px solid var(--gold);padding:0 0 4px;cursor:pointer;font:600 15.5px inherit;font-family:inherit;color:var(--ink)}
+@media (max-width:860px){.o10{grid-template-columns:1fr}.o10-list li{grid-template-columns:1fr;gap:4px}}

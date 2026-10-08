@@ -26,7 +26,7 @@ export default async function DinnerRecap({ params }) {
       <div className="evp">
         {/* Hero: the evening itself */}
         <section className="eh dr-hero">
-        <div className="wrap cb-wrap"><Crumbs dark items={[['Dinners', '/events'], [`${e.city} recap`]]} /></div>
+        <div className="wrap cb-wrap"><Crumbs dark items={[['Legends10', '/events'], [`${e.city} recap`]]} /></div>
           <div className="eh-bg" aria-hidden="true"><img src={e.cover} alt="" /><i className="eh-shade" /></div>
           <div className="eh-city" data-drift aria-hidden="true">{Array.from({ length: 6 }, () => e.city.toUpperCase()).join(' · ')} ·</div>
           <div className="wrap eh-in">

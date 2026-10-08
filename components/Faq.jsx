@@ -1,7 +1,7 @@
 // FAQ for a dinner page (city and date filled in).
 export default function Faq({ e }) {
   const QA = [
-    ['Is there a fee?', 'No. Dinner is settled with the venue.'],
+    ['Who pays for dinner?', 'Each guest pays for their own order.'],
     ['Who else will be there?', '10 active investors: family offices, allocators, GPs, LPs and private investors. Every guest is reviewed.'],
     ['Where is the venue?', `A private venue in ${e.city}. Shared after your seat is confirmed.`],
     ['What happens after I apply?', 'Personal review, a short call if needed, then seat confirmation and venue details.'],

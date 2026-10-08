@@ -11,8 +11,8 @@ import { ESSAYS } from '@/data/blog';
 const Arr = ({ c = 'arr' }) => <svg className={c} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 
 const WAYS = [
-  ['Online', 'by sector', 'Sector rooms to share deals, mandates and market views.'],
-  ['In person', 'by city', 'Private dinners for ten, in the weeks capital meets.'],
+  ['Online', 'by sector', 'Legends Online10 and InvestHack: deals, mandates and market views.'],
+  ['In person', 'by city', 'Legends10: private dinners for ten, in the weeks capital meets.'],
   ['Platform', 'in between', 'Deals, asks and introductions in one place.'],
 ];
 const GIVES = ['Deal flow', 'Co-investment', 'Additional capital', 'Private events'];
@@ -45,13 +45,13 @@ export default function Home() {
       <section className="sec" id="events"><div className="wrap">
         <div className="sec-head rv"><h2 className="h2">Events</h2></div>
 
-        <p className="tag2 rv">In person</p>
+        <p className="tag2 rv">Legends10 · In person</p>
         <Upcoming events={events} />
 
-        <p className="tag2 on rv" style={{ marginTop: 'clamp(44px,5vw,70px)' }}>Online</p>
+        <p className="tag2 on rv" style={{ marginTop: 'clamp(44px,5vw,70px)' }}>InvestHack · Online</p>
         <div className="rv"><OnlineCard s={ONLINE_NEXT} /></div>
 
-        <div className="more-row rv"><a className="more" href="/events">All dinners <Arr c="" /></a><a className="more" href="/events/online">All online sessions <Arr c="" /></a></div>
+        <div className="more-row rv"><a className="more" href="/events">All Legends10 dinners <Arr c="" /></a><a className="more" href="/events/online">All InvestHack sessions <Arr c="" /></a></div>
       </div></section>
 
       {/* ===== Blog ===== */}

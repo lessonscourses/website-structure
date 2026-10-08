@@ -4,14 +4,14 @@ import Footer from '@/components/Footer';
 import { FeaturedEvent, EventCard, DinnerCard } from '@/components/Cards';
 import { upcoming, PAST_DINNERS } from '@/data/events';
 
-export const metadata = { title: 'Private dinners - Legends', description: 'Private dinners for ten investors in key investor cities.' };
+export const metadata = { title: 'Legends10 - Legends', description: 'Up to 10 investors at one table. Private dinners by city, during the biggest global investor summits.' };
 
 export default function Events() {
   const events = upcoming();
   return (
     <>
       <Header />
-      <PageHero crumbs={[['Dinners']]} word="SINGAPORE · DUBAI · ABU DHABI · RIYADH ·" title={<>Private <em>dinners</em></>} lead="Ten investors at one private table, in the cities where capital meets. Selected guests, investors only." />
+      <PageHero crumbs={[['Legends10']]} word="SINGAPORE · DUBAI · ABU DHABI · RIYADH ·" title={<>Legends<em>10</em></>} lead="Up to 10 investors. One table. In person, by city: private dinners during the biggest global investor summits." />
 
       <section className="sec ev-sec" data-track="offline" id="in-person" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="sec-head rv">

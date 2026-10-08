@@ -10,7 +10,7 @@ import '../../../online.css';
 export const generateStaticParams = () => ONLINE_RECAPS.map((r) => ({ slug: r.slug }));
 export async function generateMetadata({ params }) {
   const r = recap((await params).slug);
-  return r ? { title: `${r.title} - Legends Online recap`, description: r.lead } : {};
+  return r ? { title: `${r.title} - InvestHack recap`, description: r.lead } : {};
 }
 
 const Arr = () => <svg className="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
@@ -21,10 +21,10 @@ export default async function Recap({ params }) {
   const others = ONLINE_PAST.filter((p) => !p.url.endsWith(r.slug));
   return (
     <>
-      <Header cta={{ href: ONLINE_NEXT.url, label: 'Next session' }} />
+      <Header cta={{ href: ONLINE_NEXT.url, label: 'Next InvestHack' }} />
 
       <section className="h-hero rc-hero" id="top">
-        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], ['Recap']]} /></div>
+        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], ['InvestHack recap']]} /></div>
         <div className="h-no" aria-hidden="true">{r.no}</div>
         <div className="wrap h-in">
           <div className="h-copy">
@@ -75,7 +75,7 @@ export default async function Recap({ params }) {
 
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="rc-next rv">
-          <h2 className="h2">Next session</h2>
+          <h2 className="h2">Next InvestHack</h2>
           <OnlineCard s={ONLINE_NEXT} />
         </div>
       </div></section>

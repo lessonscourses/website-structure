@@ -8,7 +8,7 @@ import { PRIVACY_URL, TERMS_URL } from '@/data/links';
 import '../../online.css';
 
 // Legends Online session page (layout of the approved concept). Content: data/online.js.
-export const metadata = { title: `Legends Online ${S.no} - ${S.speaker}`, description: S.lead };
+export const metadata = { title: `InvestHack #${S.no} - ${S.speaker}`, description: S.lead };
 
 const Arr = () => <svg className="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 
@@ -19,11 +19,11 @@ export default function OnlineSession() {
       <Header cta={{ href: '#register', label: 'Reserve your seat' }} />
 
       <section className="h-hero" id="top">
-        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], [`Session ${S.no}`]]} /></div>
+        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], [`InvestHack #${S.no}`]]} /></div>
         <div className="h-no" aria-hidden="true">{S.no}</div>
         <div className="wrap h-in">
           <div className="h-copy">
-            <p className="h-kick rv"><span>Legends Online</span><i /><span>No. {S.no}</span></p>
+            <p className="h-kick rv"><span>InvestHack</span><i /><span>#{S.no}</span></p>
             <h1 className="rv d1">{b ? <>{a} What Gets <em>{b}</em></> : S.title}</h1>
             <p className="lead rv d2">{S.lead}</p>
             <p className="h-by rv d2"><span>Speaker</span><b>{S.speaker}</b>{S.role}</p>
