@@ -14,10 +14,6 @@ export default function Online() {
       <Header />
       <PageHero crumbs={[['Online']]} word="ONLINE10 · INVESTHACK ·" title={<>Legends <em>Online</em></>} lead="Two formats: Legends Online10 - up to 10 investors at one online table, by industry. InvestHack - members open their playbook, live Q&A." />
       <section className="sec ev-sec" data-track="online" id="investhack" style={{ paddingTop: 0 }}><div className="wrap">
-        <div className="sec-head rv">
-          <h2 className="h2">InvestHack</h2>
-          <p className="o10-sub">Members open their playbook. Live Q&A, online.</p>
-        </div>
         <div className="past-h rv" style={{ marginTop: 0 }}><h3>Next session</h3></div>
         {nextOnline.length === 0 ? <NoEvents /> : <div className="on-next rv"><PastList items={nextOnline} /></div>}
         <div className="past-h rv"><h3>Past sessions</h3><span>{ONLINE_PAST.length} sessions</span></div>

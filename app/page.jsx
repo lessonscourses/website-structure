@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Join from '@/components/Join';
 import Platform from '@/components/Platform';
 import Unite from '@/components/Unite';
+import Online10 from '@/components/Online10';
 import { ApplyButton } from '@/components/ApplyModal';
 import { Upcoming, OnlineCard } from '@/components/Cards';
 import { upcoming } from '@/data/events';
@@ -44,6 +45,7 @@ export default function Home() {
       <div className="mq" aria-hidden="true"><div className="mq-in" data-drift>SINGAPORE · DUBAI · ABU DHABI · RIYADH · LONDON · NEW YORK · ZURICH · PALM BEACH · ONLINE ·</div></div>
 
       {/* ===== Events ===== */}
+      <Online10 />
       <section className="sec" id="events"><div className="wrap">
         <div className="sec-head rv"><h2 className="h2">Events</h2></div>
 

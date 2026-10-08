@@ -1918,3 +1918,42 @@ html,body{overflow-x:clip}
 @media (max-width:760px){.un-ph{aspect-ratio:4/3}.un-ph img{object-position:50% 70%}}
 @media (prefers-reduced-motion:reduce){.un-ph img{transform:none}}
 .ev-grid.ev-all{margin-top:clamp(20px,2.5vw,32px)}
+
+/* What members get: one quiet line under the three ways */
+.gives3{display:block;margin-top:clamp(56px,6vw,96px);padding-top:0;border-top:0}
+.g3-k{display:block;margin-bottom:14px}
+.gives3 ul{display:flex;flex-wrap:wrap;gap:6px 0}
+.gives3 li{font-size:clamp(18px,1.5vw,21px);font-weight:500;color:var(--ink-2)}
+.gives3 li::before{display:none}
+.gives3 li+li::after{content:none}
+.gives3 li:not(:last-child)::after{content:"";display:inline-block;width:5px;height:5px;margin:0 18px 4px;border-radius:50%;background:var(--gold)}
+@media (max-width:860px){.gives3 ul{display:flex}.gives3 li:not(:last-child)::after{margin:0 12px 3px}}
+@media (max-width:560px){.gives3 ul{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}.gives3 li:not(:last-child)::after{display:none}.gives3 li{font-size:17px}}
+
+/* ===== Home: Legends Online10 ===== */
+.o1-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.o1-lead{margin-top:clamp(18px,2vw,26px);font-size:clamp(17px,1.4vw,19px);font-weight:600;color:var(--ink)}
+.o1-ind,.o1-flow{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:baseline;margin-top:18px;font-size:15.5px;color:var(--ink-2)}
+.o1-ind>span,.o1-flow>span{font-size:13px;font-weight:600;color:var(--ink-3)}
+.o1-ind{margin-top:24px}
+.o1-rot{position:relative;display:block;height:1.4em;font-weight:600;color:var(--ink)}
+.o1-rot i{position:absolute;left:0;top:0;font-style:normal;white-space:nowrap;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.o1-rot i.on{opacity:1;transform:none}
+.o1-flow em{font-style:normal;color:var(--gold-d);margin:0 6px}
+.o1-k{font-size:13px;font-weight:600;color:var(--ink-3);margin-bottom:14px}
+.o1-map{position:relative}
+.o1-map img{width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.o1-pin{position:absolute;width:0;height:0}
+.o1-pin i{position:absolute;left:-4px;top:-4px;width:8px;height:8px;border-radius:50%;background:var(--gold);transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1) calc(var(--i) * .16s + .3s)}
+.o1-pin i::after{content:"";position:absolute;inset:-6px;border-radius:50%;background:rgba(197,153,58,.25);opacity:0;animation:o1Pulse 3.2s infinite calc(var(--i) * .29s + 2.4s)}
+.o1-pin b{position:absolute;top:calc(-8px + var(--dy,0px));white-space:nowrap;font-size:12px;font-weight:600;color:var(--ink);opacity:0;transform:translateY(4px);transition:opacity .5s calc(var(--i) * .16s + .45s),transform .5s calc(var(--i) * .16s + .45s)}
+.o1-pin.r b{left:9px}.o1-pin.l b{right:9px}
+.go .o1-pin i{transform:scale(1)}
+.go .o1-pin b{opacity:1;transform:none}
+@keyframes o1Pulse{0%{opacity:.9;transform:scale(.4)}60%,100%{opacity:0;transform:scale(1.6)}}
+@media (max-width:900px){.o1-g{grid-template-columns:1fr}}
+@media (max-width:560px){.o1-ind,.o1-flow{grid-template-columns:1fr;gap:4px}.o1-pin b{font-size:10px}.o1-pin i{width:6px;height:6px;left:-3px;top:-3px}}
+@media (prefers-reduced-motion:reduce){.o1-pin i{transform:scale(1)}.o1-pin b{opacity:1;transform:none}.o1-pin i::after{animation:none}}
+.o1-flow .o1-fl{font-size:15.5px;font-weight:400;color:var(--ink-2)}
+.o1-list{display:none}
+@media (max-width:560px){.o1-pin b{display:none}.o1-list{display:block;margin-top:14px;font-size:13.5px;line-height:1.6;color:var(--ink-2)}}
