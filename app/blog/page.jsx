@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import PageHero from '@/components/PageHero';
-import { EssayDeck } from '@/components/HeroMedia';
 import Footer from '@/components/Footer';
 import { EssayTile } from '@/components/Cards';
 import { ESSAYS } from '@/data/blog';
@@ -11,7 +10,7 @@ export default function Blog() {
   return (
     <>
       <Header />
-      <PageHero aside={<EssayDeck essays={ESSAYS} />} word="STORIES · ESSAYS · DECISIONS ·" title="Blog"
+      <PageHero word="STORIES · ESSAYS · DECISIONS ·" title="Blog"
         lead="Stories from the people who deploy capital - essays by Legends speakers on how they decide, what they look for and what they learned the hard way." />
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="et-list">

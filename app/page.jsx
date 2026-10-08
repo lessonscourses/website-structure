@@ -11,16 +11,11 @@ import { ESSAYS } from '@/data/blog';
 const Arr = ({ c = 'arr' }) => <svg className={c} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 
 const WAYS = [
-  ['Online by sector', 'Members meet in sector groups to share deals, mandates and market views with investors who work in the same space.'],
-  ['In person by city', 'Private dinners for ten investors in the cities where capital meets - during the weeks when the right people are already in town.'],
-  ['Connected through our platform', 'Deals, asks and introductions in one place, so the right person is easy to reach between events.'],
+  ['Online', 'by sector', 'Sector rooms to share deals, mandates and market views.'],
+  ['In person', 'by city', 'Private dinners for ten, in the weeks capital meets.'],
+  ['Platform', 'in between', 'Deals, asks and introductions in one place.'],
 ];
-const GIVES = [
-  ['Deal flow', 'Opportunities shared by investors, often before they reach an open process.'],
-  ['Co-investment', 'Partners for the deals you are already working on.'],
-  ['Additional capital', 'Capital for what you are building, from people who understand it.'],
-  ['Private events', 'Small, selected tables in key investor cities and live sessions online.'],
-];
+const GIVES = ['Deal flow', 'Co-investment', 'Additional capital', 'Private events'];
 
 export default function Home() {
   const events = upcoming();
@@ -34,36 +29,26 @@ export default function Home() {
       {/* ===== About ===== */}
       <section className="sec about" id="about"><div className="wrap">
         <p className="lit" data-lit>
-          You do not need more contacts. / You need the right ones. Legends brings together the people who deploy capital -
-          private investors, family offices, fund managers, GPs, LPs and allocators.
+          You do not need more contacts. / You need the right ones - the people who deploy capital.
         </p>
-        <div className="ways">
-          {WAYS.map(([h, p], i) => (
-            <div key={h} className={'way rv d' + i}><h3>{h}</h3><p>{p}</p></div>
+        <ol className="ways2">
+          {WAYS.map(([h, k, p], i) => (
+            <li key={h} className={'rv d' + i}><span className="w2-n">0{i + 1}</span><h3>{h} <em>{k}</em></h3><p>{p}</p></li>
           ))}
-        </div>
-        <ul className="gives">
-          {GIVES.map(([h, p], i) => <li key={h} className={'rv d' + i}><b>{h}</b><span>{p}</span></li>)}
-        </ul>
+        </ol>
+        <p className="gives2 rv">{GIVES.map((g) => <span key={g}>{g}</span>)}</p>
       </div></section>
 
       <div className="mq" aria-hidden="true"><div className="mq-in" data-drift>SINGAPORE · DUBAI · ABU DHABI · RIYADH · LONDON · NEW YORK · ZURICH · PALM BEACH · ONLINE ·</div></div>
 
       {/* ===== Events ===== */}
       <section className="sec" id="events"><div className="wrap">
-        <div className="sec-head rv">
-          <h2 className="h2">Events</h2>
-          <p className="lead">In person in key investor cities, online every month. Small rooms, selected guests, no stage and no pitches.</p>
-        </div>
+        <div className="sec-head rv"><h2 className="h2">Events</h2></div>
 
-        <div className="track rv">
-          <div className="track-h"><h3>In person</h3><p>Private dinners for ten investors, in the week a major investor event brings the right people to town.</p></div>
-        </div>
+        <p className="tag2 rv"><i />In person</p>
         <Upcoming events={events} />
 
-        <div className="track rv" style={{ marginTop: 'clamp(48px,6vw,80px)' }}>
-          <div className="track-h"><h3>Online</h3><p>Legends Online - a monthly live session with a top investor, then a closed discussion with the room.</p></div>
-        </div>
+        <p className="tag2 on rv" style={{ marginTop: 'clamp(44px,5vw,70px)' }}><i />Online</p>
         <div className="rv"><OnlineCard s={ONLINE_NEXT} /></div>
 
         <div className="more-row rv"><a className="more" href="/events">All dinners <Arr c="" /></a><a className="more" href="/events/online">All online sessions <Arr c="" /></a></div>

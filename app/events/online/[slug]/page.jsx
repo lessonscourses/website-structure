@@ -53,7 +53,7 @@ export default async function Recap({ params }) {
           : <p className="rc-soon rv">The full recording is coming soon.</p>}
         <div className="rc-row">
           <ol className="ib-r rc-hl">{r.highlights.map((h, i) => <li key={h} className={'rv d' + i}><b>{String(i + 1).padStart(2, '0')}</b><div><p>{h}</p></div></li>)}</ol>
-          <figure className="rc-pull rv d1"><blockquote>“{r.pull}”</blockquote><figcaption>{r.speaker}</figcaption></figure>
+          <figure className="rc-pull rv d1"><blockquote>“{r.pull}”</blockquote></figure>
         </div>
       </div></section>
 

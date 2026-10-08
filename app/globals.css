@@ -1691,3 +1691,40 @@ a.obd:hover .obd-bd{transform:none}
 /* online labels: no green dot */
 .pc-img em::before{display:none}
 .pc-img em{padding:6px 12px!important}
+
+/* ---------- compact page heroes (dinners, online, blog): same height, no media ---------- */
+.phero{min-height:0!important;padding:clamp(120px,12vw,160px) 0 clamp(40px,5vw,64px)!important;display:block!important}
+.phero .phero-in{display:block!important}
+.phero .h1 em{font-style:normal;color:var(--gold-d)}
+.phero .ph-word{top:30%}
+
+/* ---------- home: events labels instead of track headings ---------- */
+.tag2{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.tag2 i{width:8px;height:8px;border-radius:2px;background:var(--gold);transform:rotate(45deg)}
+.tag2.on i{border-radius:50%;transform:none;background:var(--ink)}
+.tag2.on{color:var(--ink-2)}
+
+/* ---------- home: second block, half the content ---------- */
+.about .lit{margin-bottom:clamp(36px,4vw,56px)}
+.ways2{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+.ways2 li{position:relative;padding-top:22px}
+.ways2 li::before{content:"";position:absolute;left:0;top:0;height:1px;width:100%;background:var(--line)}
+.ways2 li::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--gold);transition:width 1.2s cubic-bezier(.2,.8,.2,1) .2s}
+.ways2 li.in::after{width:56px}
+.w2-n{display:block;font-size:13px;font-weight:600;color:var(--ink-3);letter-spacing:.1em}
+.ways2 h3{margin-top:10px;font-size:clamp(22px,2vw,28px);font-weight:700;letter-spacing:-.02em}
+.ways2 h3 em{font-style:normal;font-weight:400;color:var(--ink-3)}
+.ways2 p{margin-top:8px;font-size:15.5px;line-height:1.55;color:var(--ink-2);max-width:320px}
+.gives2{margin-top:clamp(36px,4vw,56px);display:flex;flex-wrap:wrap;gap:10px 0;font-size:clamp(15px,1.3vw,18px);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gold-d)}
+.gives2 span+span::before{content:"";display:inline-block;width:5px;height:5px;margin:0 18px 3px;border-radius:50%;background:var(--ink-3);opacity:.5}
+@media (max-width:860px){.ways2{grid-template-columns:1fr}.gives2{flex-direction:column}.gives2 span+span::before{display:none}}
+
+/* ---------- online cards: registration on its own line ---------- */
+.pc-open{display:block;margin-top:4px}
+
+/* ---------- mobile hero: bigger word, more air ---------- */
+@media (max-width:640px){
+  .hd-lead{font-size:14px;margin-top:14px}
+  .hd-cta{margin-top:40px}
+}
+.hd+.sec{display:flex;flex-direction:column;justify-content:center}

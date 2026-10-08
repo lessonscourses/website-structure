@@ -24,13 +24,13 @@ export default function OnlineSession() {
             <p className="h-kick rv"><span>Legends Online</span><i /><span>No. {S.no}</span></p>
             <h1 className="rv d1">{b ? <>{a} What Gets <em>{b}</em></> : S.title}</h1>
             <p className="lead rv d2">{S.lead}</p>
+            <p className="h-by rv d2"><span>Speaker</span><b>{S.speaker}</b>{S.role}</p>
             <DayLine s={S} className="h-dln d2" />
             <div className="h-cta rv d3"><a className="btn gold big" href="#register">Reserve your seat <Arr /></a></div>
           </div>
           <div className="h-port rv d2">
             <span className="h-ring r1" /><span className="h-ring r2" />
             <img src={S.hero || S.photo} alt={S.speaker} />
-            <p className="h-sig"><b>{S.speaker}</b>{S.role}</p>
           </div>
         </div>
       </section>

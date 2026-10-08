@@ -41,7 +41,7 @@ export function PastList({ items, paged }) {
           <span className="pc-tx">
             <h4>{p.title}</h4>
             <span className="pc-by"><b>{p.speaker}</b>{p.role}</span>
-            <span className="pc-d">{p.date} · Online{p.next && <b> · Registration open</b>}</span>
+            <span className="pc-d">{p.date} · Online{p.next && <b className="pc-open">Registration open</b>}</span>
           </span>
         </a>
       ))}
