@@ -1762,3 +1762,35 @@ a.obd:hover .obd-bd{transform:none}
 .gives3.in li{opacity:1;transform:none}
 .gives3 li::before{content:"";display:block;width:22px;height:2px;margin-bottom:12px;background:var(--gold)}
 @media (max-width:860px){.gives3{grid-template-columns:1fr}.gives3 ul{grid-template-columns:1fr 1fr}}
+
+/* ===== mobile + layout fixes ===== */
+html,body{overflow-x:clip}
+.phero,.eh,.h-hero{overflow:hidden}
+/* hero lines on phones: smaller */
+@media (max-width:640px){.hd-ways{font-size:10.5px!important;letter-spacing:.1em;gap:4px!important;bottom:22px!important}}
+/* labels: in person = gold dash, online = ring */
+.tag2 i{width:18px;height:2px;border-radius:2px;transform:none;background:var(--gold)}
+.tag2.on i{width:9px;height:9px;border-radius:50%;background:none;border:1.5px solid var(--ink-2)}
+/* next dinners list: centred in each row */
+.up-list .er{align-content:center;align-items:center}
+/* small "all" links */
+.more-row .more,#blog .more{font-size:13.5px;padding-bottom:3px}
+#blog .more-row{margin-top:22px}
+/* titles ~15% higher; breadcrumbs right under the header */
+.phero{padding-top:clamp(110px,11vw,150px)!important}
+.crumbs2{margin-bottom:clamp(14px,1.6vw,22px)}
+@media (max-width:900px){
+  .phero{padding-top:88px!important;padding-bottom:44px!important}
+  .eh{padding-top:88px!important;min-height:0!important;align-items:flex-start!important;padding-bottom:60px!important}
+  .h-hero{padding-top:88px!important;min-height:0!important;align-items:flex-start!important}
+  .crumbs2{margin-bottom:16px}
+}
+/* dinner cards with a cover on phones: stack */
+@media (max-width:760px){
+  .ev.has-img{display:flex!important;flex-direction:column;padding:0 18px 18px}
+  .ev.has-img .ev-img{margin:0 -18px 16px;--ev-pad:18px}
+  .ev.has-img .ev-d{flex-direction:row;align-items:baseline}
+  .ev.has-img h3{margin-top:10px}
+  .ev.has-img .ev-go{margin-top:12px}
+}
+@media (max-width:900px){.eh{padding-bottom:150px!important}.eh-city{top:auto!important;bottom:24px!important;font-size:96px!important}}

@@ -59,7 +59,6 @@ export default function Home() {
         <div className="bc-hd rv">
           <h2 className="h2">From the blog</h2>
           <div className="bc-nav">
-            <a className="more" href="/blog">All stories <Arr c="" /></a>
             <button type="button" className="prev" data-carousel-step="-1" aria-label="Previous"><Arr c="" /></button>
             <button type="button" data-carousel-step="1" aria-label="Next"><Arr c="" /></button>
           </div>
@@ -74,6 +73,7 @@ export default function Home() {
           ))}
         </div>
         <div className="bc-bar"><i data-carousel-bar /></div>
+        <div className="more-row rv"><a className="more" href="/blog">All stories <Arr c="" /></a></div>
       </div></section>
 
       <Join />
