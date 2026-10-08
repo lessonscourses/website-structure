@@ -1828,3 +1828,11 @@ html,body{overflow-x:clip}
 }
 .ev-d.plain{flex-direction:row!important;align-items:baseline!important;white-space:nowrap}
 @media (max-width:760px){.up-list .er .ev-d{gap:6px}}
+
+/* blog cards: never wider than the column on mobile */
+.et-list>div,.et-grid>div{min-width:0}
+.et{min-width:0;max-width:100%}
+.et-img{width:100%}
+.et-cap{min-width:0;overflow-wrap:anywhere}
+@media (max-width:900px){.et-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.et-list{grid-template-columns:minmax(0,1fr)}}
