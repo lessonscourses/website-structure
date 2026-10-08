@@ -1,3 +1,8 @@
+import { OnlineCard } from './Cards';
+import { ONLINE_NEXT } from '@/data/online';
+
+const Arr = () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
+
 // Home: Legends Online10 - your industry, worldwide (pins and the industry line animate, see data-o10 in lib/site.js)
 const CITIES = [
   // name, x %, y %, label side, label shift (px)
@@ -10,7 +15,7 @@ const INDUSTRIES = ['Artificial intelligence', 'Healthcare & biotech', 'Infrastr
 
 export default function Online10() {
   return (
-    <section className="sec o1" id="online10" style={{ paddingTop: 0 }}><div className="wrap">
+    <section className="sec o1" id="online10"><div className="wrap">
       <div className="o1-g" data-o10>
         <div className="o1-l">
           <h2 className="h2 rv">Legends Online10</h2>
@@ -33,6 +38,11 @@ export default function Online10() {
           </div>
           <p className="o1-list">{CITIES.map(([n]) => n).join(' · ')}</p>
         </div>
+      </div>
+      <div className="o1-next rv">
+        <p className="o1-k">Next online session · InvestHack</p>
+        <OnlineCard s={ONLINE_NEXT} />
+        <a className="more" href="/events/online">All online sessions <Arr /></a>
       </div>
     </div></section>
   );

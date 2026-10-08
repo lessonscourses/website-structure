@@ -6,7 +6,7 @@ import Platform from '@/components/Platform';
 import Unite from '@/components/Unite';
 import Online10 from '@/components/Online10';
 import { ApplyButton } from '@/components/ApplyModal';
-import { Upcoming, OnlineCard } from '@/components/Cards';
+import Legends10 from '@/components/Legends10';
 import { upcoming } from '@/data/events';
 import { ONLINE_NEXT } from '@/data/online';
 import { ESSAYS } from '@/data/blog';
@@ -25,6 +25,7 @@ export default function Home() {
   return (
     <>
       <Header dark />
+      <main className="home">
 
       {/* ===== Hero ===== */}
       <HeroDust />
@@ -40,23 +41,12 @@ export default function Home() {
           ))}
         </ol>
         <div className="gives3 rv"><span className="g3-k">What members get</span><ul>{GIVES.map((g, i) => <li key={g} style={{ '--i': i }}>{g}</li>)}</ul></div>
-      </div></section>
+      </div>
+        <div className="mq" aria-hidden="true"><div className="mq-in" data-drift>SINGAPORE · DUBAI · ABU DHABI · RIYADH · LONDON · NEW YORK · HONG KONG · MONACO · ONLINE ·</div></div>
+      </section>
 
-      <div className="mq" aria-hidden="true"><div className="mq-in" data-drift>SINGAPORE · DUBAI · ABU DHABI · RIYADH · LONDON · NEW YORK · ZURICH · PALM BEACH · ONLINE ·</div></div>
-
-      {/* ===== Events ===== */}
+      <Legends10 events={events} />
       <Online10 />
-      <section className="sec" id="events"><div className="wrap">
-        <div className="sec-head rv"><h2 className="h2">Events</h2></div>
-
-        <p className="tag2 rv">Legends10 · In person</p>
-        <Upcoming events={events} />
-
-        <p className="tag2 on rv" style={{ marginTop: 'clamp(44px,5vw,70px)' }}>InvestHack · Online</p>
-        <div className="rv"><OnlineCard s={ONLINE_NEXT} /></div>
-
-        <div className="more-row rv"><a className="more" href="/events">All Legends10 dinners <Arr c="" /></a><a className="more" href="/events/online">All InvestHack sessions <Arr c="" /></a></div>
-      </div></section>
 
       {/* ===== Blog ===== */}
       <section className="sec" id="blog" style={{ paddingTop: 0 }}><div className="wrap">
@@ -83,6 +73,7 @@ export default function Home() {
       <Platform />
       <Unite />
       <Join />
+      </main>
       <Footer />
     </>
   );

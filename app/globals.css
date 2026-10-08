@@ -1957,3 +1957,17 @@ html,body{overflow-x:clip}
 .o1-flow .o1-fl{font-size:15.5px;font-weight:400;color:var(--ink-2)}
 .o1-list{display:none}
 @media (max-width:560px){.o1-pin b{display:none}.o1-list{display:block;margin-top:14px;font-size:13.5px;line-height:1.6;color:var(--ink-2)}}
+
+/* ===== Home rhythm: one gap between every block ===== */
+.home{--G:clamp(88px,10vw,150px)}
+.home>.sec{padding-top:0!important;padding-bottom:var(--G)}
+.home>.hd+.sec{padding-top:clamp(80px,9vw,130px)!important;justify-content:flex-start}
+.home>.hd+.sec>.wrap{margin-top:auto}
+.home .about .mq{margin-top:var(--G);margin-bottom:auto;padding:0}
+.home .gives3{margin-top:clamp(48px,5vw,80px)}
+/* Legends10 / Online10 right columns */
+.l10 .up-list{border-top:1px solid var(--line)}
+.l10 .o1-r .more,.o1-next .more{margin-top:22px}
+.o1-next{margin-top:clamp(48px,5vw,80px)}
+.o1-next .o1-k{margin-bottom:16px}
+.l10 .o1-g{align-items:start}
