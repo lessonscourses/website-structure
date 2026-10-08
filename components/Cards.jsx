@@ -32,16 +32,19 @@ export function OnlineCard({ s }) {
   );
 }
 
-export function PastList({ items, paged }) {
+// Past dinners in the same card format as past online sessions
+export const asPast = (e) => ({ url: e.url, img: e.cover, title: e.title, speaker: e.city, role: '', date: e.date, label: e.url.startsWith('/events/recap') ? 'Recap' : 'Dinner' });
+
+export function PastList({ items, paged, kind = 'Online' }) {
   return (
     <div className="pc-grid" {...(paged ? { 'data-paged': paged } : {})}>
       {items.map((p) => (
         <a key={p.url} className={'pc' + (p.next ? ' next' : '')} href={p.url} {...(p.url.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' })}>
-          <span className="pc-img"><img src={p.img} alt="" loading="lazy" /><em>Online · {p.label}</em></span>
+          <span className="pc-img"><img src={p.img} alt="" loading="lazy" /><em>{kind} · {p.label}</em></span>
           <span className="pc-tx">
             <h4>{p.title}</h4>
             <span className="pc-by"><b>{p.speaker}</b>{p.role}</span>
-            <span className="pc-d">{p.date} · Online{p.next && <b className="pc-open">Registration open</b>}</span>
+            <span className="pc-d">{p.date} · {kind}{p.next && <b className="pc-open">Registration open</b>}</span>
           </span>
         </a>
       ))}

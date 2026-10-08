@@ -24,7 +24,7 @@ export default function HeroScroll() {
           <div className="hs-copy">
             <p className="hs-k">Investors only</p>
             <h1>Private Investors<br /><em>Network</em></h1>
-            <p className="hs-lead">Rare, high-quality deals from investors.<br />Co-investment. Additional capital. Private events.</p>
+            <p className="hs-lead">Hard-to-find deals, shared by investors.<br />Co-investment. Additional capital. Private events.</p>
             <div className="hs-row"><ApplyButton className="g-btn">Apply to join <Arr /></ApplyButton><span className="g-note"><i />Membership by approval</span></div>
           </div>
         </div>

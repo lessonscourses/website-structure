@@ -2,6 +2,8 @@ import HeroDust from '@/components/HeroDust';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Join from '@/components/Join';
+import Platform from '@/components/Platform';
+import Unite from '@/components/Unite';
 import { ApplyButton } from '@/components/ApplyModal';
 import { Upcoming, OnlineCard } from '@/components/Cards';
 import { upcoming } from '@/data/events';
@@ -11,9 +13,9 @@ import { ESSAYS } from '@/data/blog';
 const Arr = ({ c = 'arr' }) => <svg className={c} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 
 const WAYS = [
-  ['Online', 'by sector', 'Legends Online10 and InvestHack: deals, mandates and market views.'],
-  ['In person', 'by city', 'Legends10: private dinners for ten, in the weeks capital meets.'],
-  ['Platform', 'in between', 'Deals, asks and introductions in one place.'],
+  ['Legends10', 'In person, by city'],
+  ['Online', 'Legends Online10, InvestHack'],
+  ['AI platform', 'Matches, every day'],
 ];
 const GIVES = ['Deal flow', 'Co-investment', 'Additional capital', 'Private events'];
 
@@ -32,8 +34,8 @@ export default function Home() {
           You do not need more contacts. / You need the right ones - the people who deploy capital.
         </p>
         <ol className="ways2">
-          {WAYS.map(([h, k, p], i) => (
-            <li key={h} className={'rv d' + i}><span className="w2-n">0{i + 1}</span><h3>{h} <em>{k}</em></h3><p>{p}</p></li>
+          {WAYS.map(([h, p], i) => (
+            <li key={h} className={'rv d' + i}><span className="w2-n">0{i + 1}</span><h3>{h}</h3><p>{p}</p></li>
           ))}
         </ol>
         <div className="gives3 rv"><span className="g3-k">What members get</span><ul>{GIVES.map((g, i) => <li key={g} style={{ '--i': i }}>{g}</li>)}</ul></div>
@@ -76,6 +78,8 @@ export default function Home() {
         <div className="more-row rv"><a className="more" href="/blog">All stories <Arr c="" /></a></div>
       </div></section>
 
+      <Platform />
+      <Unite />
       <Join />
       <Footer />
     </>

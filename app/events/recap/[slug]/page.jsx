@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { RECAPS, PAST_DINNERS, pastDinner, upcoming } from '@/data/events';
-import { DinnerCard } from '@/components/Cards';
+import { PastList, asPast } from '@/components/Cards';
 
 // Recap of a past dinner: same look as the dinner page, without seats, form, time or venue.
 export const dynamicParams = false;
@@ -79,7 +79,7 @@ export default async function DinnerRecap({ params }) {
         {others.length > 0 && (
           <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
             <div className="sec-head rv"><h2 className="h2">Past dinners</h2></div>
-            <div className="dr-more">{others.map((o, i) => <DinnerCard key={o.slug} e={o} i={i} />)}</div>
+            <PastList items={others.map(asPast)} kind="In person" />
           </div></section>
         )}
       </div>

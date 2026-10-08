@@ -4,7 +4,7 @@ import Interactions from '@/components/Interactions';
 
 export const metadata = {
   title: 'Legends - Private Investors Network',
-  description: 'Rare, high-quality deals from investors. Co-investment. Additional capital. Private events. Membership by approval.',
+  description: 'Hard-to-find deals, shared by investors. Co-investment. Additional capital. Private events. Membership by approval.',
 };
 
 export default function RootLayout({ children }) {
