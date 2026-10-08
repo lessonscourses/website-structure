@@ -9,7 +9,7 @@ const ORDER = 'mmwmmwmmwm';
 
 export default function Seats() {
   return (
-    <span className="seats" aria-hidden="true">
+    <span className="ppl" aria-hidden="true">
       {ORDER.split('').map((k, i) => <i key={i} style={{ '--i': i }}>{k === 'w' ? <Woman /> : <Man />}</i>)}
     </span>
   );
