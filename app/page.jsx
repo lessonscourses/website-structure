@@ -36,7 +36,7 @@ export default function Home() {
             <li key={h} className={'rv d' + i}><span className="w2-n">0{i + 1}</span><h3>{h} <em>{k}</em></h3><p>{p}</p></li>
           ))}
         </ol>
-        <p className="gives2 rv">{GIVES.map((g) => <span key={g}>{g}</span>)}</p>
+        <div className="gives3 rv"><span className="g3-k">What members get</span><ul>{GIVES.map((g, i) => <li key={g} style={{ '--i': i }}>{g}</li>)}</ul></div>
       </div></section>
 
       <div className="mq" aria-hidden="true"><div className="mq-in" data-drift>SINGAPORE · DUBAI · ABU DHABI · RIYADH · LONDON · NEW YORK · ZURICH · PALM BEACH · ONLINE ·</div></div>

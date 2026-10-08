@@ -1,3 +1,4 @@
+import Crumbs from '@/components/Crumbs';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -39,7 +40,7 @@ export default async function EssayPage({ params }) {
       <Header />
       <div className="readbar" aria-hidden="true"><i /></div>
       <section className="art-hero"><div className="wrap">
-        <nav className="crumbs rv"><a href="/blog">Blog</a><span>/</span><span>Essay</span></nav>
+        <Crumbs items={[['Blog', '/blog'], [e.author]]} />
         <div className="art-head">
           <h1 className="art-h rv d1">{e.title}</h1>
           <p className="lead rv d2">{e.excerpt}</p>

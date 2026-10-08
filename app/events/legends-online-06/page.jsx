@@ -1,3 +1,4 @@
+import Crumbs from '@/components/Crumbs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { PastList } from '@/components/Cards';
@@ -21,6 +22,7 @@ export default function OnlineSession() {
         <div className="h-no" aria-hidden="true">{S.no}</div>
         <div className="wrap h-in">
           <div className="h-copy">
+            <Crumbs items={[['Online', '/events/online'], [`Session ${S.no}`]]} />
             <p className="h-kick rv"><span>Legends Online</span><i /><span>No. {S.no}</span></p>
             <h1 className="rv d1">{b ? <>{a} What Gets <em>{b}</em></> : S.title}</h1>
             <p className="lead rv d2">{S.lead}</p>

@@ -11,7 +11,7 @@ export default function Events() {
   return (
     <>
       <Header />
-      <PageHero word="SINGAPORE · DUBAI · ABU DHABI · RIYADH ·" title={<>Private <em>dinners</em></>} lead="Ten investors at one private table, in the cities where capital meets. Selected guests, investors only." />
+      <PageHero crumbs={[['Dinners']]} word="SINGAPORE · DUBAI · ABU DHABI · RIYADH ·" title={<>Private <em>dinners</em></>} lead="Ten investors at one private table, in the cities where capital meets. Selected guests, investors only." />
 
       <section className="sec ev-sec" data-track="offline" id="in-person" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="sec-head rv">

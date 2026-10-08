@@ -1,3 +1,4 @@
+import Crumbs from '@/components/Crumbs';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -28,6 +29,7 @@ export default async function DinnerRecap({ params }) {
           <div className="eh-bg" aria-hidden="true"><img src={e.cover} alt="" /><i className="eh-shade" /></div>
           <div className="eh-city" data-drift aria-hidden="true">{Array.from({ length: 6 }, () => e.city.toUpperCase()).join(' · ')} ·</div>
           <div className="wrap eh-in">
+            <Crumbs dark items={[['Dinners', '/events'], [`${e.city} recap`]]} />
             <p className="eh-when rv">Recap · {e.city} · {e.day} {e.month} 2026</p>
             <h1 className="eh-h rv d1"><b>One table in {e.city}.</b><br /><span>Ten investors,<br />one evening.</span></h1>
             <p className="eh-lead rv d2">{e.lead}</p>

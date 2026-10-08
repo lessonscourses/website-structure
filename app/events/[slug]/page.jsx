@@ -1,3 +1,4 @@
+import Crumbs from '@/components/Crumbs';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -38,6 +39,7 @@ export default async function EventPage({ params }) {
         </div>
         <div className="eh-city" data-drift aria-hidden="true">{Array.from({ length: 6 }, () => e.city.toUpperCase()).join(' · ')} ·</div>
         <div className="wrap eh-in">
+          <Crumbs dark items={[['Dinners', '/events'], [e.city]]} />
           <p className="eh-when rv">{e.city} · {e.day} {e.month} · Invitation only</p>
           <h1 className="eh-h rv d1"><b>You’re in {e.city} for<br />{e.heroWeek}.</b><br /><span>Meet the other nine<br />at one private table.</span></h1>
           <p className="eh-lead rv d2">A private dinner for the investors who decide where capital goes: family offices, GPs, LPs and private investors.</p>

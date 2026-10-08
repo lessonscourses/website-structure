@@ -1,3 +1,4 @@
+import Crumbs from '@/components/Crumbs';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -26,6 +27,7 @@ export default async function Recap({ params }) {
         <div className="h-no" aria-hidden="true">{r.no}</div>
         <div className="wrap h-in">
           <div className="h-copy">
+            <Crumbs items={[['Online', '/events/online'], ['Recap']]} />
             <p className="h-kick rv"><span>InvestHack #{r.no}</span><i /><span>Recap</span></p>
             <h1 className="rv d1">{r.title}</h1>
             <p className="lead rv d2">{r.lead}</p>
