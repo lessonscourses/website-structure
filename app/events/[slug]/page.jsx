@@ -33,13 +33,13 @@ export default async function EventPage({ params }) {
       {/* ===== Hero: city video on black ===== */}
       <div className="evp">
       <section className="eh">
+        <div className="wrap cb-wrap"><Crumbs dark items={[['Dinners', '/events'], [e.city]]} /></div>
         <div className="eh-bg" aria-hidden="true">
           <video autoPlay muted loop playsInline preload="auto" poster={`${MEDIA}/img/evening-1.jpg`}><source src={`https://legends.app/events/${e.slug}/media/hero.mp4`} type="video/mp4" /></video>
           <i className="eh-shade" />
         </div>
         <div className="eh-city" data-drift aria-hidden="true">{Array.from({ length: 6 }, () => e.city.toUpperCase()).join(' · ')} ·</div>
         <div className="wrap eh-in">
-          <Crumbs dark items={[['Dinners', '/events'], [e.city]]} />
           <p className="eh-when rv">{e.city} · {e.day} {e.month} · Invitation only</p>
           <h1 className="eh-h rv d1"><b>You’re in {e.city} for<br />{e.heroWeek}.</b><br /><span>Meet the other nine<br />at one private table.</span></h1>
           <p className="eh-lead rv d2">A private dinner for the investors who decide where capital goes: family offices, GPs, LPs and private investors.</p>

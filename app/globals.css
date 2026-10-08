@@ -1794,3 +1794,37 @@ html,body{overflow-x:clip}
   .ev.has-img .ev-go{margin-top:12px}
 }
 @media (max-width:900px){.eh{padding-bottom:150px!important}.eh-city{top:auto!important;bottom:24px!important;font-size:96px!important}}
+
+/* ===== breadcrumbs: ~26px under the header, clear space before the content ===== */
+:root{--hh:76px}
+@media (max-width:520px){:root{--hh:64px}}
+.phero,.eh,.h-hero,.art-hero{position:relative}
+.cb-wrap{position:absolute;left:0;right:0;top:calc(var(--hh) + 22px);z-index:5;margin:0 auto}
+.cb-wrap .crumbs2{margin:0!important}
+.phero{padding-top:calc(var(--hh) + 22px + 30px + clamp(44px,5vw,64px))!important}
+.art-hero{padding-top:calc(var(--hh) + 22px + 30px + clamp(40px,4.5vw,56px))!important}
+.h-hero,.eh{padding-top:calc(var(--hh) + 22px + 30px + clamp(48px,6vw,80px))!important}
+@media (max-width:900px){.phero{padding-top:calc(var(--hh) + 20px + 30px + 40px)!important}.h-hero,.eh,.art-hero{padding-top:calc(var(--hh) + 20px + 30px + 40px)!important}.cb-wrap{top:calc(var(--hh) + 20px)}}
+
+/* ===== plain dates next to the day number ===== */
+.ev-d.plain{align-items:baseline;gap:8px}
+.ev-d.plain span{font-size:14px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink-2);line-height:1}
+.ev.next .ev-d.plain span{color:rgba(255,255,255,.7)}
+/* labels without icons */
+.tag2 i{display:none}
+.tag2{color:var(--ink-3)}
+
+/* ===== next dinners list on phones ===== */
+@media (max-width:760px){
+  .up-list{margin-top:6px}
+  .up-list .er{grid-template-columns:1fr auto!important;grid-template-rows:auto auto;column-gap:16px;row-gap:6px;padding:22px 2px!important;align-content:center}
+  .up-list .er .ev-d{grid-column:1;grid-row:1}
+  .up-list .er .er-c{grid-column:1;grid-row:2}
+  .up-list .er>svg{grid-column:2;grid-row:1/3;align-self:center}
+  .up-list .er .ev-d b{font-size:15px;font-weight:600;letter-spacing:0;line-height:1;color:var(--gold-d)}
+  .up-list .er .ev-d span{font-size:15px;color:var(--gold-d)}
+  .up-list .er h4{font-size:24px!important;line-height:1.1}
+  .up-list .er-c span{margin-top:6px;font-size:13.5px;line-height:1.4}
+}
+.ev-d.plain{flex-direction:row!important;align-items:baseline!important;white-space:nowrap}
+@media (max-width:760px){.up-list .er .ev-d{gap:6px}}

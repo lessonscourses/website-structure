@@ -7,7 +7,7 @@ export function EventCard({ e, next = false }) {
   return (
     <a className={'ev' + (next ? ' next' : '') + (e.img ? ' has-img' : '')} href={e.url}>
       {e.img && <span className="ev-img"><img src={e.img} alt="" loading="lazy" /></span>}
-      <span className="ev-d"><b>{e.day}</b><span>{e.dow}<br />{e.month.slice(0, 3)}</span></span>
+      <span className="ev-d plain"><b>{e.day}</b><span>{e.month.slice(0, 3)}, {e.dow}</span></span>
       <h3>{e.city}</h3>
       <p>{e.week} week</p>
       <ul className="ev-meta"><li>{e.time}</li><li>{e.seats} investors</li></ul>
@@ -125,7 +125,7 @@ export function Upcoming({ events }) {
 export function EventRow({ e }) {
   return (
     <a className="er" href={e.url}>
-      <span className="ev-d"><b>{e.day}</b><span>{e.dow}<br />{e.month.slice(0, 3)}</span></span>
+      <span className="ev-d plain"><b>{e.day}</b><span>{e.month.slice(0, 3)}, {e.dow}</span></span>
       <span className="er-c"><h4>{e.city}</h4><span>{e.week} week · {e.time}</span></span>
       <Arr />
     </a>

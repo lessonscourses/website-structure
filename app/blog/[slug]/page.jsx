@@ -39,8 +39,8 @@ export default async function EssayPage({ params }) {
     <>
       <Header />
       <div className="readbar" aria-hidden="true"><i /></div>
-      <section className="art-hero"><div className="wrap">
-        <Crumbs items={[['Blog', '/blog'], [e.author]]} />
+      <section className="art-hero">
+        <div className="wrap cb-wrap"><Crumbs items={[['Blog', '/blog'], [e.author]]} /></div><div className="wrap">
         <div className="art-head">
           <h1 className="art-h rv d1">{e.title}</h1>
           <p className="lead rv d2">{e.excerpt}</p>

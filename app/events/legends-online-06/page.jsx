@@ -19,10 +19,10 @@ export default function OnlineSession() {
       <Header cta={{ href: '#register', label: 'Reserve your seat' }} />
 
       <section className="h-hero" id="top">
+        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], [`Session ${S.no}`]]} /></div>
         <div className="h-no" aria-hidden="true">{S.no}</div>
         <div className="wrap h-in">
           <div className="h-copy">
-            <Crumbs items={[['Online', '/events/online'], [`Session ${S.no}`]]} />
             <p className="h-kick rv"><span>Legends Online</span><i /><span>No. {S.no}</span></p>
             <h1 className="rv d1">{b ? <>{a} What Gets <em>{b}</em></> : S.title}</h1>
             <p className="lead rv d2">{S.lead}</p>

@@ -45,10 +45,10 @@ export default function Home() {
       <section className="sec" id="events"><div className="wrap">
         <div className="sec-head rv"><h2 className="h2">Events</h2></div>
 
-        <p className="tag2 rv"><i />In person</p>
+        <p className="tag2 rv">In person</p>
         <Upcoming events={events} />
 
-        <p className="tag2 on rv" style={{ marginTop: 'clamp(44px,5vw,70px)' }}><i />Online</p>
+        <p className="tag2 on rv" style={{ marginTop: 'clamp(44px,5vw,70px)' }}>Online</p>
         <div className="rv"><OnlineCard s={ONLINE_NEXT} /></div>
 
         <div className="more-row rv"><a className="more" href="/events">All dinners <Arr c="" /></a><a className="more" href="/events/online">All online sessions <Arr c="" /></a></div>
