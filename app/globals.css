@@ -1836,3 +1836,8 @@ html,body{overflow-x:clip}
 .et-cap{min-width:0;overflow-wrap:anywhere}
 @media (max-width:900px){.et-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.et-list{grid-template-columns:minmax(0,1fr)}}
+
+/* upcoming rows (desktop/tablet): date column sized to the plain date */
+@media (min-width:761px){
+  .up-list .er{grid-template-columns:minmax(124px,max-content) 1fr auto!important;column-gap:24px!important}
+}
