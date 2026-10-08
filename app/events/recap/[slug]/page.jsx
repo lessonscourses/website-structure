@@ -62,8 +62,8 @@ export default async function DinnerRecap({ params }) {
         <section className="oc-band"><div className="wrap oc-band-in">
           <h2 className="h2 rv">One evening.<br />One relationship<br />may be enough.</h2>
           <figure className="dr-q rv d1">
-            <blockquote>“Every deal I regret started with the wrong introduction. Every one I’m proud of started with the right one.”</blockquote>
-            <figcaption><b>Yanis Chkhatval</b>Founder of Legends</figcaption>
+            <blockquote>“Every deal I regret started with the wrong introduction. Every deal I’m proud of started with the right one.”</blockquote>
+            <figcaption><b>Yanis Chkhatval</b>Private investor and entrepreneur, founder of Legends</figcaption>
           </figure>
         </div></section>
 

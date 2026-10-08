@@ -11,8 +11,8 @@ export default function Join() {
           <p className="lead">Legends is for people who invest their own capital or manage it for a family office, fund or institution. Every application is reviewed personally.</p>
           <ApplyButton className="g-btn">Apply to join <Arr /></ApplyButton>
           <figure className="jn-q">
-            <blockquote>“Every deal I regret started with the wrong introduction. Every one I’m proud of started with the right one.”</blockquote>
-            <figcaption><b>Yanis Chkhatval</b>Private investor &amp; entrepreneur. Founder of Legends.</figcaption>
+            <blockquote>“Every deal I regret started with the wrong introduction. Every deal I’m proud of started with the right one.”</blockquote>
+            <figcaption><b>Yanis Chkhatval</b>Private investor and entrepreneur, founder of Legends</figcaption>
           </figure>
         </div>
         <div className="jn-ph" aria-hidden="true"><span className="jn-glow" /><img src="/brand/yanis.webp" alt="" /></div>

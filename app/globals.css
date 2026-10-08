@@ -1837,7 +1837,14 @@ html,body{overflow-x:clip}
 @media (max-width:900px){.et-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.et-list{grid-template-columns:minmax(0,1fr)}}
 
-/* upcoming rows (desktop/tablet): date column sized to the plain date */
+/* upcoming rows (desktop/tablet): same structure as phones - date line, city, details */
 @media (min-width:761px){
-  .up-list .er{grid-template-columns:minmax(124px,max-content) 1fr auto!important;column-gap:24px!important}
+  .up-list .er{grid-template-columns:1fr auto!important;grid-template-rows:auto auto;column-gap:24px;row-gap:0;padding:24px 4px!important;align-content:center}
+  .up-list .er .ev-d{grid-column:1;grid-row:1;gap:7px;margin-bottom:8px}
+  .up-list .er .er-c{grid-column:1;grid-row:2}
+  .up-list .er>svg{grid-column:2;grid-row:1/3;align-self:center}
+  .up-list .er .ev-d b{font-size:15px;font-weight:600;letter-spacing:0;line-height:1;color:var(--gold-d)}
+  .up-list .er .ev-d span{font-size:15px;font-weight:500;color:var(--gold-d)}
+  .up-list .er h4{font-size:clamp(28px,2.4vw,34px)!important;line-height:1.05}
+  .up-list .er-c span{margin-top:8px;font-size:14.5px;line-height:1.4}
 }

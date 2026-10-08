@@ -105,8 +105,8 @@ export default async function EventPage({ params }) {
           <p>The goal is not to fill the table. It is to make the table worth joining.</p>
           <SeatTable />
           <figure className="inv-q">
-            <blockquote>“Every deal I regret started with the wrong introduction. Every one I’m proud of started with the right one.”</blockquote>
-            <figcaption><img src={`${MEDIA}/img/yanis.jpg`} alt="Yanis Chkhatval" /><span><b>Yanis Chkhatval</b>Private investor &amp; entrepreneur. Founder of Legends.</span></figcaption>
+            <blockquote>“Every deal I regret started with the wrong introduction. Every deal I’m proud of started with the right one.”</blockquote>
+            <figcaption><img src={`${MEDIA}/img/yanis.jpg`} alt="Yanis Chkhatval" /><span><b>Yanis Chkhatval</b>Private investor and entrepreneur, founder of Legends</span></figcaption>
           </figure>
         </div>
         <div className="inv-form rv d1">
