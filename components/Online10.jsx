@@ -11,33 +11,25 @@ const CITIES = [
   ['Riyadh', 63.5, 38.0, 'l', 4], ['Dubai, Abu Dhabi', 66.6, 37.5, 'r', -10], ['Mumbai', 72.8, 43.7, 'r', 6],
   ['Hong Kong', 87.4, 40.4, 'r', 0], ['Singapore', 83.7, 61.3, 'l', 0],
 ];
+const GLOBE_CITIES = [['San Francisco', 37.8, -122.4], ['New York', 40.7, -74], ['London', 51.5, -0.1], ['Amsterdam', 52.4, 4.9, 0], ['Zurich', 47.4, 8.5, 0], ['Monaco', 43.7, 7.4, 0], ['Riyadh', 24.7, 46.7, 0], ['Dubai, Abu Dhabi', 25.2, 55.3], ['Mumbai', 19.1, 72.9], ['Hong Kong', 22.3, 114.2], ['Singapore', 1.35, 103.8]];
 const INDUSTRIES = ['Artificial intelligence', 'Healthcare & biotech', 'Infrastructure & real estate', 'Energy & resources', 'Fintech & private credit'];
 
 export default function Online10() {
   return (
     <section className="sec o1" id="online10"><div className="wrap">
-      <div className="o1-g" data-o10>
+      <div className="o1-g2">
         <div className="o1-l">
-          <h2 className="h2 rv">Legends Online10</h2>
-          <p className="pf-sub rv d1">Your industry. Worldwide.</p>
-          <p className="o1-lead rv d1">Up to 10 investors at one online table, 1-2 times a month.</p>
-          <div className="pf-ps rv d2">
-            <p><span>Problem</span><span className="pf-xw"><s className="pf-x">The investors you need are in other cities and time zones.</s></span></p>
-            <p><span>Legends</span><b>Networking, deals and insights, without the flight.</b></p>
+          <div className="bh">
+            <h2 className="h2 rv">Legends Online10</h2>
+            <p className="pf-sub rv d1">Your industry. Worldwide.</p>
+            <p className="bh-tx rv d1">Up to 10 investors at one online table, 1-2 times a month. Networking, deals and insights, without the flight.</p>
           </div>
-          <p className="o1-ind rv d2"><span>By industry</span><b className="o1-rot" aria-live="off">{INDUSTRIES.map((t, i) => <i key={t} className={i ? '' : 'on'}>{t}</i>)}</b></p>
-          <p className="o1-flow rv d2"><span>At every call</span><span className="o1-fl">Short intros <em>→</em> Asks & gives <em>→</em> Networking</span></p>
-        </div>
-        <div className="o1-r rv d1">
-          <p className="o1-k">Members and guests from</p>
-          <div className="o1-map">
-            <img src="/brand/world-dots.svg" alt="" />
-            {CITIES.map(([n, x, y, s, dy], i) => (
-              <span key={n} className={'o1-pin ' + s} style={{ left: x + '%', top: y + '%', '--i': i, '--dy': dy + 'px' }}><i /><b>{n}</b></span>
-            ))}
+          <div className="o1-facts rv d2" data-o10>
+            <p><span>By industry</span><b className="o1-rot" aria-live="off">{INDUSTRIES.map((t, i) => <i key={t} className={i ? '' : 'on'}>{t}</i>)}</b></p>
+            <p><span>At every call</span><b>Short intros <em>→</em> Asks & gives <em>→</em> Networking</b></p>
           </div>
-          <p className="o1-list">{CITIES.map(([n]) => n).join(' · ')}</p>
         </div>
+        <div className="o1-globe rv d1"><canvas data-globe={JSON.stringify(GLOBE_CITIES)} aria-label="Members and guests from 11 cities" role="img" /></div>
       </div>
       <div className="o1-next rv">
         <p className="o1-k">Next online session · InvestHack</p>
