@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import PageHero from '@/components/PageHero';
 import Footer from '@/components/Footer';
 import { EventCard, PastList, asPast } from '@/components/Cards';
-import { upcoming, PAST_DINNERS } from '@/data/events';
+import { upcoming, PAST_ALL } from '@/data/events';
 
 export const metadata = { title: 'Legends10 - Legends', description: 'Up to 10 investors at one table. Private dinners by city, during the biggest global investor summits.' };
 
@@ -22,8 +22,8 @@ export default function Events() {
           {events.map((e, i) => <div key={e.slug} className={'rv d' + (i % 4)}><EventCard e={e} /></div>)}
         </div>
         <p className="note rv">More cities for November and December will be announced here.</p>
-        <div className="past-h rv"><h3>Past dinners</h3><span>{PAST_DINNERS.length} dinners</span></div>
-        <PastList items={PAST_DINNERS.map(asPast)} paged={10} kind="In person" />
+        <div className="past-h rv"><h3>Past dinners</h3><span>{PAST_ALL.length} dinners</span></div>
+        <PastList items={PAST_ALL.map(asPast)} paged={10} kind="In person" />
       </div></section>
 
       <Footer />

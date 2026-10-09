@@ -41,6 +41,14 @@ const G = '/gallery';
 // Layout example for a dinner recap, open at /events/recap/example.
 // TODO: replace with a real evening (text, numbers, photos, video) and list it in PAST_DINNERS.
 export const RECAPS = [
+  // TODO: demo recap for Legends10 Singapore (8 Oct 2026) - replace text, numbers and photos with the real evening.
+  { slug: 'singapore-081026', city: 'Singapore', day: 8, dow: 'Thu', month: 'October', week: 'Milken Institute Asia Summit week', cover: 'https://belegends.club/api/files/pbc_1687431684/sxxpr1szvneou6e/sin_new_9oaezpbbck.png',
+    title: 'Legends10 Singapore · Milken Institute Asia Summit week',
+    lead: 'Ten investors at one table during Milken Asia week. Family offices from Singapore and the Gulf, two fund managers and a private investor compared notes on Asian private credit, AI infrastructure and co-investing across the region.',
+    story: ['The evening opened with short intros around the table: who each guest is, what they invest in and where.', 'Then asks and gives - one each. Two guests were looking for co-investors in data-centre deals in Southeast Asia, another offered access to a private credit fund closing later this year.', 'Dinner turned into open conversation. By the end of the night several follow-ups were agreed person to person, only where both sides said yes.'],
+    stats: [['10', 'Investors at the table'], ['5', 'Countries represented'], ['7', 'Follow-ups agreed']],
+    themes: ['Asian private credit', 'AI and data-centre infrastructure', 'Family office co-investment', 'Gulf capital into Asia'],
+    photos: [`${G}/evening-3.jpg`, `${G}/evening-1.jpg`, `${G}/evening-4.jpg`, `${G}/evening-2.jpg`, `${G}/evening-5.jpg`], video: `${MEDIA}/media/highlights.mp4` },
   { slug: 'example', city: 'Dubai', day: 17, dow: 'Thu', month: 'September', week: 'Dubai FinTech week', template: true, cover: `${G}/evening-4.jpg`,
     lead: 'Ten investors, one table on the 70th floor. Family offices from the Gulf, two GPs from London and a founder-turned-LP compared notes on private credit and secondaries.',
     story: ['The evening opened with a short round of asks and gives: what each guest was looking for this quarter and what they could offer the table.', 'By dessert three co-investment conversations had started, and two guests agreed to look at the same secondary deal together the following week.', 'As always, nothing was pitched from a stage. The introductions were made person to person, only where both sides said yes.'],
@@ -49,3 +57,6 @@ export const RECAPS = [
     photos: [`${G}/evening-4.jpg`, `${G}/evening-1.jpg`, `${G}/evening-3.jpg`, `${G}/evening-2.jpg`, `${G}/evening-5.jpg`], video: `${MEDIA}/media/highlights.mp4` },
 ].map((e) => ({ ...e, url: `/events/recap/${e.slug}`, date: `${e.dow}, ${e.day} ${e.month.slice(0, 3)} 2026` }));
 export const pastDinner = (slug) => RECAPS.find((e) => e.slug === slug);
+
+// Past dinners list: recaps (newest first) + the older Luma dinners
+export const PAST_ALL = [...RECAPS.filter((r) => !r.template).map((r) => ({ ...r, title: r.title || `Legends10 ${r.city}` })), ...PAST_DINNERS];
