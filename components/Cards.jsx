@@ -16,19 +16,19 @@ export function EventCard({ e, next = false }) {
   );
 }
 
-// Next online session in the same card format as the dinners
-export function SessionCard({ s, img }) {
+// Next online session / Online10 table in the same card format as the dinners
+export function SessionCard({ s, img, tag = 'InvestHack', name, text }) {
   const [city, t] = s.times.find(([c]) => c === 'London') || s.times[0];
   const [, hh, mm, ap] = t.match(/(\d+):(\d+)\s*(AM|PM)/i) || [, 12, '00', 'PM'];
   const h = (+hh % 12) + (/pm/i.test(ap) ? 12 : 0), f = (x) => String(x % 24).padStart(2, '0') + ':' + mm;
   return (
-    <a className="ev has-img ses" href={s.url}>
-      {img && <span className="ev-img"><img src={img} alt="" loading="lazy" /></span>}
+    <a className={'ev has-img ses' + (tag === 'Online10' ? ' is-o10' : '')} href={s.url}>
+      <span className="ev-img">{img && <img src={img} alt="" loading="lazy" />}<em className="ev-tag">{tag}</em></span>
       <span className="ev-d plain"><b>{s.day}</b><span>{s.month.slice(0, 3)}, {s.dow}</span></span>
-      <h3>{s.speaker}</h3>
-      <p>{s.title}</p>
-      <ul className="ev-meta"><li>{f(h)}-{f(h + 1)} {city}</li><li>On Zoom</li></ul>
-      <span className="ev-go">View the session <Arr /></span>
+      <h3>{name || s.speaker}</h3>
+      <p>{text || s.title}</p>
+      <ul className="ev-meta"><li>{f(h)}-{f(h + 1)} {city}</li><li>{tag === 'Online10' ? `${s.seats} seats` : 'On Zoom'}</li></ul>
+      <span className="ev-go">{tag === 'Online10' ? 'View the table' : 'View the session'} <Arr /></span>
     </a>
   );
 }
@@ -56,7 +56,7 @@ export function PastList({ items, paged, kind = 'Online' }) {
   return (
     <div className="pc-grid" {...(paged ? { 'data-paged': paged } : {})}>
       {items.map((p) => (
-        <a key={p.url} className={'pc' + (p.next ? ' next' : '')} href={p.url} {...(p.url.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' })}>
+        <a key={p.url} className={'pc' + (p.next ? ' next' : '')} data-kind={p.kind || (/AI-matched/i.test(p.label || '') ? 'other' : 'investhack')} href={p.url} {...(p.url.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' })}>
           <span className="pc-img"><img src={p.img} alt="" loading="lazy" /><em>{kind} · {p.label}</em></span>
           <span className="pc-tx">
             <h4>{p.title}</h4>

@@ -120,3 +120,19 @@ export const ONLINE_RECAPS = [
   },
 ];
 export const recap = (slug) => ONLINE_RECAPS.find((r) => r.slug === slug);
+
+// Legends Online10: up to 10 investors at one online table, by industry. No speaker.
+// AI table on 21 Oct 2026 (time is a placeholder: 17:00 Dubai / 14:00 London - confirm).
+export const ONLINE10 = [
+  {
+    slug: 'ai-211026',
+    industry: 'Artificial intelligence',
+    title: 'Artificial intelligence table',
+    day: 21, dow: 'Wed', month: 'October', iso: '2026-10-21',
+    times: [['Dubai', '5:00 PM'], ['London', '2:00 PM'], ['New York', '9:00 AM'], ['Singapore', '9:00 PM']],
+    startsAt: '2026-10-21T13:00:00Z',
+    seats: 10,
+    lead: 'Up to 10 investors in artificial intelligence at one online table. No stage, no speaker - intros, asks & gives and networking with peers from other cities.',
+  },
+].map((t) => ({ ...t, url: `/events/online10/${t.slug}` }));
+export const online10 = (slug) => ONLINE10.find((t) => t.slug === slug);

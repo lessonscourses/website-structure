@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Join from '@/components/Join';
 import Platform from '@/components/Platform';
-import Unite from '@/components/Unite';
 import Online10 from '@/components/Online10';
 import { ApplyButton } from '@/components/ApplyModal';
 import Legends10 from '@/components/Legends10';
@@ -71,7 +70,6 @@ export default function Home() {
       </div></section>
 
       <Platform />
-      <Unite />
       <Join />
       </main>
       <Footer />

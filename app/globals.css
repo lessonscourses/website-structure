@@ -2129,3 +2129,26 @@ html,body{overflow-x:clip}
 .ab-seats .ppl{margin:0!important}
 .ab-h3+.ab-cols{margin-top:18px}
 .ev.ses p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* card tag (InvestHack / Online10) */
+.ev-img{position:relative}
+.ev-tag{position:absolute;left:12px;bottom:12px;padding:5px 11px;border-radius:999px;background:rgba(23,19,12,.78);color:#fff;font-style:normal;font-size:12px;font-weight:600;letter-spacing:.02em;backdrop-filter:blur(6px)}
+.ev.is-o10 .ev-tag{background:var(--gold);color:#17130c}
+/* Online10 page hero globe */
+.o10h-globe{justify-self:center;width:min(100%,560px)}
+.o10h-globe canvas{display:block;width:100%;aspect-ratio:1}
+.o10h .about-pg{padding-top:0}
+@media (max-width:980px){.o10h-globe{width:min(100%,420px);margin:10px auto 0}}
+.ev.ses h3{white-space:normal;overflow-wrap:anywhere;font-size:clamp(26px,2.3vw,34px);line-height:1.05}
+.ev.ses .ev-meta li{white-space:nowrap}
+
+/* light filter tabs */
+.ftabs{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 clamp(28px,3vw,40px);padding:4px;border-radius:999px;background:rgba(197,153,58,.08);width:max-content;max-width:100%}
+.ftabs button{border:0;background:none;cursor:pointer;padding:8px 16px;border-radius:999px;font:500 14px/1 inherit;font-family:inherit;color:var(--ink-2);transition:background .25s,color .25s}
+.ftabs button:hover{color:var(--ink)}
+.ftabs button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 4px 14px -8px rgba(60,40,10,.35)}
+[data-filter="investhack"] [data-kind="online10"],[data-filter="online10"] [data-kind="investhack"]{display:none!important}
+.f-empty{display:none;font-size:15px;color:var(--ink-3)}
+[data-filter="online10"] .pc-grid[data-empty="1"]+.f-empty,[data-filter="online10"] .pc-grid[data-empty="1"]~.f-empty{display:block}
+@media (max-width:560px){.ftabs button{padding:8px 12px;font-size:13px}}
+[data-filter="investhack"] [data-kind="other"],[data-filter="online10"] [data-kind="other"]{display:none!important}
