@@ -14,6 +14,7 @@ export default function Footer() {
           <li><a href="/events">Legends10</a></li>
           <li><a href="/events/online">Legends Online10</a></li>
           <li><a href="/events/online#investhack">InvestHack</a></li>
+          <li><a href="/ai-platform">AI platform</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul></div>
         <div><h4>Membership</h4><ul>
