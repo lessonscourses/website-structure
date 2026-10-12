@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Crumbs from '@/components/Crumbs';
 import HvSteps from '@/components/hv/HvSteps';
-import { MatchStory, LiveHub } from '@/components/hv/HvLive';
+import { MatchCards, VennHub } from '@/components/hv/HvPick';
 import { Head, Problem, Chat, Manager, Founder, JoinCard } from '@/components/hv/Hv';
 import '../hv.css';
 
@@ -20,7 +20,7 @@ export default function AiPlatform() {
             <Head title="AI platform" sub="The right investors find you" />
             <Problem p="The right co-investor, peer or hobby partner takes years to find." s="Legends AI matches you based on your asks, needs and offers. A real person makes every intro." />
           </div>
-          <MatchStory />
+          <MatchCards />
         </div></section>
 
         <section className="sec" id="how"><div className="wrap">
@@ -35,7 +35,7 @@ export default function AiPlatform() {
 
         <section className="sec"><div className="wrap">
           <Head title="One platform connects it all" sub="Every format feeds one profile" />
-          <div className="rv" style={{ marginTop: 'clamp(36px,4vw,56px)' }}><LiveHub /></div>
+          <div className="rv" style={{ marginTop: 'clamp(36px,4vw,56px)' }}><VennHub /></div>
         </div></section>
 
         <section className="sec hv-fj"><div className="wrap"><Founder /><JoinCard /></div></section>

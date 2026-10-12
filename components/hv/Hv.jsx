@@ -1,7 +1,7 @@
 // Home / About / AI platform building blocks (overview structure, Tony-style visuals). Styles: app/hv.css
 import HvCarousel from './HvCarousel';
 import HvVoices from './HvVoices';
-import { LiveHub } from './HvLive';
+import { VennHub } from './HvPick';
 
 export const Arr = () => <svg className="hv-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 export const WA = 'https://wa.me/35797916299';
@@ -151,7 +151,7 @@ export function AiBlock({ link = true }) {
       <Problem p="The right co-investor, peer or hobby partner takes years to find." s="AI matches you with investors based on your asks, needs and offers." />
       <div className="hv-ai"><Manager /><Chat /></div>
       <h3 className="hv-k rv">One platform connects it all</h3>
-      <div className="rv"><LiveHub /></div>
+      <div className="rv"><VennHub /></div>
       {link && <More href="/ai-platform">Explore the AI platform</More>}
     </div></section>
   );
