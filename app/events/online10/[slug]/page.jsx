@@ -7,7 +7,7 @@ import { ONLINE10, online10 } from '@/data/online';
 import { PRIVACY_URL, TERMS_URL } from '@/data/links';
 import '../../../online.css';
 
-// Legends Online10 table: up to 10 investors at one online table, by industry. No speaker.
+// Legends Online10 table: up to 10 investors in one online session, by industry. No speaker.
 export const generateStaticParams = () => ONLINE10.map((t) => ({ slug: t.slug }));
 export async function generateMetadata({ params }) {
   const t = online10((await params).slug);
@@ -17,12 +17,12 @@ export async function generateMetadata({ params }) {
 const Arr = () => <svg className="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 const GLOBE = [['San Francisco', 37.8, -122.4], ['New York', 40.7, -74], ['London', 51.5, -0.1], ['Amsterdam', 52.4, 4.9, 0], ['Zurich', 47.4, 8.5, 0], ['Monaco', 43.7, 7.4, 0], ['Riyadh', 24.7, 46.7, 0], ['Dubai, Abu Dhabi', 25.2, 55.3], ['Mumbai', 19.1, 72.9], ['Hong Kong', 22.3, 114.2], ['Singapore', 1.35, 103.8]];
 const CALL = [
-  ['Short intros', 'Everyone at the table: who you are, what you invest in and where.'],
+  ['Short intros', 'Everyone in the session: who you are, what you invest in and where.'],
   ['Asks & gives', 'One ask and one give each: a co-investor, deal flow, LPs, an introduction - or a deal, expertise, a contact, capital.'],
   ['Networking', 'Open conversation with peers in your industry. Follow up directly after the call.'],
 ];
 const WHO = [['Family offices', 'Principals, CIOs'], ['Fund managers', 'VC, PE, private credit'], ['LPs & allocators', 'Into funds, strategies'], ['Private investors', 'Angels, own capital']];
-const RULES = [['Cameras on', 'A table, not a webinar. Join from a quiet place.'], ['Give first', 'Offer before you ask.'], ['Invitation only', 'Your seat is personal. No plus-ones or colleagues.']];
+const RULES = [['Cameras on', 'A conversation, not a webinar. Join from a quiet place.'], ['Give first', 'Offer before you ask.'], ['Invitation only', 'Your seat is personal. No plus-ones or colleagues.']];
 
 export default async function Online10Page({ params }) {
   const t = online10((await params).slug);
@@ -32,7 +32,7 @@ export default async function Online10Page({ params }) {
       <Header cta={{ href: '#register', label: 'Request a seat' }} />
 
       <section className="h-hero o10h" id="top">
-        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], [`Online10 · ${t.industry}`]]} /></div>
+        <div className="wrap cb-wrap"><Crumbs items={[['Legends Online10', '/events/online10'], [t.industry]]} /></div>
         <div className="wrap h-in">
           <div className="h-copy">
             <p className="h-kick rv"><span>Legends Online10</span><i /><span>{t.industry}</span></p>
@@ -47,9 +47,9 @@ export default async function Online10Page({ params }) {
 
       <main className="about-pg">
         <section className="sec" id="table"><div className="wrap">
-          <span className="ab-n rv">The table</span>
+          <span className="ab-n rv">The session</span>
           <h2 className="h2 rv">No speaker. Just the right ten.</h2>
-          <p className="bh-tx rv d1">The investors you need are often in other cities and time zones. Online10 puts up to 10 of them at one table, by industry, 1-2 times a month: networking, deals and insights, without the flight.</p>
+          <p className="bh-tx rv d1">The investors you need are often in other cities and time zones. Online10 puts up to 10 of them in one session, by industry, 1-2 times a month: networking, deals and insights, without the flight.</p>
           <div className="ab-seats rv d1"><Seats /><span>Up to {t.seats} investors, each reviewed personally.</span></div>
           <ul className="ab-cols four rv d2">{WHO.map(([h, p]) => <li key={h}><b>{h}</b><span>{p}</span></li>)}</ul>
         </div></section>
@@ -70,8 +70,8 @@ export default async function Online10Page({ params }) {
 
         <section className="sec" id="register"><div className="wrap inv2">
           <div className="inv-card rv">
-            <h2>{t.seats} seats, one table</h2>
-            <p>Every request is reviewed. Confirmed investors receive the call link before the table.</p>
+            <h2>{t.seats} seats, one session</h2>
+            <p>Every request is reviewed. Confirmed investors receive the call link before the session.</p>
             <dl className="on-reg-facts">
               <div><dt>Date</dt><dd>{t.dow}, {t.day} {t.month} 2026</dd></div>
               <div><dt>Time</dt><dd>{t.times[0][1]} {t.times[0][0]} · {t.times[1][1]} {t.times[1][0]}</dd></div>
@@ -91,7 +91,7 @@ export default async function Online10Page({ params }) {
               <button className="btn gold big" type="submit">Request a seat <Arr /></button>
               <p className="af-legal">By submitting, you agree to our <a href={TERMS_URL}>Terms</a> and <a href={PRIVACY_URL}>Privacy</a>.</p>
             </form>
-            <div className="inv-done" hidden><h3>Request received</h3><p>We’ll confirm your seat and send the call link before the table.</p></div>
+            <div className="inv-done" hidden><h3>Request received</h3><p>We’ll confirm your seat and send the call link before the session.</p></div>
           </div>
         </div></section>
       </main>

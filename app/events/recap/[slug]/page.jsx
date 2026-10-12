@@ -34,7 +34,7 @@ export default async function DinnerRecap({ params }) {
           <div className="eh-city" data-drift aria-hidden="true">{Array.from({ length: 6 }, () => e.city.toUpperCase()).join(' · ')} ·</div>
           <div className="wrap eh-in">
             <p className="eh-when rv">Recap · {e.city} · {e.day} {e.month} 2026</p>
-            <h1 className="eh-h rv d1"><b>One table in {e.city}.</b><br /><span>Ten investors,<br />one evening.</span></h1>
+            <h1 className="eh-h rv d1"><b>One evening in {e.city}.</b><br /><span>Ten investors,<br />one evening.</span></h1>
             <p className="eh-lead rv d2">{e.lead}</p>
             <a className="btn gold big rv d3" href="#gallery">See the evening <Arr /></a>
           </div>
@@ -48,7 +48,7 @@ export default async function DinnerRecap({ params }) {
           </div>
           <div className="rc3 rv d2">
             <dl className="rc3-facts">{e.stats.map(([v, k]) => { const [a, ...b] = k.split(' '); return <div key={k}><dt>{v}</dt><dd>{a}<br />{b.join(' ')}</dd></div>; })}</dl>
-            <p className="rc3-themes"><span>On the table:</span> {e.themes.join(', ')}.</p>
+            <p className="rc3-themes"><span>Discussed:</span> {e.themes.join(', ')}.</p>
           </div>
         </div></section>
 

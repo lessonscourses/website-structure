@@ -12,8 +12,8 @@ export default function Footer() {
         <div><h4>Explore</h4><ul>
           <li><a href="/about">How Legends works</a></li>
           <li><a href="/events">Legends10</a></li>
-          <li><a href="/events/online">Legends Online10</a></li>
-          <li><a href="/events/online#investhack">InvestHack</a></li>
+          <li><a href="/events/online10">Legends Online10</a></li>
+          <li><a href="/events/online">InvestHack</a></li>
           <li><a href="/ai-platform">AI platform</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul></div>

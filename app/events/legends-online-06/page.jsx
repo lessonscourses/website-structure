@@ -19,7 +19,7 @@ export default function OnlineSession() {
       <Header cta={{ href: '#register', label: 'Reserve your seat' }} />
 
       <section className="h-hero" id="top">
-        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], [`InvestHack #${S.no}`]]} /></div>
+        <div className="wrap cb-wrap"><Crumbs items={[['InvestHack', '/events/online'], [`InvestHack #${S.no}`]]} /></div>
         <div className="h-no" aria-hidden="true">{S.no}</div>
         <div className="wrap h-in">
           <div className="h-copy">
@@ -60,7 +60,7 @@ export default function OnlineSession() {
       </div></section>
 
       <section className="sec d-hour" id="hour" style={{ paddingTop: 0 }}><div className="wrap">
-        <div className="sec-head rv"><h2 className="h2">Sixty minutes, then the room</h2><p className="lead">30-minute talk, then a closed discussion with the speaker. Small group, cameras on.</p></div>
+        <div className="sec-head rv"><h2 className="h2">Sixty minutes, then the discussion</h2><p className="lead">30-minute talk, then a closed discussion with the speaker. Small group, cameras on.</p></div>
         <div className="d-track rv">
           <div className="d-marks"><span style={{ left: 0 }}>0'</span><span style={{ left: '22.1%' }}>10'</span><span style={{ left: '56.6%' }}>30'</span><span style={{ left: '100%' }}>60'</span></div>
           <div className="d-rail"><i className="r1" /><i className="r2" /><i className="r3" /><span className="d-head" /></div>

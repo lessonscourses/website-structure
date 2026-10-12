@@ -22,7 +22,7 @@ export default function Online10() {
           <div className="bh">
             <h2 className="h2 rv">Legends Online10</h2>
             <p className="pf-sub rv d1">Your industry. Worldwide.</p>
-            <p className="bh-tx rv d1">Up to 10 investors at one online table, 1-2 times a month. Networking, deals and insights, without the flight.</p>
+            <p className="bh-tx rv d1">Up to 10 investors in one online session, 1-2 times a month. Networking, deals and insights, without the flight.</p>
           </div>
           <div className="o1-facts rv d2" data-o10>
             <p><span>By industry</span><b className="o1-rot" aria-live="off">{INDUSTRIES.map((t, i) => <i key={t} className={i ? '' : 'on'}>{t}</i>)}</b></p>

@@ -29,7 +29,7 @@ export function More({ href, children }) {
 export function Formats({ title = 'One network. Three ways in.', sub = 'Dinners by city, sessions by industry and one platform in between.' }) {
   const F = [
     ['01', 'Legends10', 'In person, city by city', '/events', '/gallery/evening-1.jpg'],
-    ['02', 'Online', 'Legends Online10, InvestHack', '/events/online', '/brand/online10-card.jpg'],
+    ['02', 'Online', 'Legends Online10, InvestHack', '/events/online10', '/brand/online10-card.jpg'],
     ['03', 'AI platform', 'Matches and introductions', '/ai-platform', '/gallery/evening-2.jpg'],
   ];
   return (
@@ -79,7 +79,7 @@ export function Online10Block({ link = true }) {
           </div>
         </div>
         <div className="hv-who rv d1">
-          <p className="hv-cap">Who is at the table</p>
+          <p className="hv-cap">Who joins</p>
           <ul>{WHO.map(([h, p]) => <li key={h}><b>{h}</b><span>{p}</span></li>)}</ul>
         </div>
         <div className="hv-call rv d2">
@@ -91,7 +91,7 @@ export function Online10Block({ link = true }) {
           <ul>{INDUSTRIES.map((t) => <li key={t}>{t}</li>)}</ul>
         </div>
       </div>
-      {link && <More href="/events/online">Legends Online10 sessions</More>}
+      {link && <More href="/events/online10">Legends Online10 sessions</More>}
     </div></section>
   );
 }

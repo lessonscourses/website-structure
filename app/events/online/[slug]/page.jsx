@@ -24,7 +24,7 @@ export default async function Recap({ params }) {
       <Header cta={{ href: ONLINE_NEXT.url, label: 'Next InvestHack' }} />
 
       <section className="h-hero rc-hero" id="top">
-        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], ['InvestHack recap']]} /></div>
+        <div className="wrap cb-wrap"><Crumbs items={[['InvestHack', '/events/online'], ['Recap']]} /></div>
         <div className="h-no" aria-hidden="true">{r.no}</div>
         <div className="wrap h-in">
           <div className="h-copy">
@@ -47,7 +47,7 @@ export default async function Recap({ params }) {
 
       <section className="sec" id="recap"><div className="wrap">
         <div className="rc-head rv">
-          <h2 className="h2">What happened in the room</h2>
+          <h2 className="h2">What happened in the session</h2>
           <p className="rc-room">{(() => { const i = r.room.indexOf('. '); return i > 0 ? <><b>{r.room.slice(0, i + 1)}</b> {r.room.slice(i + 2)}</> : r.room; })()}</p>
         </div>
         {r.video

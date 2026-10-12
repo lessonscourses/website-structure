@@ -41,7 +41,7 @@ export default async function EventPage({ params }) {
         <div className="eh-city" data-drift aria-hidden="true">{Array.from({ length: 6 }, () => e.city.toUpperCase()).join(' · ')} ·</div>
         <div className="wrap eh-in">
           <p className="eh-when rv">{e.city} · {e.day} {e.month} · Invitation only</p>
-          <h1 className="eh-h rv d1"><b>You’re in {e.city} for<br />{e.heroWeek}.</b><br /><span>Meet the other nine<br />at one private table.</span></h1>
+          <h1 className="eh-h rv d1"><b>You’re in {e.city} for<br />{e.heroWeek}.</b><br /><span>Meet the other nine<br />at one private dinner.</span></h1>
           <p className="eh-lead rv d2">A private dinner for the investors who decide where capital goes: family offices, GPs, LPs and private investors.</p>
           <div className="lf rv d2"><span>I’m looking for</span><div>{LOOKING.map((l) => <button key={l} type="button">{l}</button>)}</div></div>
           <a className="btn gold big rv d3" href="#apply">Request an invitation <Arr /></a>
@@ -57,7 +57,7 @@ export default async function EventPage({ params }) {
 
       {/* ===== Why ===== */}
       <section className="sec" id="why"><div className="wrap why">
-        <div className="why-pics rv"><img src={`${MEDIA}/img/evening-1.jpg`} alt="Investors around one dinner table on a rooftop" /><img src={`${MEDIA}/img/evening-2.jpg`} alt="Investors talking in a private lounge" /></div>
+        <div className="why-pics rv"><img src={`${MEDIA}/img/evening-1.jpg`} alt="Investors at a dinner on a rooftop" /><img src={`${MEDIA}/img/evening-2.jpg`} alt="Investors talking in a private lounge" /></div>
         <div className="why-tx">
           <h2 className="h2 rv">{e.city} will be full of people. The right ten are harder to find.</h2>
           <p className="lead rv d1">Thousands of investors, funds and brokers. No selection. Finding people you can trust usually takes years.</p>
@@ -68,8 +68,8 @@ export default async function EventPage({ params }) {
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="sel">
           <div className="sel-tx">
-            <h2 className="h2 rv">Legends selects the table.</h2>
-            <p className="lead rv d1">Introductions that usually take years, at one table in one evening.</p>
+            <h2 className="h2 rv">Legends selects the guests.</h2>
+            <p className="lead rv d1">Introductions that usually take years, at one dinner in one evening.</p>
             <ul className="sel-facts">
               <li className="rv"><b>10 seats</b><span>Active investors only.</span></li>
               <li className="rv d1"><b>Reviewed</b><span>Every guest, personally.</span></li>
@@ -94,7 +94,7 @@ export default async function EventPage({ params }) {
       </div></section>
 
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
-        <div className="sec-head rv" style={{ marginTop: 'clamp(70px,8vw,120px)' }}><h2 className="h2">Who sits at the table</h2><p className="lead">Only investors, at your level. Nobody pitching you. People who have walked the same journey.</p></div>
+        <div className="sec-head rv" style={{ marginTop: 'clamp(70px,8vw,120px)' }}><h2 className="h2">Who you’ll meet</h2><p className="lead">Only investors, at your level. Nobody pitching you. People who have walked the same journey.</p></div>
         <div className="tables4">{GUESTS.map(([h, p], i) => <div key={h} className={'tbl rv d' + i}><h3>{h}</h3><p>{p}</p></div>)}</div>
       </div></section>
 
@@ -102,7 +102,7 @@ export default async function EventPage({ params }) {
       <section className="sec" id="apply" style={{ paddingTop: 0 }}><div className="wrap inv2">
         <div className="inv-card rv">
           <h2>10 seats, each one personally confirmed</h2>
-          <p>The goal is not to fill the table. It is to make the table worth joining.</p>
+          <p>The goal is not to fill the seats. It is to make every seat worth taking.</p>
           <SeatTable />
           <figure className="inv-q">
             <blockquote>“Every deal I regret started with the wrong introduction. Every deal I’m proud of started with the right one.”</blockquote>
@@ -160,7 +160,7 @@ export default async function EventPage({ params }) {
       {/* ===== Closing ===== */}
       <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
         <div className="close3 rv">
-          <div><h2>The strong never walk<br />their journey alone.</h2><p>10 seats. One table. {e.city}, {e.day} {e.month}.</p></div>
+          <div><h2>The strong never walk<br />their journey alone.</h2><p>10 seats. One dinner. {e.city}, {e.day} {e.month}.</p></div>
           <a className="btn gold big" href="#apply">Request an invitation <Arr /></a>
         </div>
       </div></section>

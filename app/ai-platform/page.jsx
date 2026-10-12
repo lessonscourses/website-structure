@@ -37,7 +37,7 @@ export default function AiPlatform() {
         </div></section>
 
         <section className="sec"><div className="wrap">
-          <Head title="One platform connects it all" sub="Dinners, online tables and member sessions feed one profile" />
+          <Head title="One platform connects it all" sub="Dinners, online sessions and InvestHack feed one profile" />
           <div style={{ marginTop: 'clamp(36px,4vw,56px)' }}><Hub /></div>
           <div className="hv-cards" style={{ '--c': 3 }}>{NUMS.map(([v, k], i) => <div key={k} className={'hv-card rv d' + i}><b className="big">{v}</b><p>{k}</p></div>)}</div>
         </div></section>

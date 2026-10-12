@@ -25,7 +25,7 @@ export const ONLINE_NEXT = {
     'His approach combines scientific rigor with family office discipline: the underlying science, commercial viability, founders’ alignment and the capacity to last beyond a single fundraising cycle. A yes from Alex means an 8-10-year minimum horizon.',
   ],
   creds: [['Family office', '$200M+, 90% direct'], ['Invests in', 'Biotech · Healthcare · Agriculture · Energy'], ['Typical check', '$1-10M'], ['Horizon', '8-10 years minimum']],
-  hour: [[1.5, '01 · 10 min', 'The journey', 'How molecular toxicology and scientific commercialisation shaped his investment philosophy and risk framework.'], [2.3, '02 · 20 min', 'The decision framework', 'Underlying science, commercial viability, founders’ alignment and the capacity to last beyond a single fundraising cycle.'], [2.8, '03 · 30 min', 'The closed discussion', 'Questions from the room, candid discussion and relevant introductions with the speaker.']],
+  hour: [[1.5, '01 · 10 min', 'The journey', 'How molecular toxicology and scientific commercialisation shaped his investment philosophy and risk framework.'], [2.3, '02 · 20 min', 'The decision framework', 'Underlying science, commercial viability, founders’ alignment and the capacity to last beyond a single fundraising cycle.'], [2.8, '03 · 30 min', 'The closed discussion', 'Questions from members, candid discussion and relevant introductions with the speaker.']],
   forWho: ['An investor building a direct-investment practice', 'A fund manager working with family offices', 'A founder who wants to understand how patient capital decides'],
   notFor: 'pitching the speaker or looking for clients as a service provider.',
 };
@@ -41,7 +41,7 @@ export const ONLINE_PAST = [
   { speaker: 'Vijay Sivaram', role: 'Co-Founder, RVAI Global', title: 'How to Build a $2B Company and Manage 650k+ People', date: 'Tue, 11 Aug 2026', label: 'Speaker session', img: `${LU}/2o/559112b4-ca42-4a7d-bfe8-66797fbb0833.png`, url: 'https://luma.com/gxeiw4sg' },
   { speaker: 'Abhineet Singh', role: 'CIO, Al Siraj Holdings', title: 'Inside the Family Office: How Patient Capital Decides', date: 'Thu, 30 Jul 2026', label: 'Speaker session', img: `${LU}/sx/b253d992-9e8f-48f5-b19e-2ce299ddee0c.png`, url: 'https://luma.com/2uelini6' },
   { speaker: 'Radhesh Kanumury', role: 'Managing Partner, Suvan Ventures', title: 'AI in the Enterprise: An Investor’s View', date: 'Thu, 23 Jul 2026', label: 'Speaker session', img: `${LU}/f1/589abc2d-6f41-4c2f-b9d2-dc4b90c88713.png`, url: 'https://luma.com/au6shx7n' },
-  { speaker: 'Legends', role: 'AI-matched rooms', title: 'Private Founders & CEOs Online Networking: AI-Matched Rooms', date: 'Thu, 4 Jun 2026', label: 'AI-matched rooms', img: `${LU}/mq/8fd45b4c-0a1e-4620-9e8a-362b0f5dece5.png`, url: 'https://luma.com/0bpr2u1i' },
+  { speaker: 'Legends', role: 'AI-matched networking', title: 'Private Founders & CEOs Online Networking: AI-Matched Networking', date: 'Thu, 4 Jun 2026', label: 'AI-matched networking', img: `${LU}/mq/8fd45b4c-0a1e-4620-9e8a-362b0f5dece5.png`, url: 'https://luma.com/0bpr2u1i' },
 ];
 
 // Recaps of past sessions (content from belegends.club/events/<slug>), shown at /events/online/<slug>.
@@ -79,7 +79,7 @@ export const ONLINE_RECAPS = [
     room: 'Before a startup has revenue, an investor is placing a bet on the people who will build it. Drawing on her experience as both a founder and an investor, Janneke Niessen explained how CapitalT evaluates teams - and why even an exceptional founder may be pursuing a path that does not fit venture capital.',
     highlights: ['How CapitalT evaluates a founding team before revenue can provide evidence', 'Why shared vision and the ability to disagree productively matter as much as individual talent', 'How founders’ ambitions shape whether venture capital is the right fit'],
     pull: 'The main thing I look at is the founders and the founding team.',
-    bio: 'Janneke Niessen is Founding Partner at CapitalT, a serial entrepreneur and investor. She co-founded DQ&A and Improve Digital, scaled both technology companies internationally and exited them before moving to the other side of the investment table.',
+    bio: 'Janneke Niessen is Founding Partner at CapitalT, a serial entrepreneur and investor. She co-founded DQ&A and Improve Digital, scaled both technology companies internationally and exited them before moving to the other side of the deal.',
     quote: 'Before revenue, the team is the evidence.',
     focus: [['Evaluates', 'Founders and founding teams before revenue provides conventional evidence of performance.'], ['Investigates', 'The ambition, perseverance, experience and team dynamics behind an early-stage company.'], ['Backs', 'Pre-seed companies in Climate Tech and the Future of Work across Northern Europe.']],
     stats: [['2', 'Companies built and exited'], ['€500K-€1.2M', 'Typical investment'], ['Up to €2.5M', 'Maximum commitment']],
@@ -121,18 +121,18 @@ export const ONLINE_RECAPS = [
 ];
 export const recap = (slug) => ONLINE_RECAPS.find((r) => r.slug === slug);
 
-// Legends Online10: up to 10 investors at one online table, by industry. No speaker.
+// Legends Online10: up to 10 investors in one online session, by industry. No speaker.
 // AI table on 21 Oct 2026 (time is a placeholder: 17:00 Dubai / 14:00 London - confirm).
 export const ONLINE10 = [
   {
     slug: 'ai-211026',
     industry: 'Artificial intelligence',
-    title: 'Artificial intelligence table',
+    title: 'Artificial intelligence session',
     day: 21, dow: 'Wed', month: 'October', iso: '2026-10-21',
     times: [['Dubai', '5:00 PM'], ['London', '2:00 PM'], ['New York', '9:00 AM'], ['Singapore', '9:00 PM']],
     startsAt: '2026-10-21T13:00:00Z',
     seats: 10,
-    lead: 'Up to 10 investors in artificial intelligence at one online table. No stage, no speaker - intros, asks & gives and networking with peers from other cities.',
+    lead: 'Up to 10 investors in artificial intelligence in one online session. No stage, no speaker - intros, asks & gives and networking with peers from other cities.',
   },
 ].map((t) => ({ ...t, url: `/events/online10/${t.slug}` }));
 export const online10 = (slug) => ONLINE10.find((t) => t.slug === slug);

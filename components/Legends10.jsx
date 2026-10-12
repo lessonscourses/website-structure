@@ -8,12 +8,12 @@ export default function Legends10({ events }) {
     <section className="sec l10" id="legends10"><div className="wrap">
       <div className="bh">
         <h2 className="h2 rv">Legends10</h2>
-        <p className="pf-sub rv d1">Up to 10 investors. One table.</p>
+        <p className="pf-sub rv d1">Up to 10 investors. One dinner.</p>
         <p className="bh-tx rv d1">In person, by city: private dinners during the biggest global investor summits.</p>
       </div>
       <div className="l10-n rv d1">
         <div className="l10-s off"><b><s className="pf-x">1,000s</s></b><span>people at a global summit. No selection.</span></div>
-        <div className="l10-s on"><div className="l10-top"><b>10</b><Seats /></div><span>reviewed investors at one table. Premium venues.</span></div>
+        <div className="l10-s on"><div className="l10-top"><b>10</b><Seats /></div><span>reviewed investors at one dinner. Premium venues.</span></div>
       </div>
       <div className="l10-row">
         {events.map((e, i) => (

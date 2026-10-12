@@ -16,7 +16,7 @@ export function EventCard({ e, next = false }) {
   );
 }
 
-// Next online session / Online10 table in the same card format as the dinners
+// Next online session / Online10 session in the same card format as the dinners
 export function SessionCard({ s, img, tag = 'InvestHack', name, text }) {
   const [city, t] = s.times.find(([c]) => c === 'London') || s.times[0];
   const [, hh, mm, ap] = t.match(/(\d+):(\d+)\s*(AM|PM)/i) || [, 12, '00', 'PM'];
@@ -28,7 +28,7 @@ export function SessionCard({ s, img, tag = 'InvestHack', name, text }) {
       <h3>{name || s.speaker}</h3>
       <p>{text || s.title}</p>
       <ul className="ev-meta"><li>{f(h)}-{f(h + 1)} {city}</li><li>{tag === 'Online10' ? `${s.seats} seats` : 'On Zoom'}</li></ul>
-      <span className="ev-go">{tag === 'Online10' ? 'View the table' : 'View the session'} <Arr /></span>
+      <span className="ev-go">{tag === 'Online10' ? 'View the session' : 'View the session'} <Arr /></span>
     </a>
   );
 }
