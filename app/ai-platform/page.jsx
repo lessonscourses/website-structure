@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import Crumbs from '@/components/Crumbs';
 import HvSteps from '@/components/hv/HvSteps';
 import { MatchStory, LiveHub } from '@/components/hv/HvLive';
-import { Head, Chat, Manager, Founder, JoinCard } from '@/components/hv/Hv';
+import { Head, Problem, Chat, Manager, Founder, JoinCard } from '@/components/hv/Hv';
 import '../hv.css';
 
 export const metadata = { title: 'AI platform - Legends', description: 'Legends investors worldwide, in one place. AI matches you with investors based on your asks, needs and offers; a Personal Legends Manager makes the intros.' };
@@ -17,7 +17,8 @@ export default function AiPlatform() {
       <main className="hv">
         <section className="sec hv-page-hero"><div className="wrap cb-wrap"><Crumbs items={[['AI platform']]} /></div><div className="wrap ai-hero">
           <div>
-            <Head title="AI platform" sub="Matches, not contacts" one="Legends AI matches you with investors worldwide based on your asks, needs and offers. A real person makes every intro." />
+            <Head title="AI platform" sub="The right investors find you" />
+            <Problem p="The right co-investor, peer or hobby partner takes years to find." s="Legends AI matches you based on your asks, needs and offers. A real person makes every intro." />
           </div>
           <MatchStory />
         </div></section>
