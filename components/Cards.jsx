@@ -54,7 +54,7 @@ export const asPast = (e) => ({ url: e.url, img: e.cover, title: e.title, speake
 
 export function PastList({ items, paged, kind = 'Online' }) {
   return (
-    <div className="pc-grid" {...(paged ? { 'data-paged': paged } : {})}>
+    <div className={'pc-grid' + (kind === 'In person' ? ' l10' : '')} {...(paged ? { 'data-paged': paged } : {})}>
       {items.map((p) => (
         <a key={p.url} className={'pc' + (p.next ? ' next' : '')} data-kind={p.kind || (/AI-matched/i.test(p.label || '') ? 'other' : 'investhack')} href={p.url} {...(p.url.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' })}>
           <span className="pc-img"><img src={p.img} alt="" loading="lazy" /><em>{kind} · {p.label}</em></span>

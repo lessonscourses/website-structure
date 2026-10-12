@@ -2210,5 +2210,5 @@ html,body{overflow-x:clip}
 @media (max-width:1120px){.nav a{padding-left:9px!important;padding-right:9px!important;font-size:14px}}
 @media (max-width:1000px){.hdr .btn,.hdr .g-btn{padding-left:16px!important;padding-right:16px!important}}
 /* dinner card photos: never taller than 225px */
-.ev-img{max-height:225px}.ev-img img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
-.pc-img{max-height:225px}
+.ev:not(.ses) .ev-img{max-height:225px}.ev:not(.ses) .ev-img img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.pc-grid.l10 .pc-img{max-height:225px}
