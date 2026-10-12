@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Crumbs from '@/components/Crumbs';
 import HvSteps from '@/components/hv/HvSteps';
-import { MatchCards, VennHub } from '@/components/hv/HvPick';
+import { MatchCards, StackHub } from '@/components/hv/HvPick';
 import { Head, Problem, Chat, Manager, Founder, JoinCard } from '@/components/hv/Hv';
 import '../hv.css';
 
@@ -35,7 +35,7 @@ export default function AiPlatform() {
 
         <section className="sec"><div className="wrap">
           <Head title="One platform connects it all" sub="Every format feeds one profile" />
-          <div className="rv" style={{ marginTop: 'clamp(36px,4vw,56px)' }}><VennHub /></div>
+          <div className="rv" style={{ marginTop: 'clamp(36px,4vw,56px)' }}><StackHub /></div>
         </div></section>
 
         <section className="sec hv-fj"><div className="wrap"><Founder /><JoinCard /></div></section>

@@ -1,7 +1,7 @@
 // Home / About / AI platform building blocks (overview structure, Tony-style visuals). Styles: app/hv.css
 import HvCarousel from './HvCarousel';
 import HvVoices from './HvVoices';
-import { VennHub } from './HvPick';
+import { StackHub } from './HvPick';
 
 export const Arr = () => <svg className="hv-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 export const WA = 'https://wa.me/35797916299';
@@ -71,27 +71,26 @@ export function Online10Block({ link = true }) {
     <section className="sec hv-sec" id="online"><div className="wrap">
       <Head n="02" title="Legends Online10" sub="Your industry. Worldwide" one="Up to 10 investors per online session, once or twice a month." />
       <Problem p="The investors you need are in other cities and time zones." s="Networking, deals and insights, without the flight." />
-      <div className="hv-bento">
-        <div className="hv-map rv">
+      <div className="o10b">
+        <div className="o10b-l">
+          <div className="o10b-who rv">
+            <p className="hv-cap">Who joins</p>
+            <ol>{WHO.map(([h, p], k) => <li key={h}><span>0{k + 1}</span><b>{h}</b><em>{p}</em></li>)}</ol>
+          </div>
+          <div className="o10b-call rv d1">
+            <p className="hv-cap">On every call</p>
+            <ol><li><i>1</i>Short intros</li><li><i>2</i>Asks & offers</li><li><i>3</i>Networking</li></ol>
+          </div>
+        </div>
+        <div className="o10b-map rv d1">
           <p className="hv-cap">Members and guests from</p>
-          <div className="hv-map-in">
+          <div className="hv-map-in hv-map">
             <img src="/brand/world-dots.svg" alt="" />
             {PINS.map(([c, x, y, l], i) => <span key={c} className={'hv-pin' + (l ? ' l' : '')} style={{ left: `calc(${x}% * .94 + 3%)`, top: `calc(${y}% * .9 + 5%)`, '--i': i }}><i /><b>{c}</b></span>)}
           </div>
         </div>
-        <div className="hv-who rv d1">
-          <p className="hv-cap">Who joins</p>
-          <ul>{WHO.map(([h, p]) => <li key={h}><b>{h}</b><span>{p}</span></li>)}</ul>
-        </div>
-        <div className="hv-call rv d2">
-          <p className="hv-cap">On every call</p>
-          <ol><li>Short intros</li><li>Asks & offers</li><li>Networking</li></ol>
-        </div>
-        <div className="hv-inds rv">
-          <p className="hv-cap">By industry</p>
-          <ul>{INDUSTRIES.map((t) => <li key={t}>{t}</li>)}</ul>
-        </div>
       </div>
+      <div className="o10b-mq rv" aria-label="By industry"><div className="o10b-mq-in">{[0, 1].map((r) => <span key={r} aria-hidden={r === 1}>{INDUSTRIES.map((t) => <em key={t}>{t}</em>)}</span>)}</div></div>
       {link && <More href="/events/online10">Legends Online10 sessions</More>}
     </div></section>
   );
@@ -106,7 +105,7 @@ export function InvestHackBlock({ link = true }) {
       <HvVoices />
       <div className="hv-stage">
         <div className="hv-ys rv"><h3>Your stage</h3><p>Speak at InvestHack as a member and share your thesis with the investors who make the decisions.</p></div>
-        <div className="hv-mem rv d1"><h3>Members include</h3><ul>{MEMBERS.map(([n, c]) => <li key={n}><b>{n}</b>{c}</li>)}</ul></div>
+        <div className="hv-mem2 rv d1"><h3>Members include</h3><ul>{MEMBERS.map(([n, c]) => <li key={n}><b>{n}</b><span>{c}</span></li>)}</ul></div>
       </div>
       {link && <More href="/events/online">InvestHack sessions</More>}
     </div></section>
@@ -151,7 +150,7 @@ export function AiBlock({ link = true }) {
       <Problem p="The right co-investor, peer or hobby partner takes years to find." s="AI matches you with investors based on your asks, needs and offers." />
       <div className="hv-ai"><Manager /><Chat /></div>
       <h3 className="hv-k rv">One platform connects it all</h3>
-      <div className="rv"><VennHub /></div>
+      <div className="rv"><StackHub /></div>
       {link && <More href="/ai-platform">Explore the AI platform</More>}
     </div></section>
   );

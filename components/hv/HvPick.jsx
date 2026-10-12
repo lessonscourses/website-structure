@@ -58,3 +58,21 @@ export function VennHub() {
     </div>
   );
 }
+
+/* One platform connects it all: formats -> platform bar -> outcomes (overview layout) */
+const FMT = [['01', 'Legends10', 'Dinners by city'], ['02', 'Legends Online10', 'Calls by industry'], ['03', 'InvestHack', 'Member sessions']];
+export function StackHub() {
+  const [r, on] = useSeen(0.3);
+  return (
+    <div className={'sh' + (on ? ' on' : '')} ref={r}>
+      <p className="sh-lbl"><span>01</span>Where you meet</p>
+      <div className="sh-row">{FMT.map(([n, h, p], k) => <div key={h} className="sh-in" style={{ '--k': k }}><span>{n}</span><b>{h}</b><em>{p}</em></div>)}</div>
+      <div className="sh-wires">{FMT.map((_, k) => <i key={k} style={{ '--k': k }}><b /></i>)}</div>
+      <p className="sh-lbl"><span>02</span>Where it connects</p>
+      <div className="sh-bar"><span className="sh-logo"><img src="/brand/symbol.png" alt="" /></span><b>Legends AI platform</b><ul><li>Profile</li><li>Asks</li><li>Matches</li><li>Intros</li></ul></div>
+      <div className="sh-wires out">{FMT.map((_, k) => <i key={k} style={{ '--k': k }}><b /></i>)}</div>
+      <p className="sh-lbl"><span>03</span>What you get</p>
+      <div className="sh-row">{OUT.map(([h, p], k) => <div key={h} className="sh-out" style={{ '--k': k }}><b>{h}</b><em>{p}</em></div>)}</div>
+    </div>
+  );
+}
