@@ -3,6 +3,8 @@ import HvCarousel from './HvCarousel';
 import HvVoices from './HvVoices';
 import HvOnline from './HvOnline';
 import HvBars from './HvBars';
+import { EssayTile } from '@/components/Cards';
+import { ESSAYS } from '@/data/blog';
 import { ONLINE10 } from '@/data/online';
 import HvSteps from './HvSteps';
 import { StackHub } from './HvPick';
@@ -233,6 +235,17 @@ export function UniteBlock() {
       </div>
       <Founder />
       <JoinCard />
+    </div></section>
+  );
+}
+
+/* Home: blog slider (bottom of the page, before Unite) */
+export function BlogBlock() {
+  return (
+    <section className="sec hv-sec" id="blog"><div className="wrap">
+      <Head title="Blog" sub="Essays from members and speakers" />
+      <HvCarousel title="Latest essays" className="hv-blog">{ESSAYS.map((e) => <div key={e.url} className="hv-blog-i"><EssayTile e={e} /></div>)}</HvCarousel>
+      <More href="/blog">All essays</More>
     </div></section>
   );
 }

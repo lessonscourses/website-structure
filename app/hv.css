@@ -992,3 +992,6 @@
 .nw-mid .nw-caps b{font-size:inherit;line-height:inherit;letter-spacing:0;background:none;-webkit-text-fill-color:var(--gold-d);color:var(--gold-d)}
 .nw-mid .nw-caps span{display:inline-flex;align-items:baseline}
 @media (max-width:760px){.nb-b{width:max(var(--w),72%)}.nb-b em{width:100%;justify-content:space-between}}
+.hv-blog{grid-auto-columns:clamp(270px,30vw,400px)}
+.hv-blog-i{scroll-snap-align:start;min-width:0}
+@media (max-width:560px){.hv-blog{grid-auto-columns:84%}}
