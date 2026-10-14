@@ -14,7 +14,7 @@ export default function Platform() {
         <p className="pf-sub rv d1">Legends investors worldwide, in one place.</p>
         <div className="pf-ps rv d2">
           <p><span>Problem</span><span className="pf-xw"><s className="pf-x">The right co-investor, peer or hobby partner takes years to find.</s></span></p>
-          <p><span>Legends</span><b>AI matches you by your asks, needs and offers.</b></p>
+          <p><span>Legends</span><b>AI matches you by your asks, needs and opportunities.</b></p>
         </div>
         <div className="pf-hm rv d2">
           <h3>A real human on your side</h3>

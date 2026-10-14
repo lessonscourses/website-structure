@@ -32,7 +32,7 @@ export default async function Online10Page({ params }) {
       <Header cta={{ href: '#register', label: 'Request a seat' }} />
 
       <section className="h-hero o10h" id="top">
-        <div className="wrap cb-wrap"><Crumbs items={[['Legends Online10', '/events/online10'], [t.industry]]} /></div>
+        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], [`Online10 · ${t.industry}`]]} /></div>
         <div className="wrap h-in">
           <div className="h-copy">
             <p className="h-kick rv"><span>Legends Online10</span><i /><span>{t.industry}</span></p>

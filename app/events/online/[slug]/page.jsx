@@ -24,7 +24,7 @@ export default async function Recap({ params }) {
       <Header cta={{ href: ONLINE_NEXT.url, label: 'Next InvestHack' }} />
 
       <section className="h-hero rc-hero" id="top">
-        <div className="wrap cb-wrap"><Crumbs items={[['InvestHack', '/events/online'], ['Recap']]} /></div>
+        <div className="wrap cb-wrap"><Crumbs items={[['Online', '/events/online'], ['InvestHack recap']]} /></div>
         <div className="h-no" aria-hidden="true">{r.no}</div>
         <div className="wrap h-in">
           <div className="h-copy">

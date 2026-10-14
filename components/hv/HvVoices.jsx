@@ -28,10 +28,10 @@ export default function HvVoices() {
   return (
     <div className="ihv" ref={box} onMouseEnter={() => setHold(true)} onMouseLeave={() => setHold(false)} style={{ '--dur': DUR + 'ms' }}>
       <div className="ihv-feat rv">
-        <div className={'ihv-ph' + (v.cut ? ' cut' : '')}>{V.map((x, k) => <img key={k} src={x.img} alt={x.n} className={k === i ? 'on' : ''} loading={k < 3 ? 'eager' : 'lazy'} />)}</div>
+        <div className={'ihv-ph' + (v.cut ? ' cut' : '') + (v.glob ? ' glob' : '')}>{V.map((x, k) => <img key={k} src={x.img} alt={x.n} className={k === i ? 'on' : ''} loading={k < 3 ? 'eager' : 'lazy'} />)}</div>
         <div className="ihv-q" key={i}>
-          <div><span className="no">InvestHack {v.no} · {v.date}</span><span className="num">{v.big}</span><p className="nl">{v.bl}</p></div>
-          <div>{v.q ? <blockquote>“{v.q}”</blockquote> : <p className="tp"><span>Session</span>{v.t}</p>}<p className="who"><b>{v.n}</b>{v.r}</p></div>
+          <div><span className="no">{v.tag ? 'Legends Online10' : v.no === 'Session' ? 'Speaker session' : 'InvestHack ' + v.no} · {v.date}</span><span className="num">{v.big}</span><p className="nl">{v.bl}</p></div>
+          <div>{v.q ? <blockquote>“{v.q}”</blockquote> : <p className="tp"><span>{v.tag ? 'Next session' : 'Session'}</span>{v.t}</p>}<p className="who"><b>{v.n}</b>{v.r}</p></div>
         </div>
       </div>
       <div className="ihv-bar rv">
@@ -40,9 +40,9 @@ export default function HvVoices() {
       </div>
       <div className="ihv-track" ref={track}>
         {V.map((x, k) => (
-          <button key={k} type="button" className={'ihv-card' + (k === i ? ' on' : '') + (x.cut ? ' cut' : '')} onClick={() => setI(k)}>
+          <button key={k} type="button" className={'ihv-card' + (k === i ? ' on' : '') + (x.cut ? ' cut' : '') + (x.glob ? ' glob' : '')} onClick={() => setI(k)}>
             <span className="ihv-im"><img src={x.img} alt="" loading="lazy" /></span>
-            <span className="ihv-tx"><em>{x.no === 'Session' ? 'Speaker session' : 'InvestHack ' + x.no} · {x.date}</em><b>{x.n}</b><span>{x.r}</span></span>
+            <span className="ihv-tx"><em>{x.tag ? 'Online10' : x.no === 'Session' ? 'Speaker session' : 'InvestHack ' + x.no} · {x.date}</em><b>{x.n}</b><span>{x.r}</span></span>
             <i className="ihv-pr" key={k === i ? 'p' + i : 'x'} />
           </button>
         ))}

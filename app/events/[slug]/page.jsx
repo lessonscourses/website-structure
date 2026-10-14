@@ -106,7 +106,7 @@ export default async function EventPage({ params }) {
           <SeatTable />
           <figure className="inv-q">
             <blockquote>“Every deal I regret started with the wrong introduction. Every deal I’m proud of started with the right one.”</blockquote>
-            <figcaption><img src={`${MEDIA}/img/yanis.jpg`} alt="Yanis Chkhatval" /><span><b>Yanis Chkhatval</b>Private investor and entrepreneur, founder of Legends</span></figcaption>
+            <figcaption><img src="/brand/yanis.webp" alt="Yanis Chkhatval" /><span><b>Yanis Chkhatval</b>Private investor and entrepreneur, founder of Legends</span></figcaption>
           </figure>
         </div>
         <div className="inv-form rv d1">

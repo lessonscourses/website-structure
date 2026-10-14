@@ -11,7 +11,7 @@ export default function HeroDust() {
       <div className="hd-stage">
         <canvas className="hd-cv" aria-hidden="true" />
         <h1 className="sr-only">Legends</h1>
-        <ul className="hd-ways"><li>Online by sector</li><li>In person by city</li><li>Connected through our platform</li></ul>
+        <ul className="hd-ways"><li>Online by sector</li><li>In person by city</li><li>Connected through our AI platform</li></ul>
         <div className="hd-copy">
           <p className="hd-t">Private Investors <em>Network</em></p>
           <p className="hd-lead">Hard-to-find deals, shared by investors.<br />Co-investment. Additional capital. Private events.</p>

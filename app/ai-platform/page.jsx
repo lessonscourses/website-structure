@@ -6,7 +6,7 @@ import { MatchCards, StackHub } from '@/components/hv/HvPick';
 import { Head, Problem, Chat, Manager, Founder, JoinCard } from '@/components/hv/Hv';
 import '../hv.css';
 
-export const metadata = { title: 'AI platform - Legends', description: 'Legends investors worldwide, in one place. AI matches you with investors based on your asks, needs and offers; a Personal Legends Manager makes the intros.' };
+export const metadata = { title: 'AI platform - Legends', description: 'Legends investors worldwide, in one place. AI matches you with investors based on your asks, needs and opportunities; a Personal Legends Manager makes the intros.' };
 
 // Content: Investor overview (p.5) + belegends.club ("What you get", numbers).
 
@@ -18,7 +18,7 @@ export default function AiPlatform() {
         <section className="sec hv-page-hero"><div className="wrap cb-wrap"><Crumbs items={[['AI platform']]} /></div><div className="wrap ai-hero">
           <div>
             <Head title="AI platform" sub="The right investors find you" />
-            <Problem p="The right co-investor, peer or hobby partner takes years to find." s="Legends AI matches you based on your asks, needs and offers. A real person makes every intro." />
+            <Problem p="The right co-investor, peer or hobby partner takes years to find." s="Legends AI matches you based on your asks, needs and opportunities. A real person makes every intro." />
           </div>
           <MatchCards />
         </div></section>
@@ -38,7 +38,7 @@ export default function AiPlatform() {
           <div className="rv" style={{ marginTop: 'clamp(36px,4vw,56px)' }}><StackHub /></div>
         </div></section>
 
-        <section className="sec hv-fj"><div className="wrap"><Founder /><JoinCard /></div></section>
+        <section className="sec hv-fj"><div className="wrap"><JoinCard /></div></section>
       </main>
       <Footer />
     </>

@@ -1,6 +1,8 @@
 // Home / About / AI platform building blocks (overview structure, Tony-style visuals). Styles: app/hv.css
 import HvCarousel from './HvCarousel';
 import HvVoices from './HvVoices';
+import { ONLINE10 } from '@/data/online';
+import HvSteps from './HvSteps';
 import { StackHub } from './HvPick';
 
 export const Arr = () => <svg className="hv-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
@@ -9,7 +11,7 @@ export const WA = 'https://wa.me/35797916299';
 export function Head({ n, title, sub, one, children }) {
   return (
     <div className="hv-head">
-      {n && <span className="hv-n rv">{n}</span>}
+      
       <h2 className="hv-h2 rv">{title}</h2>
       {sub && <p className="hv-sub rv d1">{sub}</p>}
       {one && <p className="hv-one rv d1">{one}</p>}
@@ -26,19 +28,33 @@ export function More({ href, children }) {
   return <a className="hv-more rv" href={href}>{children} <Arr /></a>;
 }
 
+/* AI platform card art: the member's ask, key words light up, matches come forward one by one */
+const AI_M = [['FO', 'Family office', 'Dubai', '94%', ['Co-invests', 'Healthcare', 'GCC']], ['FM', 'Fund manager', 'London', '89%', ['Healthcare', '$5-20M', 'GCC']], ['PI', 'Private investor', 'Zurich', '86%', ['Co-invests', '$5-20M']]];
+function AiArt() {
+  const w = (t, k) => <mark style={{ '--k': k }}>{t}</mark>;
+  return (
+    <span className="aiart" aria-hidden="true">
+      <span className="aiart-k">Your ask</span>
+      <span className="aiart-q">Looking for {w('co-investors', 0)} in {w('healthcare', 1)}, tickets {w('$5-20M', 2)}, focus on the {w('GCC', 3)}.</span>
+      <span className="aiart-lab">Matched to your ask</span>
+      <span className="aiart-st">{AI_M.map(([a, h, c, p, t], k) => <span key={a} className="aiart-c" style={{ '--k': k }}><span className="aiart-r"><b>{a}</b><span><strong>{h}</strong>{c}</span><em>{p}</em></span><span className="aiart-t">{t.map((x) => <i key={x}>✓ {x}</i>)}</span></span>)}</span>
+    </span>
+  );
+}
+
 /* ---------- formats index ---------- */
 export function Formats({ title = 'One network. Three ways in.', sub = 'Dinners by city, sessions by industry and one platform in between.' }) {
   const F = [
     ['01', 'Legends10', 'In person, city by city', '/events', '/gallery/evening-1.jpg'],
-    ['02', 'Online', 'Legends Online10, InvestHack', '/events/online10', '/brand/online10-card.jpg'],
-    ['03', 'AI platform', 'Matches and introductions', '/ai-platform', '/gallery/evening-2.jpg'],
+    ['02', 'Online', 'Legends Online10, InvestHack', '/events/online', '/brand/online10-dark.jpg'],
+    ['03', 'AI platform', 'Matches and introductions', '/ai-platform', null],
   ];
   return (
     <>
       <Head title={title} sub={sub} />
       <div className="hv-ix">
         {F.map(([n, h, p, href, img], i) => (
-          <a key={h} className={'rv d' + i} href={href}><img src={img} alt="" /><span className="hv-ix-t"><span>{n}</span><b>{h}</b><em>{p}</em><i>Explore <Arr /></i></span></a>
+          <a key={h} className={'rv d' + i + (img ? '' : ' ai')} href={href}>{img ? <img src={img} alt="" /> : <AiArt />}<span className="hv-ix-t"><b>{h}</b><em>{p}</em><i>Explore <Arr /></i></span></a>
         ))}
       </div>
     </>
@@ -46,13 +62,13 @@ export function Formats({ title = 'One network. Three ways in.', sub = 'Dinners 
 }
 
 /* ---------- 01 Legends10 ---------- */
-const CITY_PICS = [['Dubai', 'dubai'], ['Singapore', 'singapore'], ['Riyadh', 'riyadh'], ['Abu Dhabi', 'abu-dhabi'], ['London', 'london']];
+const CITY_PICS = [['Dubai', 'dubai'], ['Singapore', 'singapore'], ['London', 'london'], ['Riyadh', 'riyadh'], ['Abu Dhabi', 'abu-dhabi']];
 export function Legends10Block({ link = true }) {
   return (
     <section className="sec hv-sec" id="legends10"><div className="wrap">
       <Head n="01" title="Legends10" sub="Up to 10 investors. One dinner" one="In person, city by city: private dinners during the world’s leading investment summits." />
       <Problem p="Big conferences: thousands of people, no vetting." s="Vetted investors only. Premium venues. Private setting." />
-      <div className="hv-pics"><figure className="rv"><img src="/gallery/evening-1.jpg" alt="" /></figure><figure className="rv d1"><img src="/gallery/evening-2.jpg" alt="" /></figure></div>
+      <div className="hv-pics"><figure className="rv"><img src="/gallery/singapore-dinner.jpg" alt="" /></figure><figure className="rv d1"><img src="/gallery/evening-2.jpg" alt="" /></figure></div>
       <HvCarousel title="Where we meet" className="hv-cities">
         {CITY_PICS.map(([n, f]) => <figure key={f}><img src={`/cities/${f}.jpg`} alt="" loading="lazy" /><figcaption>{n}</figcaption></figure>)}
         <figure className="x"><b>New York<br />Hong Kong<br />Monaco</b><em>And many more</em></figure>
@@ -64,53 +80,49 @@ export function Legends10Block({ link = true }) {
 
 /* ---------- 02 Legends Online10 ---------- */
 const PINS = [['San Francisco', 3.8, 25], ['New York', 20.9, 22.1], ['London', 47, 11.3, 1], ['Amsterdam', 48.8, 10.5], ['Zurich', 50, 15.4], ['Monaco', 49.7, 19.1, 1], ['Riyadh', 63.5, 38, 1], ['Dubai, Abu Dhabi', 66.6, 37.5], ['Mumbai', 72.8, 43.7], ['Hong Kong', 87.4, 40.4], ['Singapore', 83.7, 61.3, 1]];
+const GLOBE_PTS = [['San Francisco', 37.8, -122.4], ['New York', 40.7, -74], ['London', 51.5, -0.1], ['Amsterdam', 52.4, 4.9, 0], ['Zurich', 47.4, 8.5, 0], ['Monaco', 43.7, 7.4, 0], ['Riyadh', 24.7, 46.7, 0], ['Dubai, Abu Dhabi', 25.2, 55.3], ['Mumbai', 19.1, 72.9], ['Hong Kong', 22.3, 114.2], ['Singapore', 1.35, 103.8]];
+const O10 = ONLINE10[0];
+// city, lat, lon, local time of the session (13:00 UTC). TODO: confirm time
+const MAP10 = [['San Francisco', 37.8, -122.4, '6:00 AM'], ['New York', 40.7, -74, '9:00 AM'], ['London', 51.5, -0.1, '2:00 PM'], ['Zurich', 47.4, 8.5, '3:00 PM', 0], ['Monaco', 43.7, 7.4, '3:00 PM', 0], ['Riyadh', 24.7, 46.7, '4:00 PM', 0], ['Dubai', 25.2, 55.3, '5:00 PM'], ['Mumbai', 19.1, 72.9, '6:30 PM', 0], ['Singapore', 1.35, 103.8, '9:00 PM'], ['Hong Kong', 22.3, 114.2, '9:00 PM']];
+const SEATS10 = [['FO', 'Dubai'], ['GP', 'London'], ['LP', 'Zurich'], ['FM', 'New York'], ['PI', 'Singapore'], ['CIO', 'Riyadh'], ['VC', 'San Francisco'], ['FO', 'Monaco'], ['PI', 'Mumbai'], ['LP', 'Hong Kong']];
 const WHO = [['Family offices', 'Principals, CIOs'], ['Fund managers', 'VC, PE, private credit'], ['LPs & allocators', 'Funds and strategies'], ['Private investors', 'Angels and direct investors']];
 const INDUSTRIES = ['Artificial intelligence', 'Healthcare & biotech', 'Infrastructure & real estate', 'Energy & resources', 'Fintech & private credit', 'Many more'];
-export function Online10Block({ link = true }) {
+export function OnlineBlock({ link = true }) {
   return (
     <section className="sec hv-sec" id="online"><div className="wrap">
-      <Head n="02" title="Legends Online10" sub="Your industry. Worldwide" one="Up to 10 investors per online session, once or twice a month." />
+      <Head title="Online" sub="Your industry. Worldwide"  />
       <Problem p="The investors you need are in other cities and time zones." s="Networking, deals and insights, without the flight." />
       <div className="o10b">
-        <div className="o10b-l">
-          <div className="o10b-who rv">
-            <p className="hv-cap">Who joins</p>
+        <div className="o10b-tx">
+          <div className="o10b-who rv"><span className="hv-lab">Who joins</span>
             <ol>{WHO.map(([h, p], k) => <li key={h}><span>0{k + 1}</span><b>{h}</b><em>{p}</em></li>)}</ol>
           </div>
-          <div className="o10b-call rv d1">
-            <p className="hv-cap">On every call</p>
-            <ol><li><i>1</i>Short intros</li><li><i>2</i>Asks & offers</li><li><i>3</i>Networking</li></ol>
+          <div className="o10b-call rv d1"><span className="hv-lab">On every call</span>
+            <ol>{['Short intros', 'Asks & offers', 'Networking'].map((t, k) => <li key={t}><i>{k + 1}</i>{t}</li>)}</ol>
           </div>
         </div>
-        <div className="o10b-map rv d1">
-          <p className="hv-cap">Members and guests from</p>
-          <div className="hv-map-in hv-map">
-            <img src="/brand/world-dots.svg" alt="" />
-            {PINS.map(([c, x, y, l], i) => <span key={c} className={'hv-pin' + (l ? ' l' : '')} style={{ left: `calc(${x}% * .94 + 3%)`, top: `calc(${y}% * .9 + 5%)`, '--i': i }}><i /><b>{c}</b></span>)}
-          </div>
+        <div className="onx-map lt rv d2" aria-hidden="true">
+          <canvas data-flatmap={JSON.stringify(MAP10)} data-theme="light" />
+          <div className="onx-map-f"><span><i />Same hour, ten cities</span></div>
         </div>
       </div>
-      <div className="o10b-mq rv" aria-label="By industry"><div className="o10b-mq-in">{[0, 1].map((r) => <span key={r} aria-hidden={r === 1}>{INDUSTRIES.map((t) => <em key={t}>{t}</em>)}</span>)}</div></div>
-      {link && <More href="/events/online10">Legends Online10 sessions</More>}
-    </div></section>
-  );
-}
-
-/* ---------- 02 InvestHack ---------- */
-const MEMBERS = [['Alex Felman', 'Felman Family Office'], ['Abhineet Singh', 'Al Siraj Holdings'], ['Janneke Niessen', 'CapitalT'], ['Radhesh Kanumury', 'Suvan Ventures'], ['Walied Albasheer', 'Intuitio Ventures'], ['Vijay Sivaram', 'RVAI Global'], ['Julius Bachmann', 'Bachmann Catalyst'], ['Amit Grover', 'Grover & Company']];
-export function InvestHackBlock({ link = true }) {
-  return (
-    <section className="sec hv-sec" id="investhack"><div className="wrap">
-      <Head n="02" title="InvestHack" sub="Inside members’ playbooks" one="Members share how they decide. Live Q&A, online." />
+      <div className="onx-ih rv"><span className="onl-tag">InvestHack</span><p>Inside members’ playbooks. Members share how they decide. Live Q&A, online.</p></div>
       <HvVoices />
       <div className="hv-stage">
         <div className="hv-ys rv"><h3>Your stage</h3><p>Speak at InvestHack as a member and share your thesis with the investors who make the decisions.</p></div>
         <div className="hv-mem2 rv d1"><h3>Members include</h3><ul>{MEMBERS.map(([n, c]) => <li key={n}><b>{n}</b><span>{c}</span></li>)}</ul></div>
       </div>
-      {link && <More href="/events/online">InvestHack sessions</More>}
+      <div className="o10b-mq rv" aria-label="By industry"><div className="o10b-mq-in">{[0, 1].map((r) => <span key={r} aria-hidden={r === 1}>{INDUSTRIES.map((t) => <em key={t}>{t}</em>)}</span>)}</div></div>
+
+      {link && <More href="/events/online">All online sessions</More>}
     </div></section>
   );
 }
+export const Online10Block = OnlineBlock;
+export function InvestHackBlock() { return null; }
+
+/* ---------- 02 InvestHack ---------- */
+const MEMBERS = [['Alex Felman', 'Felman Family Office'], ['Abhineet Singh', 'Al Siraj Holdings'], ['Janneke Niessen', 'CapitalT'], ['Radhesh Kanumury', 'Suvan Ventures'], ['Walied Albasheer', 'Intuitio Ventures'], ['Vijay Sivaram', 'RVAI Global'], ['Julius Bachmann', 'Bachmann Catalyst'], ['Amit Grover', 'Grover & Company']];
 
 /* ---------- 03 AI platform ---------- */
 const CHAT = [['me', 'Can’t make Singapore this time. Anything in Dubai or Riyadh?'], ['lm', 'Yes: Legends10 Dubai during SuperReturn Middle East week, or Riyadh during FII week.'], ['me', 'Dubai works.'], ['lm', 'Done, your seat is reserved. You’ll get the venue details with your confirmation.']];
@@ -147,8 +159,8 @@ export function AiBlock({ link = true }) {
   return (
     <section className="sec hv-sec" id="ai"><div className="wrap">
       <Head n="03" title="AI platform" sub="Legends investors worldwide, in one place" />
-      <Problem p="The right co-investor, peer or hobby partner takes years to find." s="AI matches you with investors based on your asks, needs and offers." />
-      <div className="hv-ai"><Manager /><Chat /></div>
+      <Problem p="The right co-investor, peer or hobby partner takes years to find." s="AI matches you with investors based on your asks, needs and opportunities." />
+      <HvSteps />
       <h3 className="hv-k rv">One platform connects it all</h3>
       <div className="rv"><StackHub /></div>
       {link && <More href="/ai-platform">Explore the AI platform</More>}
@@ -174,7 +186,13 @@ export function UniteBlock() {
   return (
     <section className="sec hv-sec" id="join"><div className="wrap">
       <Head title="We unite legends" sub="You keep the deals and contacts" />
-      <div className="hv-group rv"><img src="/brand/unite.jpg" alt="Legends members and guests" /></div>
+      <div className="hv-gal rv">
+        <figure className="big v"><video autoPlay muted loop playsInline poster="/gallery/evening-5.jpg"><source src="https://legends.app/events/shared/media/highlights.mp4" type="video/mp4" /></video><span className="play"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z" /></svg></i>Watch the highlights</span></figure>
+        <figure><img src="/gallery/evening-3.jpg" alt="Legends members at a private evening" loading="lazy" /></figure>
+        <figure><img src="/gallery/yanis-mic.jpg" alt="Yanis Chkhatval speaking at a Legends evening" loading="lazy" /></figure>
+        <figure><img src="/gallery/yanis-duo.jpg" alt="Yanis Chkhatval with a Legends member" loading="lazy" /></figure>
+        <figure><img src="/gallery/evening-4.jpg" alt="Legends members at a private evening in Dubai" loading="lazy" /></figure>
+      </div>
       <Founder />
       <JoinCard />
     </div></section>
