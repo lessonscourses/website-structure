@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Crumbs from '@/components/Crumbs';
-import { Head, Formats, Legends10Block, Online10Block, AiBlock, JoinCard, NetworkBlock, NetSharesBlock } from '@/components/hv/Hv';
+import { Head, Formats, Legends10Block, Online10Block, AiBlock, JoinCard, NetSharesBlock } from '@/components/hv/Hv';
 import '../hv.css';
 
 export const metadata = { title: 'How Legends works - Legends', description: 'Legends10 dinners, Legends Online10, InvestHack sessions and one AI platform. Every member personally vetted.' };
@@ -20,11 +20,9 @@ export default function About() {
 
         <section className="sec"><div className="wrap"><Formats title="How Legends works" sub="Three formats, one network" /></div></section>
 
-        <NetworkBlock />
+        <NetSharesBlock />
 
         <Legends10Block />
-
-        <NetSharesBlock />
 
         <Online10Block />
         <AiBlock />
