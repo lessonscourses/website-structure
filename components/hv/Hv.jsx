@@ -173,7 +173,6 @@ export function NetSharesBlock() {
     <section className="sec hv-sec" id="shares"><div className="wrap">
       <Head title="Who our investors are" sub="260+ investors. $10B+ in total capital." one="Fund managers, family offices and private investors from Dubai to Singapore, London and New York, meeting in person during the weeks that matter." />
       <HvRings />
-      <p className="nw-trust rv">Every member is personally vetted. No brokers, no service providers.</p>
     </div></section>
   );
 }
