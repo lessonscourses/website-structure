@@ -280,7 +280,7 @@ const NUM_TILES = [
 export function NumbersBlock() {
   return (
     <section className="sec hv-sec" id="numbers"><div className="wrap">
-      <Head title="Legends in numbers" sub="260+ investors. $10B+ in total capital." />
+      <Head title="Legends in numbers" sub="The numbers speak for themselves" />
       <div className="nmg">{NUM_TILES.map(([k, a, b, c], i) => (
         <div key={i} className={'nmt rv d' + (i % 4) + ' ' + k + (k === 'p' && b ? ' ov' : '')}>
           {k === 'p' && <img src={a} alt="" loading="lazy" />}
