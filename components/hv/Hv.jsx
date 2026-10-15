@@ -64,7 +64,7 @@ function LiveArt() {
 }
 
 /* ---------- formats index ---------- */
-export function Formats({ title = 'One network. Three ways in.', sub = 'Dinners by city, sessions by industry and one platform in between.' }) {
+export function Formats({ title = 'One network. Three ways in.', sub = '260+ investors. $10B+ in total capital.' }) {
   const F = [
     ['01', 'Legends10', 'In person, city by city', '/events', '/gallery/evening-1.jpg'],
     ['02', 'Online', 'Legends Online10, InvestHack', '/events/online', 'live'],
