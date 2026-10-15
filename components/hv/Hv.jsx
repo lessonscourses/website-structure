@@ -3,6 +3,8 @@ import HvCarousel from './HvCarousel';
 import HvVoices from './HvVoices';
 import HvOnline from './HvOnline';
 import HvBars from './HvBars';
+import HvDonuts from './HvDonuts';
+import HvRings from './HvRings';
 import { EssayTile } from '@/components/Cards';
 import { ESSAYS } from '@/data/blog';
 import { ONLINE10 } from '@/data/online';
@@ -46,11 +48,26 @@ function AiArt() {
   );
 }
 
+/* Online card art: live session - the speaker on stage, audience on the call */
+const LIVE_AUD = [0, 2, 3, 6, 8, 9, 12];
+function LiveArt() {
+  return (
+    <span className="lvart" aria-hidden="true">
+      <span className="lv-stage">
+        <img src="/people/alex-call.jpg" alt="" />
+        <span className="lv-top"><span className="lv-live"><i />Live</span><span>InvestHack · Alex Felman</span></span>
+        <span className="lv-bot"><span><b>Alex Felman</b>Felman Family Office</span><span className="lv-wave">{[8, 16, 26, 18, 30, 22, 12, 24, 14, 8].map((h, k) => <i key={k} style={{ '--h': h + 'px', '--k': k }} />)}</span></span>
+      </span>
+      <span className="lv-aud">{LIVE_AUD.map((f) => <img key={f} src={`/network/f${String(f).padStart(2, '0')}.jpg`} alt="" />)}<em>+3 on the call</em></span>
+    </span>
+  );
+}
+
 /* ---------- formats index ---------- */
 export function Formats({ title = 'One network. Three ways in.', sub = 'Dinners by city, sessions by industry and one platform in between.' }) {
   const F = [
     ['01', 'Legends10', 'In person, city by city', '/events', '/gallery/evening-1.jpg'],
-    ['02', 'Online', 'Legends Online10, InvestHack', '/events/online', '/brand/online10-dark.jpg'],
+    ['02', 'Online', 'Legends Online10, InvestHack', '/events/online', 'live'],
     ['03', 'AI platform', 'Matches and introductions', '/ai-platform', null],
   ];
   return (
@@ -58,7 +75,7 @@ export function Formats({ title = 'One network. Three ways in.', sub = 'Dinners 
       <Head title={title} sub={sub} />
       <div className="hv-ix">
         {F.map(([n, h, p, href, img], i) => (
-          <a key={h} className={'rv d' + i + (img ? '' : ' ai')} href={href}>{img ? <img src={img} alt="" /> : <AiArt />}<span className="hv-ix-t"><b>{h}</b><em>{p}</em><i>Explore <Arr /></i></span></a>
+          <a key={h} className={'rv d' + i + (img === 'live' ? ' ai live' : img ? '' : ' ai')} href={href}>{img === 'live' ? <LiveArt /> : img ? <img src={img} alt="" /> : <AiArt />}<span className="hv-ix-t"><b>{h}</b><em>{p}</em><i>Explore <Arr /></i></span></a>
         ))}
       </div>
     </>
@@ -154,8 +171,8 @@ export function NetworkBlock() {
 export function NetSharesBlock() {
   return (
     <section className="sec hv-sec" id="shares"><div className="wrap">
-      <Head title="Who our investors are" sub="Where they are, who they are, what they back" />
-      <HvBars />
+      <Head title="Who our investors are" sub="260+ investors. $10B+ in total capital." one="Fund managers, family offices and private investors from Dubai to Singapore, London and New York, meeting in person during the weeks that matter." />
+      <HvRings />
       <p className="nw-trust rv">Every member is personally vetted. No brokers, no service providers.</p>
     </div></section>
   );
@@ -246,6 +263,51 @@ export function BlogBlock() {
       <Head title="Blog" sub="Essays from members and speakers" />
       <HvCarousel title="Latest essays" className="hv-blog">{ESSAYS.map((e) => <div key={e.url} className="hv-blog-i"><EssayTile e={e} /></div>)}</HvCarousel>
       <More href="/blog">All essays</More>
+    </div></section>
+  );
+}
+
+/* Home: Legends in numbers - photo + number tiles (block 3). Copy: LEGENDS_NETWORK_STATS_FINAL 3 */
+const NUM_TILES = [
+  ['n', '260+', 'investors in the network, in total'],
+  ['p', '/gallery/evening-5.jpg'],
+  ['p', '/gallery/yanis-handshake.jpg', '200+', 'of them represent funds & family offices'],
+  ['p', '/gallery/yanis-mic.jpg'],
+  ['p', '/gallery/unite-mid.jpg'],
+  ['g', '$10B+', 'total capital managed, invested and deployed by our investors'],
+  ['p', '/gallery/evening-4.jpg', '60+', 'private investors & angels'],
+  ['n', '$1M+', 'average ticket of our investors'],
+];
+export function NumbersBlock() {
+  return (
+    <section className="sec hv-sec" id="numbers"><div className="wrap">
+      <Head title="Legends in numbers" sub="260+ investors. $10B+ in total capital." />
+      <div className="nmg">{NUM_TILES.map(([k, a, b, c], i) => (
+        <div key={i} className={'nmt rv d' + (i % 4) + ' ' + k + (k === 'p' && b ? ' ov' : '')}>
+          {k === 'p' && <img src={a} alt="" loading="lazy" />}
+          {(k !== 'p' || b) && <span className="nmt-t"><b>{k === 'p' ? b : a}</b><em>{k === 'p' ? c : b}</em></span>}
+        </div>
+      ))}</div>
+      <p className="nw-trust rv">Every member is personally vetted. No brokers, no service providers.</p>
+    </div></section>
+  );
+}
+
+/* About: founder - three photos + quote + bio (light, no dark card) */
+export function FounderAbout() {
+  return (
+    <section className="sec hv-sec" id="founder"><div className="wrap">
+      <div className="fa">
+        <div className="fa-ph rv"><figure className="big"><img src="/gallery/yanis-mic.jpg" alt="Yanis Chkhatval speaking at Legends" /></figure><figure className="fa-hs"><img src="/gallery/yanis-handshake.jpg" alt="Yanis Chkhatval at a Legends evening in Dubai" /></figure><figure><img src="/gallery/yanis-duo.jpg" alt="Yanis Chkhatval with a Legends member" /></figure></div>
+        <div className="fa-tx rv d1">
+          <span className="k2">About the founder</span>
+          <q>Every deal I regret started with the wrong introduction. Every deal I’m proud of started with the right one.</q>
+          <span className="fa-by"><b>Yanis Chkhatval</b>Private investor and entrepreneur, founder of Legends</span>
+          <p className="fa-lead">Yanis Chkhatval is a private investor, international entrepreneur, and founder of Legends Club.</p>
+          <p>With a background in an established entrepreneurial family, Yanis developed an understanding of business and investment from an early age. He founded his first businesses at the age of 18 and studied Accounting and Finance in London. Since then, he has been involved in over 15 ventures across technology, retail, finance, and real estate, with international business experience spanning the UK, Europe, Central Asia and the CIS, the Middle East, and China.</p>
+          <p>Today, Yanis focuses on private investments across technology, financial markets, and real estate. Through Legends Club, he is building an exclusive global community of private investors, connecting accomplished individuals through trusted relationships, exceptional experiences, and unique opportunities.</p>
+        </div>
+      </div>
     </div></section>
   );
 }
