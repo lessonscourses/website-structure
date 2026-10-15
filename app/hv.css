@@ -1131,3 +1131,6 @@
 @media (max-width:900px){.fa{grid-template-columns:1fr}.fa-ph{height:auto}}
 .fa{grid-template-columns:minmax(0,5fr) minmax(0,5fr)}
 @media (max-width:900px){.fa{grid-template-columns:1fr}}
+.lv-stage img[src*="alex.jpg"]{object-position:50% 22%;filter:none;transform:scale(1.25);transform-origin:50% 25%}
+.lv-stage img[src*="alex-live"]{object-position:70% 30%;filter:none}
+.lv-stage img[src*="alex-live"]{object-position:50% 30%}

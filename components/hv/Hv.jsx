@@ -54,7 +54,7 @@ function LiveArt() {
   return (
     <span className="lvart" aria-hidden="true">
       <span className="lv-stage">
-        <img src="/people/alex-call.jpg" alt="" />
+        <img src="/people/alex-live.jpg" alt="" />
         <span className="lv-top"><span className="lv-live"><i />Live</span><span>InvestHack · Alex Felman</span></span>
         <span className="lv-bot"><span><b>Alex Felman</b>Felman Family Office</span><span className="lv-wave">{[8, 16, 26, 18, 30, 22, 12, 24, 14, 8].map((h, k) => <i key={k} style={{ '--h': h + 'px', '--k': k }} />)}</span></span>
       </span>
