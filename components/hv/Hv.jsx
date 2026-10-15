@@ -151,7 +151,7 @@ const FACES = FACE_ORDER.map((i) => `/network/f${String(i).padStart(2, '0')}.jpg
 export function NetworkBlock() {
   return (
     <section className="sec hv-sec nw" id="network"><div className="wrap">
-      <Head title="Legends in numbers" sub="The numbers speak for themselves" />
+      <Head title="Legends in numbers" sub="The facts speak for themselves" />
       <div className="nw-wall rv">
         <div className="nw-faces" aria-hidden="true">{FACES.map((f, i) => <img key={i} src={f} alt="" style={{ '--i': i }} />)}</div>
         <div className="nw-mid">
@@ -280,7 +280,7 @@ const NUM_TILES = [
 export function NumbersBlock() {
   return (
     <section className="sec hv-sec" id="numbers"><div className="wrap">
-      <Head title="Legends in numbers" sub="The numbers speak for themselves" />
+      <Head title="Legends in numbers" sub="The facts speak for themselves" />
       <div className="nmg">{NUM_TILES.map(([k, a, b, c], i) => (
         <div key={i} className={'nmt rv d' + (i % 4) + ' ' + k + (k === 'p' && b ? ' ov' : '')}>
           {k === 'p' && <img src={a} alt="" loading="lazy" />}
